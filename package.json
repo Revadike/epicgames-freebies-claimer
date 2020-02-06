@@ -1,0 +1,13 @@
+{
+    "name": "epicgames-freebies-claimer",
+    "description": "Claim free game promotions from the Epic Game Store",
+    "version": "1.0.0",
+    "author": "Revadike",
+    "homepage": "https://revadike.com",
+    "url": "https://github.com/revadike/epicgames-freebies-claimer",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "epicgames-client": "latest"
+    }
+}
