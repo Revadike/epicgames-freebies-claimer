@@ -3,6 +3,9 @@
 ## Description
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Game Store.
 
+## Requirements
+ * [Node.js](https://nodejs.org/download/)
+
 ## Instructions
 1. Download/clone repo
 2. Edit `index.js` to include your EpicGames credentials
