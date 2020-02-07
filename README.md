@@ -1,7 +1,7 @@
 # EpicGames Freebies Claimer
 
 ## Description
-Claim available free game promotions from the Epic Game Store.
+Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Game Store.
 
 ## Instructions
 1. Download/clone repo
