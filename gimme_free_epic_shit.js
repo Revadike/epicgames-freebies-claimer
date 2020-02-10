@@ -1,50 +1,54 @@
 const { Launcher } = require(`epicgames-client`);
 const { email, password } = require(`${__dirname}/config.json`);
-const epic = new Launcher({
+const defaultPageSize = 100;
+const epicLauncher = new Launcher({
     email: process.argv[2] || email,
     password: process.argv[3] || password
 });
 
+console.log('Trying to log in as ' + epicLauncher.config.email);
+
 (async () => {
-    if (!await epic.init() || !await epic.login()) {
+    if (!await epicLauncher.init() || !await epicLauncher.login()) {
         throw new Error(`Error while initialize or login process.`);
     }
     
-    console.log(`Logged in as ${epic.account.name} (${epic.account.id})`);
+    console.log(`Logged in as ${epicLauncher.account.name} (${epicLauncher.account.id})`);
     
-    let getAllOffers = async (ns, n=100) => {
+    let getAllOffers = async (namespace, pagesize=defaultPageSize) => {
         let i = 0;
         let results = [];
-        while ((i * n) - results.length === 0) {
-            let { elements } = await epic.getOffersForNamespace(ns, n, n * i++);
+        while ((i * pagesize) - results.length === 0) {
+            let { elements } = await epicLauncher.getOffersForNamespace(namespace, pagesize, pagesize * i++);
             results = results.concat(elements);
         }
         return results;
     };
 
     let all = await getAllOffers(`epic`);
-    let freegames = all.filter(game => game.categories.find(cat => cat.path === `freegames`));
+    let freegamesNamespaces =
+        all.filter(game => game.categories
+            .find(cat => cat.path === `freegames`) && game.customAttributes[`com.epicgames.app.offerNs`].value)
+        .map(game => game.customAttributes[`com.epicgames.app.offerNs`].value);
 
-    for (let game of freegames) {
-        let namespace = game.customAttributes[`com.epicgames.app.offerNs`].value
-        if (!namespace) {
-            continue;
-        }
+    for (let gameNamespace of freegamesNamespaces) {
+        let offers = await getAllOffers(gameNamespace);
+        let freeOffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
 
-        let offers = await getAllOffers(namespace);
-        let offer = offers.find(game => game.currentPrice === 0 && game.discountPercentage === 0);
-        if (!offer) {
-            continue;
-        }
+        for (let offer of freeOffers){
+            let purchased = await epicLauncher.purchase(offer, 1).catch(console.error);
 
-        let purchased = await epic.purchase(offer, 1);
-        if (purchased) {
-            console.log(`Successfully claimed ${offer.title} (${purchased})`);
+            if (purchased) {
+                console.log(`Successfully redeemed ${offer.title} (${purchased})`);
+            }
+            else {
+                console.log(`${offer.title} was already redeemed for this account`);
+            }
         }
     }
 
-    await epic.logout();
-    console.log(`Enjoy!`);
+    await epicLauncher.logout();
+    console.log("Script finished!");
     process.exit(0);
 
 })().catch(err => {
