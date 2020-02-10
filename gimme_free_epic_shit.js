@@ -1,22 +1,21 @@
-const { Launcher } = require(`epicgames-client`);
+const { Launcher: EpicGames } = require(`epicgames-client`);
 const { email, password } = require(`${__dirname}/config.json`);
-const epicClient = new Launcher({
+const client = new EpicGames({
     email: process.argv[2] || email,
     password: process.argv[3] || password
 });
 
 (async () => {
-    if (!await epicClient.init() || !await epicClient.login()) {
-        throw new Error(`Error while initialize or login process as ${epicClient.config.email}`);
+    if (!await client.init() || !await client.login()) {
+        throw new Error(`Error while initializing or logging in as ${client.config.email}`);
     }
     
-    console.log(`Logged in as ${epicLauncher.account.name} (${epicLauncher.account.id})`);
-    
+    console.log(`Logged in as ${client.account.name} (${client.account.id})`);
     let getAllOffers = async (namespace, pagesize=100) => {
         let i = 0;
         let results = [];
         while ((i * pagesize) - results.length === 0) {
-            let { elements } = await epicClient.getOffersForNamespace(namespace, pagesize, pagesize * i++);
+            let { elements } = await client.getOffersForNamespace(namespace, pagesize, pagesize * i++);
             results = results.concat(elements);
         }
         return results;
@@ -24,17 +23,16 @@ const epicClient = new Launcher({
 
     let all = await getAllOffers(`epic`);
     let freegames = all
-        .filter(game => game.categories
-            .find(cat => cat.path === `freegames`) &&
-                game.customAttributes[`com.epicgames.app.offerNs`].value)
+        .filter(game => game.categories.find(cat => cat.path === `freegames`) &&
+            game.customAttributes[`com.epicgames.app.offerNs`].value)
         .map(game => game.customAttributes[`com.epicgames.app.offerNs`].value);
 
     for (let namespace of freegames) {
         let offers = await getAllOffers(namespace);
-        let freeOffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
+        let freeoffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
 
-        for (let offer of freeOffers){
-            let purchased = await epicClient.purchase(offer, 1);
+        for (let offer of freeoffers) {
+            let purchased = await client.purchase(offer, 1);
 
             if (purchased) {
                 console.log(`Successfully claimed ${offer.title} (${purchased})`);
@@ -44,8 +42,8 @@ const epicClient = new Launcher({
         }
     }
 
-    await epicClient.logout();
-    console.log(`Script finished!`);
+    await client.logout();
+    console.log(`Logged out of Epic Games`);
     process.exit(0);
 
 })().catch(err => {
