@@ -1,4 +1,5 @@
 # EpicGames Freebies Claimer
+![image](https://user-images.githubusercontent.com/4411977/74479432-6a6d1b00-4eaf-11ea-930f-1b89e7135887.png)
 
 ## Description
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Game Store.
