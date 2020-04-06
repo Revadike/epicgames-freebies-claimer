@@ -2,7 +2,8 @@ const { Launcher: EpicGames } = require(`epicgames-client`);
 const { email, password } = require(`${__dirname}/config.json`);
 const client = new EpicGames({
     email: process.argv[2] || email,
-    password: process.argv[3] || password
+    password: process.argv[3] || password,
+    rememberLastSession: true
 });
 
 (async () => {
