@@ -24,6 +24,11 @@ Also, this is a good alternative, in case you don't like using Epic's client or 
 To which I will say, why not? Most of these games are actually outstanding games! Even if you don't like Epic and their shenanigans, you will be pleased to know that Epic actually funds all the free copies that are given away:  ["But we actually found it was more economical to pay developers [a lump sum] to distribute their game free for two weeks..."](https://arstechnica.com/gaming/2019/03/epic-ceo-youre-going-to-see-lower-prices-on-epic-games-store/)
 
 ## Changelog
+### V1.2.0
+ * Now allows web login, if normal login fails, e.g. due to captcha (Closes #3)
+
+*Please run `npm install` again, to install `epicgames-client-login-adapter`, required to utilize this new feature
+
 ### V1.1.2
  * Enables `rememberLastSession` by default* (Closes #4)
 
