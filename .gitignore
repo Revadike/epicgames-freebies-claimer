@@ -1,6 +1,7 @@
 *.bat
 node_modules
 package-lock.json
+.egstore/*
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

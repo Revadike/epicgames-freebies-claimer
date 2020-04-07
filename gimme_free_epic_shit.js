@@ -1,14 +1,30 @@
 const { Launcher: EpicGames } = require(`epicgames-client`);
 const { email, password } = require(`${__dirname}/config.json`);
-const client = new EpicGames({
+const credentials = {
     email: process.argv[2] || email,
     password: process.argv[3] || password,
     rememberLastSession: true
-});
+};
+const client = new EpicGames(credentials);
 
 (async () => {
-    if (!await client.init() || !await client.login()) {
-        throw new Error(`Error while initializing or logging in as ${client.config.email}`);
+    if (!await client.init()) {
+        throw new Error('Error while initialize process.');
+    }
+
+    if (!await client.login().catch(() => {})) {
+        console.log(`Failed to login as ${client.config.email}, please attempt manually.`);
+
+        const ClientLoginAdapter = require(`epicgames-client-login-adapter`);
+        credentials.login = credentials.email;
+        
+        let auth = await ClientLoginAdapter.init(credentials);
+        let exchangeCode = await auth.getExchangeCode();
+        await auth.close();
+        
+        if (!await client.login(null, exchangeCode)) {
+            throw new Error(`Error while logging in.`);
+        }
     }
     
     console.log(`Logged in as ${client.account.name} (${client.account.id})`);
