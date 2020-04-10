@@ -49,7 +49,7 @@ const client = new EpicGames(credentials);
         let freeoffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
 
         for (let offer of freeoffers) {
-            let purchased = await client.purchase(offer, 1);
+            let purchased = await client.quickPurchase(offer, 1);
 
             if (purchased) {
                 console.log(`Successfully claimed ${offer.title} (${purchased})`);
