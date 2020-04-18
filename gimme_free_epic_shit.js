@@ -1,34 +1,39 @@
-const { Launcher: EpicGames } = require(`epicgames-client`);
-const { email, password } = require(`${__dirname}/config.json`);
+"use strict";
+const { "Launcher": EpicGames } = require("epicgames-client");
+const { email, password, rememberLastSession } = require(`${__dirname}/config.json`);
 const credentials = {
-    email: process.argv[2] || email,
-    password: process.argv[3] || password,
-    rememberLastSession: true
+    "email":    process.argv[2] || email,
+    "password": process.argv[3] || password
 };
-const client = new EpicGames(credentials);
 
-(async () => {
+if (typeof process.argv[4] === "undefined") {
+    credentials.rememberLastSession = rememberLastSession;
+} else {
+    credentials.rememberLastSession = Boolean(Number(process.argv[4]));
+}
+
+(async() => {
+    const client = new EpicGames(credentials);
+
     if (!await client.init()) {
-        throw new Error('Error while initialize process.');
+        throw new Error("Error while initialize process.");
     }
 
-    if (!await client.login().catch(() => {})) {
+    if (!await client.login().catch(() => false)) {
         console.log(`Failed to login as ${client.config.email}, please attempt manually.`);
 
-        const ClientLoginAdapter = require(`epicgames-client-login-adapter`);
-        credentials.login = credentials.email;
-        
+        const ClientLoginAdapter = require("epicgames-client-login-adapter");
         let auth = await ClientLoginAdapter.init(credentials);
         let exchangeCode = await auth.getExchangeCode();
         await auth.close();
-        
+
         if (!await client.login(null, exchangeCode)) {
-            throw new Error(`Error while logging in.`);
+            throw new Error("Error while logging in.");
         }
     }
-    
+
     console.log(`Logged in as ${client.account.name} (${client.account.id})`);
-    let getAllOffers = async (namespace, pagesize=100) => {
+    let getAllOffers = async(namespace, pagesize = 100) => {
         let i = 0;
         let results = [];
         while ((i * pagesize) - results.length === 0) {
@@ -38,11 +43,11 @@ const client = new EpicGames(credentials);
         return results;
     };
 
-    let all = await getAllOffers(`epic`);
+    let all = await getAllOffers("epic");
     let freegames = all
-        .filter(game => game.categories.find(cat => cat.path === `freegames`) &&
-            game.customAttributes[`com.epicgames.app.offerNs`].value)
-        .map(game => game.customAttributes[`com.epicgames.app.offerNs`].value);
+        .filter(game => game.categories.find(cat => cat.path === "freegames")
+            && game.customAttributes["com.epicgames.app.offerNs"].value)
+        .map(game => game.customAttributes["com.epicgames.app.offerNs"].value);
 
     for (let namespace of freegames) {
         let offers = await getAllOffers(namespace);
@@ -60,10 +65,9 @@ const client = new EpicGames(credentials);
     }
 
     await client.logout();
-    console.log(`Logged out of Epic Games`);
+    console.log("Logged out of Epic Games");
     process.exit(0);
-
 })().catch(err => {
     console.error(err);
-    process.exit(1)
+    process.exit(1);
 });
