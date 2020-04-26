@@ -1,9 +1,33 @@
 "use strict";
+const Config = require(`${__dirname}/config.json`);
 const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const { "Launcher": EpicGames } = require("epicgames-client");
-let { accounts, delay, loop } = require(`${__dirname}/config.json`);
+const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, $start: Int) {
+    Catalog {
+        searchStore(category: $category, locale: $locale, start: $start) {
+            elements {
+                title
+                id
+                namespace
+                promotions(category: $category) {
+                    promotionalOffers {
+                        promotionalOffers {
+                            startDate
+                            endDate
+                            discountSetting {
+                                discountType
+                                discountPercentage
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}`;
 
 (async() => {
+    let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
         if (process.argv.length > 2) {
@@ -34,34 +58,24 @@ let { accounts, delay, loop } = require(`${__dirname}/config.json`);
             }
 
             console.log(`Logged in as ${client.account.name} (${client.account.id})`);
-            let getAllOffers = async(namespace, pagesize = 100) => {
-                let i = 0;
-                let results = [];
-                while ((i * pagesize) - results.length === 0) {
-                    let { elements } = await client.getOffersForNamespace(namespace, pagesize, pagesize * i++);
-                    results = results.concat(elements);
-                }
-                return results;
-            };
 
-            let all = await getAllOffers("epic");
-            let freegames = all
-                .filter(game => game.categories.find(cat => cat.path === "freegames")
-                        && game.customAttributes["com.epicgames.app.offerNs"].value)
-                .map(game => game.customAttributes["com.epicgames.app.offerNs"].value);
+            const { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
 
-            for (let namespace of freegames) {
-                let offers = await getAllOffers(namespace);
-                let freeoffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
+            let { elements } = JSON.parse(data).data.Catalog.searchStore;
+            let freePromos = elements.filter(offer => offer.promotions
+              && offer.promotions.promotionalOffers.length > 0
+              && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
 
-                for (let offer of freeoffers) {
+            for (let offer of freePromos) {
+                try {
                     let purchased = await client.purchase(offer, 1);
-
                     if (purchased) {
                         console.log(`Successfully claimed ${offer.title} (${purchased})`);
                     } else {
                         console.log(`${offer.title} was already claimed for this account`);
                     }
+                } catch (err) {
+                    console.log(`Failed to claim ${offer.title} (${err})`);
                 }
             }
 
