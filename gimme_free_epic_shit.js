@@ -43,17 +43,99 @@ if (typeof process.argv[4] === "undefined") {
         return results;
     };
 
-    let all = await getAllOffers("epic");
-    let freegames = all
-        .filter(game => game.categories.find(cat => cat.path === "freegames")
-            && game.customAttributes["com.epicgames.app.offerNs"].value)
-        .map(game => game.customAttributes["com.epicgames.app.offerNs"].value);
+    const { data } = await client.http.sendGraphQL(null, `query searchStoreQuery($allowCountries: String, $category: String, $count: Int, $country: String!, $keywords: String, $locale: String, $namespace: String, $sortBy: String, $sortDir: String, $start: Int, $tag: String, $withPrice: Boolean = false, $withPromotions: Boolean = false) {
+        Catalog {
+          searchStore(allowCountries: $allowCountries, category: $category, count: $count, country: $country, keywords: $keywords, locale: $locale, namespace: $namespace, sortBy: $sortBy, sortDir: $sortDir, start: $start, tag: $tag) {
+            elements {
+              title
+              id
+              namespace
+              description
+              effectiveDate
+              keyImages {
+                type
+                url
+              }
+              seller {
+                id
+                name
+              }
+              productSlug
+              urlSlug
+              url
+              items {
+                id
+                namespace
+              }
+              customAttributes {
+                key
+                value
+              }
+              categories {
+                path
+              }
+              price(country: $country) @include(if: $withPrice) {
+                totalPrice {
+                  discountPrice
+                  originalPrice
+                  voucherDiscount
+                  discount
+                  currencyCode
+                  currencyInfo {
+                    decimals
+                  }
+                  fmtPrice(locale: $locale) {
+                    originalPrice
+                    discountPrice
+                    intermediatePrice
+                  }
+                }
+                lineOffers {
+                  appliedRules {
+                    id
+                    endDate
+                    discountSetting {
+                      discountType
+                    }
+                  }
+                }
+              }
+              promotions(category: $category) @include(if: $withPromotions) {
+                promotionalOffers {
+                  promotionalOffers {
+                    startDate
+                    endDate
+                    discountSetting {
+                      discountType
+                      discountPercentage
+                    }
+                  }
+                }
+                upcomingPromotionalOffers {
+                  promotionalOffers {
+                    startDate
+                    endDate
+                    discountSetting {
+                      discountType
+                      discountPercentage
+                    }
+                  }
+                }
+              }
+            }
+            paging {
+              count
+              total
+            }
+          }
+        }
+      }`, { "category": "freegames", "sortBy": "effectiveDate", "sortDir": "asc", "count": 1000, "locale": "en-US", "country": "NL", "withPrice": true, "withPromotions": false });
+    console.dir(JSON.parse(data));
 
-    for (let namespace of freegames) {
-        let offers = await getAllOffers(namespace);
-        let freeoffers = offers.filter(game => game.currentPrice === 0 && game.discountPercentage === 0);
+    let freeoffers = JSON.parse(data).data.Catalog.searchStore.elements.filter(o => o.price.totalPrice.discountPrice === 0 && new Date(o.effectiveDate).valueOf() < Date.now());
 
-        for (let offer of freeoffers) {
+    for (let offer of freeoffers) {
+        try {
             let purchased = await client.purchase(offer, 1);
 
             if (purchased) {
@@ -61,6 +143,8 @@ if (typeof process.argv[4] === "undefined") {
             } else {
                 console.log(`${offer.title} was already claimed for this account`);
             }
+        } catch (error) {
+            console.log(`Failed to claim ${offer.title} (${error})`);
         }
     }
 
