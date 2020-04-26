@@ -1,5 +1,15 @@
 {
-    "email": "YOUR_EMAIL_HERE",
-    "password": "YOUR_PASSWORD_HERE",
+	"accounts": [
+		{
+			"email": "YOUR_EMAIL1_HERE",
+			"password": "YOUR_PASSWORD1_HERE"
+		},
+        {
+			"email": "YOUR_EMAIL2_HERE",
+			"password": "YOUR_PASSWORD2_HERE"
+		}
+	],
+	"delay": 3600,
+	"loop": true,
     "rememberLastSession": true
 }
