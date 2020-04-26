@@ -59,12 +59,11 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
 
             console.log(`Logged in as ${client.account.name} (${client.account.id})`);
 
-            const { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
-
+            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
             let { elements } = JSON.parse(data).data.Catalog.searchStore;
             let freePromos = elements.filter(offer => offer.promotions
-              && offer.promotions.promotionalOffers.length > 0
-              && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
+                && offer.promotions.promotionalOffers.length > 0
+                && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
 
             for (let offer of freePromos) {
                 try {
