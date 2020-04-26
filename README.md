@@ -7,11 +7,16 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 ## Requirements
  * [Node.js](https://nodejs.org/download/)
 
-## Instructions
+## Instructions (config)
 1. Download/clone repo
-2. (Optional) Edit `config.json` to include your EpicGames credentials
+2. Run `npm install`
+3. Edit `config.json` to include your EpicGames credentials and options
+4. Run `node gimme_free_epic_shit`*
+
+## Instructions (arguments)
+1. Download/clone repo
 3. Run `npm install`
-4. Run `node gimme_free_epic_shit` or `node gimme_free_epic_shit USERNAME PASSWORD 0/1`*
+4. Run `node gimme_free_epic_shit USERNAME PASSWORD 0/1`*
 
 *Only this step is required after the initial use.
 
@@ -23,7 +28,19 @@ Also, this is a good alternative, in case you don't like using Epic's client or 
 ### Why should I even bother claiming these free games?
 To which I will say, why not? Most of these games are actually outstanding games! Even if you don't like Epic and their shenanigans, you will be pleased to know that Epic actually funds all the free copies that are given away:  ["But we actually found it was more economical to pay developers [a lump sum] to distribute their game free for two weeks..."](https://arstechnica.com/gaming/2019/03/epic-ceo-youre-going-to-see-lower-prices-on-epic-games-store/)
 
+### Can I use the looping or multi-account feature when using launch arguments?
+No, these are only usable by using the config.
+
 ## Changelog
+### V1.2.3
+ * Small bugfix
+
+### V1.2.2
+ * Added looping feature a.k.a. run forever* (Closes #2)
+ * Added multi-account support*
+
+*Please update your config accordingly
+
 ### V1.2.1
  * Makes `rememberLastSession` optional in config or launch parameter (Closes #8)
  * Added ESLint linter
