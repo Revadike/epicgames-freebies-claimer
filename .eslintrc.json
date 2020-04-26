@@ -62,6 +62,7 @@
         "no-caller": "error",
         "no-case-declarations": "error",
         "no-confusing-arrow": "error",
+        "no-console": "error",
         "no-constructor-return": "error",
         "no-dupe-else-if": "error",
         "no-duplicate-imports": "error",

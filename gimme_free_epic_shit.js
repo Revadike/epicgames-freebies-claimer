@@ -1,5 +1,6 @@
 "use strict";
 const Config = require(`${__dirname}/config.json`);
+const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const { "Launcher": EpicGames } = require("epicgames-client");
 const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, $start: Int) {
@@ -47,7 +48,7 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
             }
 
             if (!await client.login().catch(() => false)) {
-                console.log(`Failed to login as ${client.config.email}, please attempt manually.`);
+                Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
                 await auth.close();
@@ -57,7 +58,7 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
                 }
             }
 
-            console.log(`Logged in as ${client.account.name} (${client.account.id})`);
+            Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
 
             let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
             let { elements } = JSON.parse(data).data.Catalog.searchStore;
@@ -69,27 +70,27 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
                 try {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
-                        console.log(`Successfully claimed ${offer.title} (${purchased})`);
+                        Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
                     } else {
-                        console.log(`${offer.title} was already claimed for this account`);
+                        Logger.info(`${offer.title} was already claimed for this account`);
                     }
                 } catch (err) {
-                    console.log(`Failed to claim ${offer.title} (${err})`);
+                    Logger.warn(`Failed to claim ${offer.title} (${err})`);
                 }
             }
 
             await client.logout();
-            console.log(`Logged ${client.account.name} out of Epic Games`);
+            Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }
 
         if (loop) {
-            console.log(`Waiting ${delay} minutes`);
+            Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);
         } else {
             process.exit(0);
         }
     } while (loop);
 })().catch(err => {
-    console.error(err);
+    Logger.error(err);
     process.exit(1);
 });

@@ -34,6 +34,7 @@ No, these are only usable by using the config.
 ## Changelog
 ### V1.3.0
  * Changed method of obtaining free games list (Closes #13)
+ * Added better logger (Closes #14)
 
 ### V1.2.3
  * Small bugfix
