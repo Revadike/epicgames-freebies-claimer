@@ -67,13 +67,13 @@ let { accounts, delay, loop } = require(`${__dirname}/config.json`);
 
             await client.logout();
             console.log(`Logged ${client.account.name} out of Epic Games`);
+        }
 
-            if (loop) {
-                console.log(`Waiting ${delay} minutes`);
-                await sleep(delay);
-            } else {
-                process.exit(0);
-            }
+        if (loop) {
+            console.log(`Waiting ${delay} minutes`);
+            await sleep(delay);
+        } else {
+            process.exit(0);
         }
     } while (loop);
 })().catch(err => {

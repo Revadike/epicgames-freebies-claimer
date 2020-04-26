@@ -32,6 +32,9 @@ To which I will say, why not? Most of these games are actually outstanding games
 No, these are only usable by using the config.
 
 ## Changelog
+### V1.2.3
+ * Small bugfix
+
 ### V1.2.2
  * Added looping feature a.k.a. run forever* (Closes #2)
  * Added multi-account support*
