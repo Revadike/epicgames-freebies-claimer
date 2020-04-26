@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": "Revadike <https://revadike.ga>",
     "main": "gimme_free_epic_shit.js",
