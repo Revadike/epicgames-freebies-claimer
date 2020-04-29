@@ -3,10 +3,11 @@
     "version": "1.3.0",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": "Revadike <https://revadike.ga>",
-    "main": "gimme_free_epic_shit.js",
+    "main": "claimer.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node gimme_free_epic_shit.js"
+        "start": "node claimer.js",
+        "claim": "node claimer.js"
     },
     "license": "MIT",
     "repository": {

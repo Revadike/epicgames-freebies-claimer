@@ -11,12 +11,12 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 1. Download/clone repo
 2. Run `npm install`
 3. Edit `config.json` to include your EpicGames credentials and options
-4. Run `node gimme_free_epic_shit`*
+4. Run `npm claim`*
 
 ## Instructions (arguments)
 1. Download/clone repo
 3. Run `npm install`
-4. Run `node gimme_free_epic_shit USERNAME PASSWORD 0/1`*
+4. Run `npm claim USERNAME PASSWORD 0|1`*
 
 *Only this step is required after the initial use.
 

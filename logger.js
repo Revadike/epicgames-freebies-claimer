@@ -34,7 +34,7 @@ module.exports = {
             "flags":    "a",
             "encoding": "utf8"
         };
-        fs.createWriteStream(path.join(__dirname, "log.txt"), streamoptions).write(`\r\n${data.rawoutput}`);
+        fs.createWriteStream(path.join(__dirname, "claimer.log"), streamoptions).write(`\r\n${data.rawoutput}`);
         if (data.logpath) {
             fs.createWriteStream(data.logpath, streamoptions).write(`\r\n${data.rawoutput}`);
         }
