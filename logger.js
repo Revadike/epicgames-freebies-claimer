@@ -26,9 +26,6 @@ module.exports = {
     "transport": data => {
         // eslint-disable-next-line no-console
         console.log(data.output);
-        if (data.level === 4) {
-            return;
-        }
 
         const streamoptions = {
             "flags":    "a",

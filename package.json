@@ -6,8 +6,7 @@
     "main": "claimer.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node claimer.js",
-        "claim": "node claimer.js"
+        "start": "node claimer.js"
     },
     "license": "MIT",
     "repository": {
