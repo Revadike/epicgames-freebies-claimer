@@ -1,6 +1,8 @@
 "use strict";
+const request = require("request");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
+const Package = require(`${__dirname}/package.json`);
 const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const twoFactor = require("node-2fa");
 const { "Launcher": EpicGames } = require("epicgames-client");
@@ -27,7 +29,74 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
         }
     }
 }`;
+function isNewerVersion(currentVersion, remoteVersion) {
+    if (currentVersion && currentVersion !== "" && remoteVersion && remoteVersion !== "") {
+        Logger.info(`Current version is ${currentVersion} and remote version is ${remoteVersion}`);
+        let current = currentVersion.split(".");
+        let remote = remoteVersion.split(".");
+        for (let i = 0; i < (current.length > remote.length ? current.length : remote.length); ++i) {
+            let i1 = i < current.length ? parseInt(current[i]) : 0;
+            let i2 = i < remote.length ? parseInt(remote[i]) : 0;
+            if (i1 !== i2) {
+                return !(i1 > i2);
+            }
+        }
+        return false;
+    }
+
+    Logger.error("Version is empty value");
+    return false;
+}
+
+function GetJSON(options) {
+    return new Promise((resolve, reject) => {
+        request(options, (err, res, body) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            if (res.statusCode !== 200) {
+                reject(new Error(`Invalid Status Code: ${res.statusCode}`));
+                return;
+            }
+
+            let json = "{}";
+            try {
+                json = JSON.parse(body);
+            } catch (err) { Logger.error(err); }
+
+            if (!json) {
+                reject(body);
+                return;
+            }
+
+            resolve(json);
+        });
+    });
+}
+
+function GetLatestVersion() {
+    return new Promise(async(resolve, reject) => {
+        let remotePackage = "https://raw.githubusercontent.com/Revadike/epicgames-freebies-claimer/master/package.json";
+        let json = await GetJSON(remotePackage).catch(err => { reject(err); });
+
+        if (!json || !json.version) {
+            reject(json);
+            return;
+        }
+
+        resolve(json.version);
+    });
+}
 (async() => {
+    Logger.info("Checking update");
+    let remoteVersion = await GetLatestVersion().catch(err => { Logger.error(err); });
+    if (isNewerVersion(Package.version, remoteVersion)) {
+        Logger.warn("Found newer version on github!");
+    } else {
+        Logger.info("There is no newer version on github!");
+    }
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
