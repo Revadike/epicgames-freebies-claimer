@@ -2,6 +2,7 @@
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const ClientLoginAdapter = require("epicgames-client-login-adapter");
+const twoFactor = require("node-2fa");
 const { "Launcher": EpicGames } = require("epicgames-client");
 const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, $start: Int) {
     Catalog {
@@ -26,7 +27,6 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
         }
     }
 }`;
-
 (async() => {
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
@@ -41,14 +41,28 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
         }
 
         for (let account of accounts) {
+            if (account.twoFactorSecret !== "") {
+                let { token } = twoFactor.generateToken(account.twoFactorSecret);
+                account.twoFactorCode = token;
+            }
+            if (account.twoFactorCode !== "") {
+                Logger.info(`use 2fa code ${account.twoFactorCode} to login as ${account.email}`);
+            }
             let client = new EpicGames(account);
 
             if (!await client.init()) {
                 throw new Error("Error while initialize process.");
             }
-
             if (!await client.login().catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
+                if (account.twoFactorSecret !== "") {
+                    let { token } = twoFactor.generateToken(account.twoFactorSecret);
+                    account.twoFactorCode = token;
+                }
+                if (account.twoFactorCode !== "") {
+                    Logger.info(`use 2fa code ${account.twoFactorCode} to login as ${account.email}`);
+                }
+                // generate new 2fa code but adapter not support 2fa code yet
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
                 await auth.close();
