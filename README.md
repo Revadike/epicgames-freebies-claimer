@@ -34,6 +34,7 @@ No, these are only usable by using the config.
 ## Changelog
 ### V1.4.0
  * Added two factor authentication (2fa) support while EpicGames changed policy (Closes #17, #19, #21)
+ * Added update checker (Closes #20)
 
 ### V1.3.0
  * Changed method of obtaining free games list (Closes #13)
