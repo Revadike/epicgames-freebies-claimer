@@ -36,24 +36,23 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
             accounts = [{
                 "email":               process.argv[2],
                 "password":            process.argv[3],
-                "rememberLastSession": Boolean(Number(process.argv[4]))
+                "rememberLastSession": Boolean(Number(process.argv[4])),
+                "secret":              process.argv[5],
             }];
         }
 
         for (let account of accounts) {
-            if (account.twoFactorSecret !== "") {
+            if (account.secret !== "") {
                 let { token } = twoFactor.generateToken(account.twoFactorSecret);
                 account.twoFactorCode = token;
             }
-            if (account.twoFactorCode !== "") {
-                Logger.info(`use 2fa code ${account.twoFactorCode} to login as ${account.email}`);
-            }
+
             let client = new EpicGames(account);
 
             if (!await client.init()) {
                 throw new Error("Error while initialize process.");
             }
-            if (!await client.login().catch(() => false)) {
+            if (!await client.login(account).catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
                 if (account.twoFactorSecret !== "") {
                     let { token } = twoFactor.generateToken(account.twoFactorSecret);
