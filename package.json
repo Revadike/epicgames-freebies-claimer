@@ -25,6 +25,7 @@
         "colors": "^1.4.0",
         "epicgames-client": "^2.0.23",
         "epicgames-client-login-adapter": "^0.1.0",
+        "node-2fa": "^1.1.2",
         "tracer": "^1.0.3"
     }
 }

@@ -7,16 +7,16 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 ## Requirements
  * [Node.js](https://nodejs.org/download/)
 
+## Instructions (arguments)
+1. Download/clone repo
+3. Run `npm install`
+4. Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`*
+
 ## Instructions (config)
 1. Download/clone repo
 2. Run `npm install`
 3. Edit `config.json` to include your EpicGames credentials and options
 4. Run `npm start`*
-
-## Instructions (arguments)
-1. Download/clone repo
-3. Run `npm install`
-4. Run `npm start USERNAME PASSWORD 0|1`*
 
 *Only this step is required after the initial use.
 
@@ -32,6 +32,9 @@ To which I will say, why not? Most of these games are actually outstanding games
 No, these are only usable by using the config.
 
 ## Changelog
+### V1.4.0
+ * Added two factor authentication (2fa) support while EpicGames changed policy (Closes #17, #19, #21)
+
 ### V1.3.0
  * Changed method of obtaining free games list (Closes #13)
  * Added better logger (Closes #14)

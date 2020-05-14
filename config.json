@@ -3,11 +3,13 @@
 		{
 			"email": "YOUR_EMAIL1_HERE",
 			"password": "YOUR_PASSWORD1_HERE",
+			"secret": "YOUR_2FA_SECRET1_HERE_OR_EMPTY",
 			"rememberLastSession": true
 		},
 		{
 			"email": "YOUR_EMAIL2_HERE",
 			"password": "YOUR_PASSWORD2_HERE",
+			"secret": "YOUR_2FA_SECRET2_HERE_OR_EMPTY",
 			"rememberLastSession": true
 		}
 	],
