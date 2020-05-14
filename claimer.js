@@ -2,31 +2,10 @@
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const ClientLoginAdapter = require("epicgames-client-login-adapter");
-const twoFactor = require("node-2fa");
+const TwoFactor = require("node-2fa");
 const { "Launcher": EpicGames } = require("epicgames-client");
-const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, $start: Int) {
-    Catalog {
-        searchStore(category: $category, locale: $locale, start: $start) {
-            elements {
-                title
-                id
-                namespace
-                promotions(category: $category) {
-                    promotionalOffers {
-                        promotionalOffers {
-                            startDate
-                            endDate
-                            discountSetting {
-                                discountType
-                                discountPercentage
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}`;
+const PROMO_QUERY = require(`${__dirname}/graphql.js`);
+
 (async() => {
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
@@ -43,7 +22,7 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
 
         for (let account of accounts) {
             if (account.secret !== "") {
-                let { token } = twoFactor.generateToken(account.twoFactorSecret);
+                let { token } = TwoFactor.generateToken(account.twoFactorSecret);
                 account.twoFactorCode = token;
             }
 
@@ -54,13 +33,11 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
             }
             if (!await client.login(account).catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
-                if (account.twoFactorSecret !== "") {
-                    let { token } = twoFactor.generateToken(account.twoFactorSecret);
+                if (account.secret !== "") {
+                    let { token } = TwoFactor.generateToken(account.twoFactorSecret);
                     account.twoFactorCode = token;
                 }
-                if (account.twoFactorCode !== "") {
-                    Logger.info(`use 2fa code ${account.twoFactorCode} to login as ${account.email}`);
-                }
+
                 // generate new 2fa code but adapter not support 2fa code yet
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
