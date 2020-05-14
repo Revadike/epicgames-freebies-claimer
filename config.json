@@ -3,11 +3,15 @@
 		{
 			"email": "YOUR_EMAIL1_HERE",
 			"password": "YOUR_PASSWORD1_HERE",
+			"twoFactorCode": "LEAVE_IT_EMPTY_IF_YOU_DONT_HAVE_2FA_CODE",
+			"twoFactorSecret": "LEAVE_IT_EMPTY_IF_YOU_DONT_HAVE_2FA_SECRET",
 			"rememberLastSession": true
 		},
 		{
 			"email": "YOUR_EMAIL2_HERE",
 			"password": "YOUR_PASSWORD2_HERE",
+			"twoFactorCode": "LEAVE_IT_EMPTY_IF_YOU_DONT_HAVE_2FA_CODE",
+			"twoFactorSecret": "LEAVE_IT_EMPTY_IF_YOU_DONT_HAVE_2FA_SECRET",
 			"rememberLastSession": true
 		}
 	],

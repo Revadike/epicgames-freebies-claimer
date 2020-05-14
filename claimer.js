@@ -27,7 +27,6 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
         }
     }
 }`;
-
 (async() => {
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
@@ -44,9 +43,10 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
 
         for (let account of accounts) {
             if (account.secret !== "") {
-                let { token } = twoFactor.generateToken(account.secret);
+                let { token } = twoFactor.generateToken(account.twoFactorSecret);
                 account.twoFactorCode = token;
             }
+
             let client = new EpicGames(account);
 
             if (!await client.init()) {
@@ -54,6 +54,14 @@ const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, 
             }
             if (!await client.login(account).catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
+                if (account.twoFactorSecret !== "") {
+                    let { token } = twoFactor.generateToken(account.twoFactorSecret);
+                    account.twoFactorCode = token;
+                }
+                if (account.twoFactorCode !== "") {
+                    Logger.info(`use 2fa code ${account.twoFactorCode} to login as ${account.email}`);
+                }
+                // generate new 2fa code but adapter not support 2fa code yet
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
                 await auth.close();
