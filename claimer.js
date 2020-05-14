@@ -53,7 +53,7 @@ const PROMO_QUERY = require(`${__dirname}/graphql.js`);
                 });
             }
 
-            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "nl-NL" });
+            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
             let { elements } = JSON.parse(data).data.Catalog.searchStore;
             let freePromos = elements.filter(offer => offer.promotions
                 && offer.promotions.promotionalOffers.length > 0
