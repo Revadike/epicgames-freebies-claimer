@@ -1,102 +1,35 @@
 "use strict";
-const request = require("request");
+const { "Launcher": EpicGames } = require("epicgames-client");
+const CheckUpdate = require("check-update-github");
+const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
-const Package = require(`${__dirname}/package.json`);
-const ClientLoginAdapter = require("epicgames-client-login-adapter");
-const { "Launcher": EpicGames } = require("epicgames-client");
-const PROMO_QUERY = `query searchStoreQuery($category: String, $locale: String, $start: Int) {
-    Catalog {
-        searchStore(category: $category, locale: $locale, start: $start) {
-            elements {
-                title
-                id
-                namespace
-                promotions(category: $category) {
-                    promotionalOffers {
-                        promotionalOffers {
-                            startDate
-                            endDate
-                            discountSetting {
-                                discountType
-                                discountPercentage
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}`;
+const Package = require("./package.json");
+const PROMO_QUERY = require(`${__dirname}/graphql.js`);
+const TwoFactor = require("node-2fa");
 
-function isNewerVersion(currentVersion, remoteVersion) {
-    if (currentVersion && currentVersion !== "" && remoteVersion && remoteVersion !== "") {
-        Logger.info(`Current version is ${currentVersion} and remote version is ${remoteVersion}`);
-        let current = currentVersion.split(".");
-        let remote = remoteVersion.split(".");
-        for (let i = 0; i < (current.length > remote.length ? current.length : remote.length); ++i) {
-            let i1 = i < current.length ? parseInt(current[i]) : 0;
-            let i2 = i < remote.length ? parseInt(remote[i]) : 0;
-            if (i1 !== i2) {
-                return !(i1 > i2);
-            }
-        }
-        return false;
-    }
-
-    Logger.error("Version is empty value");
-    return false;
-}
-
-function GetJSON(options) {
-    return new Promise((resolve, reject) => {
-        request(options, (err, res, body) => {
+function isUpToDate() {
+    return new Promise((res, rej) => {
+        CheckUpdate({
+            "name":           Package.name,
+            "currentVersion": Package.version,
+            "user":           "revadike",
+            "branch":         "master"
+        }, (err, latestVersion) => {
             if (err) {
-                reject(err);
-                return;
+                rej(err);
+            } else {
+                res(latestVersion === Package.version);
             }
-
-            if (res.statusCode !== 200) {
-                reject(new Error(`Invalid Status Code: ${res.statusCode}`));
-                return;
-            }
-
-            let json = "{}";
-            try {
-                json = JSON.parse(body);
-            } catch (err) { Logger.error(err); }
-
-            if (!json) {
-                reject(body);
-                return;
-            }
-
-            resolve(json);
         });
     });
 }
 
-function GetLatestVersion() {
-    return new Promise(async(resolve, reject) => {
-        let remotePackage = "https://raw.githubusercontent.com/Revadike/epicgames-freebies-claimer/master/package.json";
-        let json = await GetJSON(remotePackage).catch(err => { reject(err); });
-
-        if (!json || !json.version) {
-            reject(json);
-            return;
-        }
-
-        resolve(json.version);
-    });
-}
 (async() => {
-    Logger.info("Checking update");
-    let remoteVersion = await GetLatestVersion().catch(err => { Logger.error(err); });
-    if (isNewerVersion(Package.version, remoteVersion)) {
-        Logger.warn("Found newer version on github!");
-    } else {
-        Logger.info("There is no newer version on github!");
+    if (!await isUpToDate()) {
+        Logger.warn(`There is a new version available: ${Package.url}`);
     }
+
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
@@ -105,11 +38,18 @@ function GetLatestVersion() {
             accounts = [{
                 "email":               process.argv[2],
                 "password":            process.argv[3],
-                "rememberLastSession": Boolean(Number(process.argv[4]))
+                "rememberLastSession": Boolean(Number(process.argv[4])),
+                "secret":              process.argv[5],
             }];
         }
 
         for (let account of accounts) {
+            let noSecret = !account.secret || account.secret.length === 0;
+            if (!noSecret) {
+                let { token } = TwoFactor.generateToken(account.secret);
+                account.twoFactorCode = token;
+            }
+
             let client = new EpicGames(account);
 
             if (!await client.init()) {
@@ -118,6 +58,7 @@ function GetLatestVersion() {
 
             if (!await client.login().catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
+
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
                 await auth.close();
@@ -128,6 +69,12 @@ function GetLatestVersion() {
             }
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
+
+            if (noSecret) {
+                await client.enableTwoFactor("authenticator", secret => {
+                    account.secret = secret;
+                });
+            }
 
             let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
             let { elements } = JSON.parse(data).data.Catalog.searchStore;
@@ -146,6 +93,10 @@ function GetLatestVersion() {
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
                 }
+            }
+
+            if (noSecret) {
+                await client.disableTwoFactor("authenticator");
             }
 
             await client.logout();
