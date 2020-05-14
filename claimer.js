@@ -21,8 +21,9 @@ const PROMO_QUERY = require(`${__dirname}/graphql.js`);
         }
 
         for (let account of accounts) {
-            if (account.secret !== "") {
-                let { token } = TwoFactor.generateToken(account.twoFactorSecret);
+            let noSecret = !account.secret || account.secret.length === 0;
+            if (!noSecret) {
+                let { token } = TwoFactor.generateToken(account.secret);
                 account.twoFactorCode = token;
             }
 
@@ -31,14 +32,10 @@ const PROMO_QUERY = require(`${__dirname}/graphql.js`);
             if (!await client.init()) {
                 throw new Error("Error while initialize process.");
             }
-            if (!await client.login(account).catch(() => false)) {
-                Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
-                if (account.secret !== "") {
-                    let { token } = TwoFactor.generateToken(account.twoFactorSecret);
-                    account.twoFactorCode = token;
-                }
 
-                // generate new 2fa code but adapter not support 2fa code yet
+            if (!await client.login().catch(() => false)) {
+                Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
+
                 let auth = await ClientLoginAdapter.init(account);
                 let exchangeCode = await auth.getExchangeCode();
                 await auth.close();
@@ -50,7 +47,13 @@ const PROMO_QUERY = require(`${__dirname}/graphql.js`);
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
 
-            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
+            if (noSecret) {
+                await client.enableTwoFactor("authenticator", secret => {
+                    account.secret = secret;
+                });
+            }
+
+            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "nl-NL" });
             let { elements } = JSON.parse(data).data.Catalog.searchStore;
             let freePromos = elements.filter(offer => offer.promotions
                 && offer.promotions.promotionalOffers.length > 0
@@ -67,6 +70,10 @@ const PROMO_QUERY = require(`${__dirname}/graphql.js`);
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
                 }
+            }
+
+            if (noSecret) {
+                await client.disableTwoFactor("authenticator");
             }
 
             await client.logout();

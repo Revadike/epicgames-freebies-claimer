@@ -7,16 +7,16 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 ## Requirements
  * [Node.js](https://nodejs.org/download/)
 
+## Instructions (arguments)
+1. Download/clone repo
+3. Run `npm install`
+4. Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`*
+
 ## Instructions (config)
 1. Download/clone repo
 2. Run `npm install`
 3. Edit `config.json` to include your EpicGames credentials and options
 4. Run `npm start`*
-
-## Instructions (arguments)
-1. Download/clone repo
-3. Run `npm install`
-4. Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`*
 
 *Only this step is required after the initial use.
 
