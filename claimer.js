@@ -1,12 +1,35 @@
 "use strict";
+const { "Launcher": EpicGames } = require("epicgames-client");
+const CheckUpdate = require("check-update-github");
+const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
-const ClientLoginAdapter = require("epicgames-client-login-adapter");
-const TwoFactor = require("node-2fa");
-const { "Launcher": EpicGames } = require("epicgames-client");
+const Package = require("./package.json");
 const PROMO_QUERY = require(`${__dirname}/graphql.js`);
+const TwoFactor = require("node-2fa");
+
+function isUpToDate() {
+    return new Promise((res, rej) => {
+        CheckUpdate({
+            "name":           Package.name,
+            "currentVersion": Package.version,
+            "user":           "revadike",
+            "branch":         "master"
+        }, (err, latestVersion) => {
+            if (err) {
+                rej(err);
+            } else {
+                res(latestVersion === Package.version);
+            }
+        });
+    });
+}
 
 (async() => {
+    if (!await isUpToDate()) {
+        Logger.warn(`There is a new version available: ${Package.url}`);
+    }
+
     let { accounts, delay, loop } = Config;
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
