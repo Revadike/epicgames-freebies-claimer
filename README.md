@@ -12,22 +12,22 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 
 ## Installation
 
-1. Download/clone repo using `git clone https://github.com/Revadike/epicgames-freebies-claimer`
-2. Run `npm install`
+1. Clone repo using `git clone https://github.com/Revadike/epicgames-freebies-claimer` or [download zip](https://github.com/Revadike/epicgames-freebies-claimer/archive/master.zip)
+2. Run `npm install` in the project directory
 
-You can also make this run automatically using github actions. Why? Because you don't wan't to run your computer 24/7 just to get free games.
+You can also run this automatically using github actions. Why? Because you don't wan't to run your computer 24/7 just to get free games.
 
 To run this using github actions, go to [maximousblk/get-epic-freebies](https://github.com/maximousblk/get-epic-freebies) and follow the instructions.
 
 ## Running
 
-### Run using arguments
+### Using arguments
 
 - Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`
 
-` 0|1 ` - If you want it to remember the last session, use `1` otherwise `0`
+`0|1` - If you want it to remember the last session, use `1` otherwise `0`
 
-### Run using config file
+### Using config file
 
 - Edit `config.json` to include your EpicGames credentials and options.
 
