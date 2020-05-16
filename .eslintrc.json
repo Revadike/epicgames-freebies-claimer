@@ -84,7 +84,10 @@
         "no-multi-assign": "error",
         "no-multi-spaces": "error",
         "no-multi-str": "error",
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0, "maxBOF": 0 }],
+        "no-multiple-empty-lines": [
+            "error",
+            { "max": 1, "maxEOF": 0, "maxBOF": 0 }
+        ],
         "no-negated-condition": "error",
         "no-nested-ternary": "error",
         "no-new": "error",
@@ -124,12 +127,19 @@
         "nonblock-statement-body-position": "error",
         "object-curly-newline": "error",
         "object-curly-spacing": ["error", "always"],
-        "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+        "object-property-newline": [
+            "error",
+            { "allowAllPropertiesOnSameLine": true }
+        ],
         "object-shorthand": "error",
         "one-var-declaration-per-line": "error",
         "operator-assignment": "error",
         "operator-linebreak": ["error", "before"],
-        "padded-blocks": ["error", { "blocks": "never", "classes": "always", "switches": "never" }, { "allowSingleLineBlocks": true }],
+        "padded-blocks": [
+            "error",
+            { "blocks": "never", "classes": "always", "switches": "never" },
+            { "allowSingleLineBlocks": true }
+        ],
         "padding-line-between-statements": [
             "error",
             { "blankLine": "always", "prev": "function", "next": "function" }
