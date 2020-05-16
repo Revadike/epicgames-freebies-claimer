@@ -100,7 +100,7 @@ function isUpToDate() {
             );
 
             for (let offer of freePromos) {
-                // try {
+                try {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
                         Logger.info(
@@ -111,9 +111,9 @@ function isUpToDate() {
                             `${offer.title} was already claimed for this account`
                         );
                     }
-                // } catch (err) {
-                //     Logger.warn(`Failed to claim ${offer.title} (${err})`);
-                // }
+                } catch (err) {
+                    Logger.warn(`Failed to claim ${offer.title} (${err})`);
+                }
             }
 
             if (noSecret) {
