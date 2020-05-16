@@ -23,15 +23,15 @@ To run this using github actions, go to [maximousblk/get-epic-freebies](https://
 
 ### Run using arguments
 
-Run `npm start USERNAME PASSWORD 0`
+- Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`
 
-Or run `npm start USERNAME PASSWORD 1 2FA_SECRET` if you have 2 factor authentication enabled
+` 0|1 ` - If you want it to remember the last session, use `1` otherwise `0`
 
 ### Run using config file
 
-Edit `config.json` to include your EpicGames credentials and options.
+- Edit `config.json` to include your EpicGames credentials and options.
 
-To start the script, just run `npm start`
+- Run `npm start`
 
 ## FAQ
 

@@ -76,7 +76,7 @@ function isUpToDate() {
             }
 
             Logger.info(
-                `Logged in as ${client.account.name} (${client.account.id})`
+                `Logged in as ${client.account.name}`
             );
 
             if (noSecret) {
