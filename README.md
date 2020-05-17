@@ -17,7 +17,7 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 
 You can also run this automatically using github actions. Why? Because you don't wan't to run your computer 24/7 just to get free games.
 
-To run this using github actions, go to [maximousblk/get-epic-freebies](https://github.com/maximousblk/get-epic-freebies) and follow the instructions.
+To run this using github actions, go to [maximousblk/claim-epic-freebies](https://github.com/maximousblk/claim-epic-freebies) and follow the instructions.
 
 ## Running
 
