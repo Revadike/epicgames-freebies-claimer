@@ -56,7 +56,7 @@ function isUpToDate() {
                 throw new Error("Error while initialize process.");
             }
 
-            if (!await client.login().catch(() => false)) {
+            if (!await client.login(account).catch(() => false)) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
 
                 let auth = await ClientLoginAdapter.init(account);
