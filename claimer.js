@@ -5,7 +5,6 @@ const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
-const PROMO_QUERY = require(`${__dirname}/graphql.js`);
 const TwoFactor = require("node-2fa");
 
 function isUpToDate() {
@@ -23,6 +22,24 @@ function isUpToDate() {
             }
         });
     });
+}
+
+async function freeGamesPromotions(client, country = "US", allowCountries = "US", locale = "en-US") {
+    let { data } = await client.freeGamesPromotions(country, allowCountries, locale);
+    let { elements } = data.Catalog.searchStore;
+    let free = elements.filter(offer => offer.promotions
+        && offer.promotions.promotionalOffers.length > 0
+        && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
+    let isBundle = promo => Boolean(promo.categories.find(cat => cat.path === "bundles"));
+    let getOffer = promo => (isBundle(promo)
+        ? client.getBundleForSlug(promo.productSlug, locale)
+        : client.getProductForSlug(promo.productSlug, locale));
+    let freeOffers = await Promise.all(free.map(promo => getOffer(promo)));
+    return freeOffers.filter(offer => !offer.error).map(offer => ({
+        "title":     offer.productName || offer._title,
+        "id":        (offer.pages ? offer.pages[0] : offer).offer.id,
+        "namespace": (offer.pages ? offer.pages[0] : offer).offer.namespace
+    }));
 }
 
 (async() => {
@@ -70,17 +87,8 @@ function isUpToDate() {
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
 
-            if (noSecret) {
-                await client.enableTwoFactor("authenticator", secret => {
-                    account.secret = secret;
-                });
-            }
-
-            let { data } = await client.http.sendGraphQL(null, PROMO_QUERY, { "category": "freegames", "locale": "en-US" });
-            let { elements } = JSON.parse(data).data.Catalog.searchStore;
-            let freePromos = elements.filter(offer => offer.promotions
-                && offer.promotions.promotionalOffers.length > 0
-                && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
+            let { country } = client.account.country;
+            let freePromos = await freeGamesPromotions(client, country, country);
 
             for (let offer of freePromos) {
                 try {
@@ -93,10 +101,6 @@ function isUpToDate() {
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
                 }
-            }
-
-            if (noSecret) {
-                await client.disableTwoFactor("authenticator");
             }
 
             await client.logout();

@@ -1,8 +1,8 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Claim free game promotions from the Epic Game Store",
-    "author": "Revadike <https://revadike.ga>",
+    "author": "Revadike <https://revadike.com>",
     "main": "claimer.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,7 +24,7 @@
     "dependencies": {
         "check-update-github": "^0.0.4",
         "colors": "^1.4.0",
-        "epicgames-client": "^2.0.23",
+        "epicgames-client": "Revadike/node-epicgames-client#develop",
         "epicgames-client-login-adapter": "^0.1.0",
         "node-2fa": "^1.1.2",
         "tracer": "^1.0.3"

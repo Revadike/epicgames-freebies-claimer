@@ -32,6 +32,9 @@ To which I will say, why not? Most of these games are actually outstanding games
 No, these are only usable by using the config.
 
 ## Changelog
+### V1.4.1
+ * Removed the need for graphql query
+
 ### V1.4.0
  * Added two factor authentication (2fa) support while EpicGames changed policy (Closes #17, #19, #21)
  * Added update checker (Closes #20)
