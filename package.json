@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.4.1",
+    "version": "2.0.0",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": "Revadike <https://revadike.com>",
     "main": "claimer.js",
@@ -16,17 +16,16 @@
     "bugs": {
         "url": "https://github.com/revadike/epicgames-freebies-claimer/issues"
     },
-    "homepage": "https://github.com/revadike/epicgames-freebies-claimer",
-    "url": "https://github.com/revadike/epicgames-freebies-claimer",
+    "homepage": "https://github.com/revadike/epicgames-freebies-claimer/tree/puppeteer",
+    "url": "https://github.com/revadike/epicgames-freebies-claimer/tree/puppeteer",
     "devDependencies": {
         "eslint": "^6.8.0"
     },
     "dependencies": {
         "check-update-github": "^0.0.4",
         "colors": "^1.4.0",
-        "epicgames-client": "Revadike/node-epicgames-client#develop",
-        "epicgames-client-login-adapter": "^0.1.0",
         "node-2fa": "^1.1.2",
+        "puppeteer": "^5.1.0",
         "tracer": "^1.0.3"
     }
 }

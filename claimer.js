@@ -1,11 +1,12 @@
 "use strict";
-const { "Launcher": EpicGames } = require("epicgames-client");
 const CheckUpdate = require("check-update-github");
-const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
+const Puppeteer = require("puppeteer");
 const TwoFactor = require("node-2fa");
+
+const LOGIN_URL = "https://www.epicgames.com/id/login?redirectUrl=https%3A%2F%2Fwww.epicgames.com%2Fstore%2Ffree-games";
 
 function isUpToDate() {
     return new Promise((res, rej) => {
@@ -13,7 +14,7 @@ function isUpToDate() {
             "name":           Package.name,
             "currentVersion": Package.version,
             "user":           "revadike",
-            "branch":         "master"
+            "branch":         "puppeteer"
         }, (err, latestVersion) => {
             if (err) {
                 rej(err);
@@ -24,30 +25,13 @@ function isUpToDate() {
     });
 }
 
-async function freeGamesPromotions(client, country = "US", allowCountries = "US", locale = "en-US") {
-    let { data } = await client.freeGamesPromotions(country, allowCountries, locale);
-    let { elements } = data.Catalog.searchStore;
-    let free = elements.filter(offer => offer.promotions
-        && offer.promotions.promotionalOffers.length > 0
-        && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
-    let isBundle = promo => Boolean(promo.categories.find(cat => cat.path === "bundles"));
-    let getOffer = promo => (isBundle(promo)
-        ? client.getBundleForSlug(promo.productSlug, locale)
-        : client.getProductForSlug(promo.productSlug, locale));
-    let freeOffers = await Promise.all(free.map(promo => getOffer(promo)));
-    return freeOffers.filter(offer => !offer.error).map(offer => ({
-        "title":     offer.productName || offer._title,
-        "id":        (offer.pages ? offer.pages[0] : offer).offer.id,
-        "namespace": (offer.pages ? offer.pages[0] : offer).offer.namespace
-    }));
-}
-
 (async() => {
     if (!await isUpToDate()) {
         Logger.warn(`There is a new version available: ${Package.url}`);
     }
 
     let { accounts, delay, loop } = Config;
+    let browser = await Puppeteer.launch();
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
         if (process.argv.length > 2) {
@@ -61,50 +45,57 @@ async function freeGamesPromotions(client, country = "US", allowCountries = "US"
         }
 
         for (let account of accounts) {
-            let noSecret = !account.secret || account.secret.length === 0;
-            if (!noSecret) {
-                let { token } = TwoFactor.generateToken(account.secret);
-                account.twoFactorCode = token;
+            let { email, password, rememberLastSession, twoFactorCode, secret } = account;
+            let hasSecret = secret && secret.length > 0;
+            if (hasSecret) {
+                let { token } = TwoFactor.generateToken(secret);
+                twoFactorCode = token;
             }
+            let loginPage = await browser.newPage();
+            await loginPage.goto(LOGIN_URL);
+            await loginPage.click("#login-with-epic");
+            await loginPage.type("#email", email);
+            await loginPage.type("#password", password);
+            await loginPage.$eval("#rememberMe", input => { input.checked = true; });
+            await Promise.all([
+                loginPage.waitForNavigation({ "waitUntil": "networkidle2" }),
+                loginPage.click("#login")
+            ]);
 
-            let client = new EpicGames(account);
+            // TODO
+            // let captchaPrompt = await loginPage.$("#");
+            // let 2faPrompt = await loginPage.$("#");
 
-            if (!await client.init()) {
-                throw new Error("Error while initialize process.");
-            }
+            let displayName = loginPage.$eval("#user .display-name");
+            Logger.info(`Logged in as ${displayName}`);
 
-            if (!await client.login().catch(() => false)) {
-                Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
-
-                let auth = await ClientLoginAdapter.init(account);
-                let exchangeCode = await auth.getExchangeCode();
-                await auth.close();
-
-                if (!await client.login(null, exchangeCode)) {
-                    throw new Error("Error while logging in.");
-                }
-            }
-
-            Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
-
-            let { country } = client.account.country;
-            let freePromos = await freeGamesPromotions(client, country, country);
+            let freePromos = await loginPage.$$eval("[class*=\"Grid-card_\"] a", links => links.map(link => link.href));
+            console.log({ freePromos });
 
             for (let offer of freePromos) {
                 try {
-                    let purchased = await client.purchase(offer, 1);
-                    if (purchased) {
-                        Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
-                    } else {
-                        Logger.info(`${offer.title} was already claimed for this account`);
-                    }
+                    let purchasePage = await browser.newPage();
+                    await purchasePage.goto(offer);
+                    await Promise.all([
+                        purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
+                        purchasePage.click("[class*=\"PurchaseButton-\"] button")
+                    ]);
+                    await Promise.all([
+                        purchasePage.waitFor(".overlay-container.open"),
+                        purchasePage.click(".confirm-container button")
+                    ]);
+                    await Promise.all([
+                        purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
+                        purchasePage.click(".overlay-container.open .btn-primary")
+                    ]);
+                    await purchasePage.close();
                 } catch (err) {
-                    Logger.warn(`Failed to claim ${offer.title} (${err})`);
+                    Logger.warn(`Failed to claim ${offer} (${err})`);
                 }
             }
 
-            await client.logout();
-            Logger.info(`Logged ${client.account.name} out of Epic Games`);
+            await loginPage.goto("https://www.epicgames.com/logout");
+            Logger.info(`Logged ${displayName} out of Epic Games`);
         }
 
         if (loop) {

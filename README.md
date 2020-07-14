@@ -32,6 +32,9 @@ To which I will say, why not? Most of these games are actually outstanding games
 No, these are only usable by using the config.
 
 ## Changelog
+### V2.0.0
+ * Complete rewrite, now uses `puppeteer` instead of `node-epicgames-client`
+
 ### V1.4.1
  * Removed the need for graphql query
 
