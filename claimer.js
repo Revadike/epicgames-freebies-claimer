@@ -7,6 +7,7 @@ const Puppeteer = require("puppeteer");
 const TwoFactor = require("node-2fa");
 
 const LOGIN_URL = "https://www.epicgames.com/id/login?redirectUrl=https%3A%2F%2Fwww.epicgames.com%2Fstore%2Ffree-games";
+const LOGOUT_URL = "https://www.epicgames.com/logout";
 
 function isUpToDate() {
     return new Promise((res, rej) => {
@@ -25,13 +26,51 @@ function isUpToDate() {
     });
 }
 
+async function claimGame(browser, link) {
+    let purchasePage = await browser.newPage();
+    await Promise.all([
+        purchasePage.waitFor("[class*=\"PurchaseButton-\"] button"),
+        await purchasePage.goto(link)
+    ]);
+
+    let purchaseDisabled
+     = await purchasePage.$eval("[class*=\"PurchaseButton-\"] button[disabled]", node => Boolean(node)).catch(() => false);
+    if (purchaseDisabled) {
+        await purchasePage.close();
+        return;
+    }
+
+    await Promise.all([
+        purchasePage.waitFor(".confirm-container button"),
+        purchasePage.click("[class*=\"PurchaseButton-\"] button")
+    ]);
+
+    let confirmPrompt = await purchasePage.$eval(".overlay-container.open", node => Boolean(node)).catch(() => false);
+    if (confirmPrompt) {
+        await Promise.all([
+            purchasePage.waitFor(".overlay-container.open"),
+            purchasePage.click(".confirm-container button")
+        ]);
+        await Promise.all([
+            purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
+            purchasePage.click(".overlay-container.open .btn-primary")
+        ]);
+    } else {
+        await Promise.all([
+            purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
+            purchasePage.click(".confirm-container button")
+        ]);
+    }
+    await purchasePage.close();
+}
+
 (async() => {
     if (!await isUpToDate()) {
         Logger.warn(`There is a new version available: ${Package.url}`);
     }
 
     let { accounts, delay, loop } = Config;
-    let browser = await Puppeteer.launch();
+    let browser = await Puppeteer.launch({ "headless": false });
     let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
     do {
         if (process.argv.length > 2) {
@@ -52,8 +91,14 @@ function isUpToDate() {
                 twoFactorCode = token;
             }
             let loginPage = await browser.newPage();
-            await loginPage.goto(LOGIN_URL);
-            await loginPage.click("#login-with-epic");
+            await Promise.all([
+                loginPage.waitFor("#login-with-epic"),
+                loginPage.goto(LOGIN_URL)
+            ]);
+            await Promise.all([
+                loginPage.waitFor("#email"),
+                loginPage.click("#login-with-epic")
+            ]);
             await loginPage.type("#email", email);
             await loginPage.type("#password", password);
             await loginPage.$eval("#rememberMe", input => { input.checked = true; });
@@ -63,38 +108,18 @@ function isUpToDate() {
             ]);
 
             // TODO
+            // let loginFail = await loginPage.$("h6.Error")
             // let captchaPrompt = await loginPage.$("#");
             // let 2faPrompt = await loginPage.$("#");
 
-            let displayName = loginPage.$eval("#user .display-name");
+            let displayName = await loginPage.$eval("#user .display-name", node => node.innerText);
             Logger.info(`Logged in as ${displayName}`);
 
             let freePromos = await loginPage.$$eval("[class*=\"Grid-card_\"] a", links => links.map(link => link.href));
-            console.log({ freePromos });
+            let promises = freePromos.map(link => () => claimGame(browser, link));
+            await Promise.all(promises.map(f => f()));
 
-            for (let offer of freePromos) {
-                try {
-                    let purchasePage = await browser.newPage();
-                    await purchasePage.goto(offer);
-                    await Promise.all([
-                        purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
-                        purchasePage.click("[class*=\"PurchaseButton-\"] button")
-                    ]);
-                    await Promise.all([
-                        purchasePage.waitFor(".overlay-container.open"),
-                        purchasePage.click(".confirm-container button")
-                    ]);
-                    await Promise.all([
-                        purchasePage.waitForNavigation({ "waitUntil": "networkidle2" }),
-                        purchasePage.click(".overlay-container.open .btn-primary")
-                    ]);
-                    await purchasePage.close();
-                } catch (err) {
-                    Logger.warn(`Failed to claim ${offer} (${err})`);
-                }
-            }
-
-            await loginPage.goto("https://www.epicgames.com/logout");
+            await loginPage.goto(LOGOUT_URL);
             Logger.info(`Logged ${displayName} out of Epic Games`);
         }
 
