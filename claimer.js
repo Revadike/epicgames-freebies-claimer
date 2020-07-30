@@ -115,8 +115,9 @@ async function claimGame(browser, link) {
             let displayName = await loginPage.$eval("#user .display-name", node => node.innerText);
             Logger.info(`Logged in as ${displayName}`);
 
-            let freePromos = await loginPage.$$eval("[class*=\"Grid-card_\"] a", links => links.map(link => link.href));
-            let promises = freePromos.map(link => () => claimGame(browser, link));
+            let freePromos = await loginPage.$$eval("a",
+                links => links.filter(e => Boolean(e.querySelector("img"))).map(link => link.href));
+            let promises = [...new Set(freePromos)].map(link => () => claimGame(browser, link));
             await Promise.all(promises.map(f => f()));
 
             await loginPage.goto(LOGOUT_URL);
