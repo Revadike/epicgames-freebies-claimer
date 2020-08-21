@@ -10,9 +10,11 @@
 			"email": "YOUR_EMAIL2_HERE",
 			"password": "YOUR_PASSWORD2_HERE",
 			"secret": "YOUR_2FA_SECRET2_HERE_OR_EMPTY",
-			"rememberLastSession": true
+			"rememberLastSession": true,
+			"cookies": []
 		}
 	],
+	"options": {},
 	"delay": 1440,
 	"loop": true
 }
