@@ -73,7 +73,14 @@ async function freeGamesPromotions(client, country = "US", allowCountries = "US"
                 throw new Error("Error while initialize process.");
             }
 
-            if (!await client.login(account).catch(() => false)) {
+            let success = false;
+            try {
+                success = await client.login(account);
+            } catch (error) {
+                Logger.warn(error.message);
+            }
+
+            if (!success) {
                 Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
 
                 let auth = await ClientLoginAdapter.init(account);
