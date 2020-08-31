@@ -1,0 +1,1293 @@
+{
+  "productRatings": {
+    "ratings": [
+      {
+        "image": {
+          "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ra1-370x208-370x208-829765488.png",
+          "_type": "Epic Store Image"
+        },
+        "countryCodes": "US,CA,MX",
+        "_type": "Epic Store Rating",
+        "title": "MATURE 17 +"
+      },
+      {
+        "image": {
+          "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FPEGI_18_Rating-208x254-f12521f5a5231d533ff539144709543cdf68f031.jpg",
+          "_type": "Epic Store Image"
+        },
+        "countryCodes": "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB",
+        "_type": "Epic Store Rating",
+        "title": "PEGI 18"
+      },
+      {
+        "image": {
+          "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FUSK_18-400x400-7ac38d8b4b29de7c5f10a52ebf17f124e361279e.png",
+          "_type": "Epic Store Image"
+        },
+        "countryCodes": "DE",
+        "_type": "Epic Store Rating",
+        "title": "USK ab 18"
+      },
+      {
+        "image": {
+          "src": "https://cdn2.unrealengine.com/18-v-l-d-c-540x117-672303047.png",
+          "_type": "Epic Store Image"
+        },
+        "countryCodes": "KR",
+        "_type": "Epic Store Rating",
+        "title": "청소년이용불가"
+      },
+      {
+        "image": {
+          "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2F800px-CERO_Z.svg-800x984-ffd454acb3d6f8fac8bdf1bf2a2d01da0d79f858.png",
+          "_type": "Epic Store Image"
+        },
+        "countryCodes": "JP",
+        "_type": "Epic Store Rating",
+        "title": "CERO Z"
+      }
+    ],
+    "_type": "Epic Store Product Ratings"
+  },
+  "disableNewAddons": true,
+  "modMarketplaceEnabled": false,
+  "_title": "hitman",
+  "regionBlock": "",
+  "_noIndex": false,
+  "_images_": [
+    "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FUSK_18-400x400-7ac38d8b4b29de7c5f10a52ebf17f124e361279e.png",
+    "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FPEGI_18_Rating-208x254-f12521f5a5231d533ff539144709543cdf68f031.jpg",
+    "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2F800px-CERO_Z.svg-800x984-ffd454acb3d6f8fac8bdf1bf2a2d01da0d79f858.png",
+    "https://cdn2.unrealengine.com/18-v-l-d-c-540x117-672303047.png",
+    "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ra1-370x208-370x208-829765488.png"
+  ],
+  "productName": "Hitman 2016",
+  "jcr:isCheckedOut": true,
+  "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+  "theme": {
+    "_type": "Diesel Theme"
+  },
+  "reviewOptOut": false,
+  "jcr:baseVersion": "a7ca237317f1e70c6be6ee-ac48-4ffa-8863-cd50adc9bed9",
+  "externalNavLinks": {
+    "_type": "Epic Store Links"
+  },
+  "_urlPattern": "/productv2/hitman",
+  "_slug": "hitman",
+  "_activeDate": "2020-02-04T14:41:51.564Z",
+  "lastModified": "2020-08-24T19:36:27.729Z",
+  "_locale": "en-US",
+  "_id": "1d6ce96e-6985-4739-8ced-52fff723eea6",
+  "pages": [
+    {
+      "productRatings": {
+        "ratings": [
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ra1-370x208-370x208-829765488.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "US,CA,MX",
+            "_type": "Epic Store Rating",
+            "title": "MATURE 17 +"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FPEGI_18_Rating-208x254-f12521f5a5231d533ff539144709543cdf68f031.jpg",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB",
+            "_type": "Epic Store Rating",
+            "title": "PEGI 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FUSK_18-400x400-7ac38d8b4b29de7c5f10a52ebf17f124e361279e.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "DE",
+            "_type": "Epic Store Rating",
+            "title": "USK ab 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/18-v-l-d-c-540x117-672303047.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "KR",
+            "_type": "Epic Store Rating",
+            "title": "청소년이용불가"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2F800px-CERO_Z.svg-800x984-ffd454acb3d6f8fac8bdf1bf2a2d01da0d79f858.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "JP",
+            "_type": "Epic Store Rating",
+            "title": "CERO Z"
+          }
+        ],
+        "_type": "Epic Store Product Ratings"
+      },
+      "disableNewAddons": true,
+      "modMarketplaceEnabled": false,
+      "_title": "standard-edition",
+      "regionBlock": "",
+      "_noIndex": false,
+      "_images_": [
+        "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ic3-200x200-551403813.png",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_02-1920x1080-358b2bef1a14735c36266bda2ec57d9dab95bb71.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_IC1-200x200-1b87a2cf091a73488e4b5d743144db480f1ff7e6.png",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S2-860x1148-90e70a51380bd7f19f78154d45f460707499e3ad.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S1-2560x1440-ee0a95f41d75bdb9a2661ebdea9b349c68ce35d2.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_01-1920x1080-7a0feff0ff3bc28827a99f45b655042f7f9a810b.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S3-1360x766-11872ddd2ff281a9fd221e6fa70655cd7f9643c5.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_00-1920x1080-badcc937b70155e57bf86e075283ed1060962bb7.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_03-1920x1080-539bda3e1756c22417d7cb754b6fabd0ae4672ba.jpg"
+      ],
+      "productName": "Hitman 2016",
+      "jcr:isCheckedOut": true,
+      "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+      "theme": {
+        "buttonPrimaryBg": "#FFFFFF",
+        "customPrimaryBg": "#000000",
+        "accentColor": "#FFFFFF",
+        "_type": "Diesel Theme",
+        "colorScheme": "dark"
+      },
+      "reviewOptOut": false,
+      "jcr:baseVersion": "a7ca237317f1e74ac78de1-9002-4fda-a397-1c1dec155d8f",
+      "externalNavLinks": {
+        "_type": "Epic Store Links"
+      },
+      "_urlPattern": "/productv2/hitman/standard-edition",
+      "_slug": "standard-edition",
+      "_activeDate": "2020-02-04T14:45:10.836Z",
+      "lastModified": "2020-08-27T14:47:26.721Z",
+      "_locale": "en-US",
+      "_id": "4e6879fa-e30a-45da-a459-aab53bc8a4cd",
+      "offer": {
+        "regionRestrictions": {
+          "_type": "Store Region Filtering"
+        },
+        "_type": "Diesel Offer",
+        "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+        "id": "e8efad3d47a14284867fef2c347c321d",
+        "type": "",
+        "hasOffer": true
+      },
+      "item": {
+        "catalogId": "",
+        "appName": "",
+        "_type": "Diesel Product Item",
+        "namespace": "",
+        "hasItem": false
+      },
+      "data": {
+        "productLinks": {
+          "_type": "Diesel Product Lins"
+        },
+        "socialLinks": {
+          "linkTwitter": "https://twitter.com/hitman",
+          "linkTwitch": "http://www.twitch.tv/hitman",
+          "linkFacebook": "https://www.facebook.com/hitman",
+          "linkYoutube": "https://www.youtube.com/user/hitman?hl=en&gl=US",
+          "_type": "Diesel Social Links",
+          "linkReddit": "https://www.reddit.com/r/HiTMAN/",
+          "title": "Follow HITMAN",
+          "linkHomepage": "https://hitman.com"
+        },
+        "requirements": {
+          "languages": [
+            "AUDIO - English",
+            "TEXT - English, French, German, Italian, Spanish - Spain, Japanese, Polish, Portuguese - Brazil, Russian, Chinese - Simplified"
+          ],
+          "systems": [
+            {
+              "_type": "Diesel System Detail",
+              "systemType": "Windows",
+              "details": [
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "OS",
+                  "minimum": "OS 64-bit Windows 7",
+                  "recommended": "OS 64-bit Windows 7 / 64-bit Windows 8 (8.1) or Windows 10"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Processor",
+                  "minimum": "Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940",
+                  "recommended": "Intel CPU Core i7 3770 3,4 GHz / AMD CPU AMD FX-8350 4 GHz"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Memory",
+                  "minimum": "8",
+                  "recommended": "8"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Graphics",
+                  "minimum": "NVIDIA GeForce GTX 660 / Radeon HD 7870",
+                  "recommended": "Nvidia GPU GeForce GTX 770 / AMD GPU Radeon R9 290"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "DirectX",
+                  "minimum": "11",
+                  "recommended": "11"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Storage",
+                  "minimum": "50 ",
+                  "recommended": "50"
+                }
+              ]
+            }
+          ],
+          "_type": "Diesel System Details",
+          "rating": {
+            "_type": "Diesel Rating"
+          }
+        },
+        "navOrder": 2,
+        "footer": {
+          "_type": "Diesel Product Footer",
+          "copy": "HITMAN™ © 2020 IO Interactive A/S. Published by IO Interactive A/S. IO INTERACTIVE, the IO logo, HITMAN™, the HITMAN™ logos, and WORLD OF ASSASSINATION are trademarks or registered trademarks owned by or exclusively licensed to IO Interactive A/S. All rights reserved. All other trademarks are the property of their respective owners.",
+          "privacyPolicyLink": {
+            "src": "https://www.ioi.dk/privacy-policy/",
+            "_type": "Diesel Link",
+            "title": "IO Interactive A/S Privacy Policy"
+          }
+        },
+        "_type": "Diesel Product Detail",
+        "about": {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S2-860x1148-90e70a51380bd7f19f78154d45f460707499e3ad.jpg",
+            "_type": "Diesel Image"
+          },
+          "developerAttribution": "IO Interactive A/S",
+          "_type": "Diesel Product About",
+          "publisherAttribution": "IO Interactive A/S",
+          "description": "Featuring all of the Season One locations and episodes from the Prologue, Paris, Sapienza, Marrakesh, Bangkok, Colorado, and Hokkaido. As Agent 47, you will perform contract hits on powerful, high-profile targets in an intense spy-thriller story across a world of assassination.\n\nAs you complete missions and contracts new weapons, items and equipment become available for use across all locations. Learn the tools of the trade as you earn your way to Silent Assassin status.",
+          "shortDescription": "Experiment and have fun in the ultimate playground as Agent 47 to become the master assassin. Travel around the globe to exotic locations and eliminate your targets with everything from a katana or a sniper rifle to an exploding golf ball.",
+          "title": "HITMAN",
+          "developerLogo": {
+            "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ic3-200x200-551403813.png",
+            "_type": "Diesel Image"
+          }
+        },
+        "banner": {
+          "showPromotion": false,
+          "_type": "Epic Store Product Banner",
+          "link": {
+            "_type": "Diesel Link"
+          }
+        },
+        "hero": {
+          "logoImage": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_IC1-200x200-1b87a2cf091a73488e4b5d743144db480f1ff7e6.png",
+            "_type": "Diesel Image"
+          },
+          "portraitBackgroundImageUrl": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S2-860x1148-90e70a51380bd7f19f78154d45f460707499e3ad.jpg",
+          "_type": "Diesel Hero",
+          "action": {
+            "_type": "Diesel Action"
+          },
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          },
+          "isFullBleed": false,
+          "altContentPosition": false,
+          "backgroundImageUrl": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S1-2560x1440-ee0a95f41d75bdb9a2661ebdea9b349c68ce35d2.jpg"
+        },
+        "carousel": {
+          "_type": "Diesel Carousel",
+          "items": [
+            {
+              "image": {
+                "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_S3-1360x766-11872ddd2ff281a9fd221e6fa70655cd7f9643c5.jpg",
+                "_type": "Diesel Image"
+              },
+              "_type": "Diesel Carousel Item - Image OR Video",
+              "video": {
+                "loop": false,
+                "_type": "Diesel Video",
+                "hasFullScreen": false,
+                "hasControls": false,
+                "muted": false,
+                "autoplay": false
+              }
+            }
+          ]
+        },
+        "editions": {
+          "_type": "Epic Store Editions",
+          "enableImages": false
+        },
+        "meta": {
+          "releaseDate": "2020-03-13T15:00:00.000Z",
+          "_type": "Epic Store Meta",
+          "publisher": [
+            "IO Interactive A/S"
+          ],
+          "logo": {
+            "_type": "Epic Store Image"
+          },
+          "developer": [
+            "IO Interactive A/S"
+          ],
+          "platform": [
+            "Windows"
+          ],
+          "tags": [
+            "ACTION",
+            "STEALTH"
+          ]
+        },
+        "markdown": {
+          "_type": "Epic Store Markdown"
+        },
+        "dlc": {
+          "contingentOffer": {
+            "regionRestrictions": {
+              "_type": "Store Region Filtering"
+            },
+            "_type": "Diesel Offer",
+            "hasOffer": false
+          },
+          "_type": "Epic Store DLC",
+          "dlc": [
+            {
+              "regionRestrictions": {
+                "_type": "Store Region Filtering"
+              },
+              "image": {
+                "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg",
+                "_type": "Diesel Image"
+              },
+              "_type": "Product DLC",
+              "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+              "description": "Upgrade your copy of HITMAN to the GOTY Edition now and get immediate access to the Patient Zero campaign plus all the other new content included in the GOTY Edition",
+              "offerId": "e573ab5b700a418bade0407694c125d6",
+              "tag": "dlc",
+              "title": "HITMAN - Game of the Year Upgrade",
+              "type": "addon",
+              "slug": "product/hitman/game-of-the-year-upgrade"
+            }
+          ],
+          "enableImages": true
+        },
+        "seo": {
+          "image": {
+            "_type": "Epic Store Image"
+          },
+          "twitter": {
+            "_type": "SEO Twitter Metadata"
+          },
+          "_type": "Epic Store Product SEO",
+          "og": {
+            "_type": "SEO OG Metadata"
+          }
+        },
+        "productSections": [
+          {
+            "productSection": "DLC",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "REQUIREMENTS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "SOCIAL_LINKS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "ABOUT",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "CAROUSEL",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "FOOTER",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "GALLERY",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "HERO",
+            "_type": "Diesel Product Section"
+          }
+        ],
+        "gallery": {
+          "_type": "Diesel Gallery",
+          "galleryImages": [
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_00-1920x1080-badcc937b70155e57bf86e075283ed1060962bb7.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 1
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_01-1920x1080-7a0feff0ff3bc28827a99f45b655042f7f9a810b.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 2
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_02-1920x1080-358b2bef1a14735c36266bda2ec57d9dab95bb71.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 2
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_G1A_03-1920x1080-539bda3e1756c22417d7cb754b6fabd0ae4672ba.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 3
+            }
+          ]
+        },
+        "navTitle": "HITMAN"
+      },
+      "ageGate": {
+        "hasAgeGate": true,
+        "_type": "Epic Store Age Gate"
+      },
+      "tag": "edition",
+      "type": "offer"
+    },
+    {
+      "productRatings": {
+        "ratings": [
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ra1-370x208-370x208-829765488.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "US,CA,MX",
+            "_type": "Epic Store Rating",
+            "title": "MATURE 17 +"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FPEGI_18_Rating-208x254-f12521f5a5231d533ff539144709543cdf68f031.jpg",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB",
+            "_type": "Epic Store Rating",
+            "title": "PEGI 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FUSK_18-400x400-7ac38d8b4b29de7c5f10a52ebf17f124e361279e.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "DE",
+            "_type": "Epic Store Rating",
+            "title": "USK ab 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/18-v-l-d-c-540x117-672303047.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "KR",
+            "_type": "Epic Store Rating",
+            "title": "청소년이용불가"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2F800px-CERO_Z.svg-800x984-ffd454acb3d6f8fac8bdf1bf2a2d01da0d79f858.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "JP",
+            "_type": "Epic Store Rating",
+            "title": "CERO Z"
+          }
+        ],
+        "_type": "Epic Store Product Ratings"
+      },
+      "disableNewAddons": true,
+      "modMarketplaceEnabled": false,
+      "_title": "home",
+      "regionBlock": "",
+      "_noIndex": false,
+      "_images_": [
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_01-1920x1080-f73e7dc1b12fdc311fa56ca569b891f5a6fb721c.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_05-1920x1080-539bda3e1756c22417d7cb754b6fabd0ae4672ba.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-g1a-07-1920x1080-623151153.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_03-1920x1080-52c8d8cd02e0c51a26c00af79b926a3d66865676.jpg",
+        "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-s5-1920x1080-551403315.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_IC1-200x200-015b336a367d6c1059a94cfd77c0e947ef217439.png",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_02-1920x1080-badcc937b70155e57bf86e075283ed1060962bb7.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s2-1200x1600-718536009.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_IC4-200x200-1ab71aa040d81bd4259caec68389a82c5be1e6c6.png",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_00-1920x1080-62460b6fbe740e14604f30c6e7efcc1e5493482c.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_04-1920x1080-358b2bef1a14735c36266bda2ec57d9dab95bb71.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s1-2560x1440-718536276.jpg"
+      ],
+      "productName": "Hitman 2016",
+      "jcr:isCheckedOut": true,
+      "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+      "theme": {
+        "buttonPrimaryBg": "#FFDF00",
+        "customPrimaryBg": "",
+        "accentColor": "#FFDF00",
+        "_type": "Diesel Theme",
+        "colorScheme": "dark"
+      },
+      "reviewOptOut": false,
+      "jcr:baseVersion": "a7ca237317f1e7021bb5b6-954c-4ddf-938b-429638093aae",
+      "externalNavLinks": {
+        "_type": "Epic Store Links"
+      },
+      "_urlPattern": "/productv2/hitman/home",
+      "_slug": "home",
+      "_activeDate": "2020-02-04T14:45:10.836Z",
+      "lastModified": "2020-08-24T15:12:01.434Z",
+      "_locale": "en-US",
+      "_id": "ad158d2a-71de-4be1-afe6-1ae16160bbd6",
+      "offer": {
+        "regionRestrictions": {
+          "_type": "Store Region Filtering"
+        },
+        "_type": "Diesel Offer",
+        "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+        "id": "f536990dc8164c829b410861caf17add",
+        "type": "edition",
+        "hasOffer": true
+      },
+      "item": {
+        "catalogId": "",
+        "appName": "",
+        "_type": "Diesel Product Item",
+        "namespace": "",
+        "hasItem": false
+      },
+      "data": {
+        "productLinks": {
+          "_type": "Diesel Product Lins"
+        },
+        "socialLinks": {
+          "linkNaver": "",
+          "linkTwitter": "https://twitter.com/hitman",
+          "linkFacebook": "https://www.facebook.com/hitman",
+          "_type": "Diesel Social Links",
+          "linkVk": "",
+          "linkDiscord": "",
+          "linkReddit": "https://www.reddit.com/r/HiTMAN/",
+          "title": "Follow HITMAN",
+          "linkTwitch": "http://www.twitch.tv/hitman",
+          "linkYoutube": "https://www.youtube.com/user/hitman?hl=en&gl=US",
+          "linkYouku": "",
+          "linkWeibo": "",
+          "linkHomepage": "https://hitman.com",
+          "linkInstagram": ""
+        },
+        "requirements": {
+          "languages": [
+            "AUDIO - English",
+            "TEXT - English, French, German, Italian, Spanish - Spain, Japanese, Polish, Portuguese - Brazil, Russian, Chinese - Simplified"
+          ],
+          "systems": [
+            {
+              "_type": "Diesel System Detail",
+              "systemType": "Windows",
+              "details": [
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "OS",
+                  "minimum": "OS 64-bit Windows 7",
+                  "recommended": "OS 64-bit Windows 7 / 64-bit Windows 8 (8.1) or Windows 10"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Processor",
+                  "minimum": "Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940",
+                  "recommended": "Intel CPU Core i7 3770 3,4 GHz / AMD CPU AMD FX-8350 4 GHz"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Memory",
+                  "minimum": "8",
+                  "recommended": "8"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Graphics",
+                  "minimum": "NVIDIA GeForce GTX 660 / Radeon HD 7870",
+                  "recommended": "Nvidia GPU GeForce GTX 770 / AMD GPU Radeon R9 290"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "DirectX",
+                  "minimum": "11",
+                  "recommended": "11"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Storage",
+                  "minimum": "50 ",
+                  "recommended": "50"
+                }
+              ]
+            }
+          ],
+          "_type": "Diesel System Details",
+          "rating": {
+            "_type": "Diesel Rating"
+          }
+        },
+        "navOrder": 1,
+        "footer": {
+          "_type": "Diesel Product Footer",
+          "copy": "HITMAN™ © 2020 IO Interactive A/S. Published by IO Interactive A/S. IO INTERACTIVE, the IO logo, HITMAN™, the HITMAN™ logos, and WORLD OF ASSASSINATION are trademarks or registered trademarks owned by or exclusively licensed to IO Interactive A/S. All rights reserved. All other trademarks are the property of their respective owners.",
+          "privacyPolicyLink": {
+            "src": "https://www.ioi.dk/privacy-policy/",
+            "_type": "Diesel Link",
+            "title": "IO Interactive A/S Privacy Policy"
+          }
+        },
+        "_type": "Diesel Product Detail",
+        "about": {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s2-1200x1600-718536009.jpg",
+            "_type": "Diesel Image"
+          },
+          "developerAttribution": "IO Interactive A/S",
+          "_type": "Diesel Product About",
+          "publisherAttribution": "IO Interactive A/S",
+          "description": "Experiment and have fun in the ultimate playground as Agent 47 to become the master assassin. Travel around the globe to exotic locations and eliminate your targets with everything from a katana or a sniper rifle to an exploding golf ball or some expired spaghetti sauce.\n\nThe HITMAN - Game of The Year Edition includes:\n\n- All missions & locations from the award-winning first season of HITMAN\n- \"Patient Zero\" Bonus campaign \n- 3 new Themed Escalation Contracts\n- 3 new Outfits\n- 3 new Weapons",
+          "shortDescription": "The HITMAN - Game of The Year Edition includes: All missions & locations from the award-winning first season of HITMAN; \"Patient Zero\" Bonus campaign; 3 new Themed Escalation Contracts; 3 new Outfits; 3 new Weapons",
+          "title": "HITMAN - Game of The Year Edition",
+          "developerLogo": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fhome%2FEGS_IOInteractiveAS_HITMANTheCompleteFirstSeason_IC4-200x200-1ab71aa040d81bd4259caec68389a82c5be1e6c6.png",
+            "_type": "Diesel Image"
+          }
+        },
+        "banner": {
+          "showPromotion": false,
+          "_type": "Epic Store Product Banner",
+          "link": {
+            "_type": "Diesel Link"
+          }
+        },
+        "hero": {
+          "logoImage": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_IC1-200x200-015b336a367d6c1059a94cfd77c0e947ef217439.png",
+            "_type": "Diesel Image"
+          },
+          "portraitBackgroundImageUrl": "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s2-1200x1600-718536009.jpg",
+          "_type": "Diesel Hero",
+          "action": {
+            "_type": "Diesel Action"
+          },
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          },
+          "title": "HITMAN - Game of The Yeard Edition",
+          "isFullBleed": false,
+          "altContentPosition": false,
+          "backgroundImageUrl": "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s1-2560x1440-718536276.jpg"
+        },
+        "carousel": {
+          "_type": "Diesel Carousel",
+          "items": [
+            {
+              "image": {
+                "_type": "Diesel Image"
+              },
+              "_type": "Diesel Carousel Item - Image OR Video",
+              "video": {
+                "epicStillDurationSeconds": 2,
+                "recipes": "{\n    \"en-US\": [\n        {\n            \"recipe\": \"video-fmp4\",\n            \"mediaRefId\": \"93334210324545ea8c74d4c40e3d913d\"\n        },\n        {\n            \"recipe\": \"video-webm\",\n            \"mediaRefId\": \"7366cb6cc7784c709f0abafaf6677c05\"\n        },\n        {\n            \"recipe\": \"video-hls\",\n            \"mediaRefId\": \"145d7ac5a75d45a08ae1504bf6d74660\"\n        }\n    ]\n}",
+                "epicStillType": "PREPEND",
+                "loop": true,
+                "_type": "Diesel Video",
+                "hasFullScreen": true,
+                "hasControls": true,
+                "title": "HITMAN GOTY Trailer",
+                "type": "epicHosted",
+                "muted": false,
+                "autoplay": true
+              }
+            }
+          ]
+        },
+        "editions": {
+          "editions": [
+            {
+              "regionRestrictions": {
+                "_type": "Store Region Filtering"
+              },
+              "image": {
+                "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-s1-2560x1440-718536276.jpg",
+                "_type": "Diesel Image"
+              },
+              "_type": "Product Edition",
+              "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+              "description": "The HITMAN - Game of The Year Edition includes: All missions & locations from the award-winning first season of HITMAN; \"Patient Zero\" Bonus campaign; 3 new Themed Escalation Contracts; 3 new Outfits; 3 new Weapons",
+              "offerId": "f536990dc8164c829b410861caf17add",
+              "tag": "edition",
+              "title": "HITMAN - Game of the Year Edition",
+              "slug": "product/hitman/home"
+            },
+            {
+              "regionRestrictions": {
+                "_type": "Store Region Filtering"
+              },
+              "image": {
+                "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-s5-1920x1080-551403315.jpg",
+                "_type": "Diesel Image"
+              },
+              "_type": "Product Edition",
+              "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+              "description": "Experiment and have fun in the ultimate playground as Agent 47 to become the master assassin. Travel around the globe to exotic locations and eliminate your targets with everything from a katana or a sniper rifle to an exploding golf ball.",
+              "offerId": "e8efad3d47a14284867fef2c347c321d",
+              "tag": "edition",
+              "title": "HITMAN",
+              "slug": "product/hitman/standard-edition"
+            }
+          ],
+          "_type": "Epic Store Editions",
+          "enableImages": true
+        },
+        "meta": {
+          "releaseDate": "2020-08-27T15:00:00.000Z",
+          "_type": "Epic Store Meta",
+          "publisher": [
+            "IO Interactive A/S"
+          ],
+          "logo": {
+            "_type": "Epic Store Image"
+          },
+          "developer": [
+            "IO Interactive A/S"
+          ],
+          "customReleaseDate": "Coming Soon",
+          "platform": [
+            "Windows"
+          ],
+          "tags": [
+            "ACTION",
+            "STEALTH"
+          ]
+        },
+        "markdown": {
+          "_type": "Epic Store Markdown"
+        },
+        "dlc": {
+          "contingentOffer": {
+            "regionRestrictions": {
+              "_type": "Store Region Filtering"
+            },
+            "_type": "Diesel Offer",
+            "hasOffer": false
+          },
+          "_type": "Epic Store DLC",
+          "dlc": [
+            {
+              "regionRestrictions": {
+                "_type": "Store Region Filtering"
+              },
+              "image": {
+                "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg",
+                "_type": "Diesel Image"
+              },
+              "_type": "Product DLC",
+              "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+              "description": "Upgrade your copy of HITMAN to the GOTY Edition now and get immediate access to the Patient Zero campaign plus all the other new content included in the GOTY Edition",
+              "offerId": "e573ab5b700a418bade0407694c125d6",
+              "tag": "dlc",
+              "title": "HITMAN - Game of the Year Upgrade",
+              "type": "addon",
+              "slug": "product/hitman/game-of-the-year-upgrade"
+            }
+          ],
+          "enableImages": true
+        },
+        "seo": {
+          "image": {
+            "_type": "Epic Store Image"
+          },
+          "twitter": {
+            "_type": "SEO Twitter Metadata"
+          },
+          "_type": "Epic Store Product SEO",
+          "og": {
+            "_type": "SEO OG Metadata"
+          }
+        },
+        "productSections": [
+          {
+            "productSection": "DLC",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "EDITIONS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "REQUIREMENTS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "SOCIAL_LINKS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "ABOUT",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "CAROUSEL",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "FOOTER",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "GALLERY",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "HERO",
+            "_type": "Diesel Product Section"
+          }
+        ],
+        "gallery": {
+          "_type": "Diesel Gallery",
+          "galleryImages": [
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_00-1920x1080-62460b6fbe740e14604f30c6e7efcc1e5493482c.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 1
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_01-1920x1080-f73e7dc1b12fdc311fa56ca569b891f5a6fb721c.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 2
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_02-1920x1080-badcc937b70155e57bf86e075283ed1060962bb7.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 2
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_03-1920x1080-52c8d8cd02e0c51a26c00af79b926a3d66865676.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 3
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_04-1920x1080-358b2bef1a14735c36266bda2ec57d9dab95bb71.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 4
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-edition%2FEGS_IOInteractiveAS_HITMANGameofTheYeardEdition_G1A_05-1920x1080-539bda3e1756c22417d7cb754b6fabd0ae4672ba.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 4
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyeardedition-iointeractiveas-bundles-g1a-07-1920x1080-623151153.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 5
+            }
+          ]
+        },
+        "navTitle": "HITMAN - Game of the Year Edition"
+      },
+      "ageGate": {
+        "hasAgeGate": true,
+        "_type": "Epic Store Age Gate"
+      },
+      "tag": "edition",
+      "type": "productHome"
+    },
+    {
+      "productRatings": {
+        "ratings": [
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ra1-370x208-370x208-829765488.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "US,CA,MX",
+            "_type": "Epic Store Rating",
+            "title": "MATURE 17 +"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FPEGI_18_Rating-208x254-f12521f5a5231d533ff539144709543cdf68f031.jpg",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,GB",
+            "_type": "Epic Store Rating",
+            "title": "PEGI 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2FUSK_18-400x400-7ac38d8b4b29de7c5f10a52ebf17f124e361279e.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "DE",
+            "_type": "Epic Store Rating",
+            "title": "USK ab 18"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/18-v-l-d-c-540x117-672303047.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "KR",
+            "_type": "Epic Store Rating",
+            "title": "청소년이용불가"
+          },
+          {
+            "image": {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproduct%2Fratings%2F800px-CERO_Z.svg-800x984-ffd454acb3d6f8fac8bdf1bf2a2d01da0d79f858.png",
+              "_type": "Epic Store Image"
+            },
+            "countryCodes": "JP",
+            "_type": "Epic Store Rating",
+            "title": "CERO Z"
+          }
+        ],
+        "_type": "Epic Store Product Ratings"
+      },
+      "disableNewAddons": true,
+      "modMarketplaceEnabled": false,
+      "_title": "game-of-the-year-upgrade",
+      "regionBlock": "",
+      "_noIndex": false,
+      "_images_": [
+        "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ic3-200x200-551403813.png",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G1A_00-1920x1080-62460b6fbe740e14604f30c6e7efcc1e5493482c.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s2-1200x1600-623107765.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G1A_01-1920x1080-f73e7dc1b12fdc311fa56ca569b891f5a6fb721c.jpg",
+        "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-g1a-03-1920x1080-623104941.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G2_00-1462x932-15144c2d011f8268027f21cac7558c34ff5d7034.jpg",
+        "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_IC1-200x200-1edab34af5099dd98909cfb711aadfc72522c46d.png"
+      ],
+      "productName": "Hitman 2016",
+      "jcr:isCheckedOut": true,
+      "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+      "theme": {
+        "buttonPrimaryBg": "#FFDF00",
+        "customPrimaryBg": "#000000",
+        "accentColor": "#FFDF00",
+        "_type": "Diesel Theme",
+        "colorScheme": "dark"
+      },
+      "reviewOptOut": false,
+      "jcr:baseVersion": "a7ca237317f1e7996085f3-eb98-4417-8600-24401aee097e",
+      "externalNavLinks": {
+        "_type": "Epic Store Links"
+      },
+      "_urlPattern": "/productv2/hitman/game-of-the-year-upgrade",
+      "_slug": "game-of-the-year-upgrade",
+      "_activeDate": "2020-02-04T14:45:10.836Z",
+      "lastModified": "2020-08-27T15:22:25.169Z",
+      "_locale": "en-US",
+      "_id": "88fd9512-f03b-4d62-91b1-deb156bdf420",
+      "offer": {
+        "regionRestrictions": {
+          "_type": "Store Region Filtering"
+        },
+        "_type": "Diesel Offer",
+        "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+        "id": "e573ab5b700a418bade0407694c125d6",
+        "tag": "dlc",
+        "type": "addOn",
+        "hasOffer": true
+      },
+      "item": {
+        "catalogId": "92cd8e3c23a6400986db14bef51caa51",
+        "appName": "Barbet",
+        "_type": "Diesel Product Item",
+        "namespace": "3c06b15a8a2845c0b725d4f952fe00aa",
+        "hasItem": true
+      },
+      "data": {
+        "productLinks": {
+          "_type": "Diesel Product Lins"
+        },
+        "socialLinks": {
+          "linkNaver": "",
+          "linkTwitter": "https://twitter.com/hitman",
+          "linkFacebook": "https://www.facebook.com/hitman",
+          "_type": "Diesel Social Links",
+          "linkVk": "",
+          "linkDiscord": "",
+          "linkReddit": "https://www.reddit.com/r/HiTMAN/",
+          "title": "Follow HITMAN",
+          "linkTwitch": "http://www.twitch.tv/hitman",
+          "linkYoutube": "https://www.youtube.com/user/hitman?hl=en&gl=US",
+          "linkYouku": "",
+          "linkWeibo": "",
+          "linkHomepage": "https://hitman.com",
+          "linkInstagram": ""
+        },
+        "requirements": {
+          "languages": [
+            "AUDIO - English",
+            "TEXT - English, French, German, Italian, Spanish - Spain, Japanese, Polish, Portuguese - Brazil, Russian, Chinese - Simplified"
+          ],
+          "systems": [
+            {
+              "_type": "Diesel System Detail",
+              "systemType": "Windows",
+              "details": [
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "OS",
+                  "minimum": "OS 64-bit Windows 7",
+                  "recommended": "OS 64-bit Windows 7 / 64-bit Windows 8 (8.1) or Windows 10"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Processor",
+                  "minimum": "Intel CPU Core i5-2500K 3.3GHz / AMD CPU Phenom II X4 940",
+                  "recommended": "Intel CPU Core i7 3770 3,4 GHz / AMD CPU AMD FX-8350 4 GHz"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Memory",
+                  "minimum": "8",
+                  "recommended": "8"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Graphics",
+                  "minimum": "NVIDIA GeForce GTX 660 / Radeon HD 7870",
+                  "recommended": "Nvidia GPU GeForce GTX 770 / AMD GPU Radeon R9 290"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "DirectX",
+                  "minimum": "11",
+                  "recommended": "11"
+                },
+                {
+                  "_type": "Diesel System Detail Item",
+                  "title": "Storage",
+                  "minimum": "50 ",
+                  "recommended": "50"
+                }
+              ]
+            }
+          ],
+          "_type": "Diesel System Details",
+          "rating": {
+            "_type": "Diesel Rating"
+          }
+        },
+        "navOrder": 3,
+        "footer": {
+          "_type": "Diesel Product Footer",
+          "copy": "HITMAN™ © 2020 IO Interactive A/S. Published by IO Interactive A/S. IO INTERACTIVE, the IO logo, HITMAN™, the HITMAN™ logos, and WORLD OF ASSASSINATION are trademarks or registered trademarks owned by or exclusively licensed to IO Interactive A/S. All rights reserved. All other trademarks are the property of their respective owners.",
+          "privacyPolicyLink": {
+            "src": "https://www.ioi.dk/privacy-policy/",
+            "_type": "Diesel Link",
+            "title": "IO Interactive A/S Privacy Policy"
+          }
+        },
+        "_type": "Diesel Product Detail",
+        "about": {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G2_00-1462x932-15144c2d011f8268027f21cac7558c34ff5d7034.jpg",
+            "_type": "Diesel Image"
+          },
+          "developerAttribution": "IO Interactive A/S",
+          "_type": "Diesel Product About",
+          "publisherAttribution": "IO Interactive A/S",
+          "description": "Upgrade your copy of HITMAN to the GOTY Edition now and get immediate access to the Patient Zero campaign plus all the other new content included in the GOTY Edition.\n\n# The HITMAN - Game of The Year Edition Upgrade includes:\n- \"Patient Zero\" campaign featuring 4 brand new missions including new gameplay mechanics and features\n- 3 new Themed Escalation Contracts\n- 3 new Outfits\n- 3 new Weapons\n\n![Hitman image](https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-g2-00-1462x932-623107394.jpg)",
+          "shortDescription": "Upgrade your copy of HITMAN to the GOTY Edition now and get immediate access to the Patient Zero campaign plus all the other new content included in the GOTY Edition",
+          "title": "HITMAN - Game of the Year Upgrade",
+          "developerLogo": {
+            "src": "https://cdn2.unrealengine.com/egs-hitman-iointeractiveas-ic3-200x200-551403813.png",
+            "_type": "Diesel Image"
+          }
+        },
+        "banner": {
+          "showPromotion": false,
+          "_type": "Epic Store Product Banner",
+          "link": {
+            "_type": "Diesel Link"
+          }
+        },
+        "hero": {
+          "logoImage": {
+            "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_IC1-200x200-1edab34af5099dd98909cfb711aadfc72522c46d.png",
+            "_type": "Diesel Image"
+          },
+          "portraitBackgroundImageUrl": "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s2-1200x1600-623107765.jpg",
+          "_type": "Diesel Hero",
+          "action": {
+            "_type": "Diesel Action"
+          },
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          },
+          "isFullBleed": false,
+          "altContentPosition": false,
+          "backgroundImageUrl": "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-s1-2560x1440-623108052.jpg"
+        },
+        "carousel": {
+          "_type": "Diesel Carousel",
+          "items": [
+            {
+              "image": {
+                "_type": "Diesel Image"
+              },
+              "_type": "Diesel Carousel Item - Image OR Video",
+              "video": {
+                "epicStillDurationSeconds": 2,
+                "recipes": "{\n    \"en-US\": [\n        {\n            \"recipe\": \"video-fmp4\",\n            \"mediaRefId\": \"93334210324545ea8c74d4c40e3d913d\"\n        },\n        {\n            \"recipe\": \"video-webm\",\n            \"mediaRefId\": \"7366cb6cc7784c709f0abafaf6677c05\"\n        },\n        {\n            \"recipe\": \"video-hls\",\n            \"mediaRefId\": \"145d7ac5a75d45a08ae1504bf6d74660\"\n        }\n    ]\n}",
+                "epicStillType": "PREPEND",
+                "loop": true,
+                "_type": "Diesel Video",
+                "hasFullScreen": true,
+                "hasControls": true,
+                "title": "HITMAN GOTY Trailer",
+                "type": "epicHosted",
+                "muted": false,
+                "autoplay": true
+              }
+            }
+          ]
+        },
+        "editions": {
+          "_type": "Epic Store Editions",
+          "enableImages": false
+        },
+        "meta": {
+          "releaseDate": "2020-03-13T15:00:00.000Z",
+          "_type": "Epic Store Meta",
+          "publisher": [
+            "IO Interactive A/S"
+          ],
+          "logo": {
+            "_type": "Epic Store Image"
+          },
+          "developer": [
+            "IO Interactive A/S"
+          ],
+          "platform": [
+            "Windows"
+          ],
+          "tags": [
+            "ACTION",
+            "STEALTH"
+          ]
+        },
+        "markdown": {
+          "_type": "Epic Store Markdown"
+        },
+        "dlc": {
+          "contingentOffer": {
+            "regionRestrictions": {
+              "_type": "Store Region Filtering"
+            },
+            "_type": "Diesel Offer",
+            "hasOffer": false
+          },
+          "_type": "Epic Store DLC",
+          "enableImages": false
+        },
+        "seo": {
+          "image": {
+            "_type": "Epic Store Image"
+          },
+          "twitter": {
+            "_type": "SEO Twitter Metadata"
+          },
+          "_type": "Epic Store Product SEO",
+          "og": {
+            "_type": "SEO OG Metadata"
+          }
+        },
+        "productSections": [
+          {
+            "productSection": "REQUIREMENTS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "SOCIAL_LINKS",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "ABOUT",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "CAROUSEL",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "FOOTER",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "GALLERY",
+            "_type": "Diesel Product Section"
+          },
+          {
+            "productSection": "HERO",
+            "_type": "Diesel Product Section"
+          }
+        ],
+        "gallery": {
+          "_type": "Diesel Gallery",
+          "galleryImages": [
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G1A_00-1920x1080-62460b6fbe740e14604f30c6e7efcc1e5493482c.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 1
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fhitman%2Fgame-of-the-year-upgrade%2FEGS_IOInteractiveAS_HITMANGameofTheYearUpgrade_G1A_01-1920x1080-f73e7dc1b12fdc311fa56ca569b891f5a6fb721c.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 1
+            },
+            {
+              "src": "https://cdn2.unrealengine.com/egs-hitmangameoftheyearupgrade-iointeractiveas-dlc-g1a-03-1920x1080-623104941.jpg",
+              "_type": "Diesel Gallery Image",
+              "row": 2
+            }
+          ]
+        },
+        "navTitle": "HITMAN - Game of the Year Upgrade"
+      },
+      "ageGate": {
+        "hasAgeGate": true,
+        "_type": "Epic Store Age Gate"
+      },
+      "tag": "dlc",
+      "type": "addon"
+    }
+  ]
+}

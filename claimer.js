@@ -8,6 +8,8 @@ const Package = require("./package.json");
 const TwoFactor = require("node-2fa");
 const Cookie = require('tough-cookie').Cookie;
 
+const { freeGamesPromotions } = require('./src/gamePromotions');
+
 function isUpToDate() {
     return new Promise((res, rej) => {
         CheckUpdate({
@@ -23,24 +25,6 @@ function isUpToDate() {
             }
         });
     });
-}
-
-async function freeGamesPromotions(client, country = "US", allowCountries = "US", locale = "en-US") {
-    let { data } = await client.freeGamesPromotions(country, allowCountries, locale);
-    let { elements } = data.Catalog.searchStore;
-    let free = elements.filter(offer => offer.promotions
-        && offer.promotions.promotionalOffers.length > 0
-        && offer.promotions.promotionalOffers[0].promotionalOffers.find(p => p.discountSetting.discountPercentage === 0));
-    let isBundle = promo => Boolean(promo.categories.find(cat => cat.path === "bundles"));
-    let getOffer = promo => (isBundle(promo)
-        ? client.getBundleForSlug(promo.productSlug, locale)
-        : client.getProductForSlug(promo.productSlug, locale));
-    let freeOffers = await Promise.all(free.map(promo => getOffer(promo)));
-    return freeOffers.filter(offer => !offer.error).map(offer => ({
-        "title":     offer.productName || offer._title,
-        "id":        (offer.pages ? offer.pages[0] : offer).offer.id,
-        "namespace": (offer.pages ? offer.pages[0] : offer).offer.namespace
-    }));
 }
 
 function getChromeCookie(cookie) {
