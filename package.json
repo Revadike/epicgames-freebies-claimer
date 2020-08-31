@@ -2,7 +2,16 @@
     "name": "epicgames-freebies-claimer",
     "version": "1.4.1",
     "description": "Claim free game promotions from the Epic Game Store",
-    "author": "Revadike <https://revadike.com>",
+    "author": {
+        "name": "Revadike",
+        "email": "revadike@outlook.com",
+        "url": "https://revadike.com"
+    },
+    "contributors": [
+        {
+            "name": "davispuh"
+        }
+    ],
     "main": "claimer.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
