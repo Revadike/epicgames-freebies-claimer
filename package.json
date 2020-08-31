@@ -25,7 +25,7 @@
         "check-update-github": "^0.0.4",
         "colors": "^1.4.0",
         "epicgames-client": "Revadike/node-epicgames-client#develop",
-        "epicgames-client-login-adapter": "^0.1.0",
+        "epicgames-client-login-adapter": "Revadike/node-epicgames-client-login-adapter",
         "node-2fa": "^1.1.2",
         "tracer": "^1.0.3"
     }
