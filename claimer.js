@@ -107,10 +107,11 @@ async function freeGamesPromotions(client, country = "US", allowCountries = "US"
                     }
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
-                    if (err.response && err.response.body && err.response.body.errorCode == "errors.com.epicgames.purchase.purchase.captcha.challenge")
-                    {
+                    if (err.response
+                        && err.response.body
+                        && err.response.body.errorCode === "errors.com.epicgames.purchase.purchase.captcha.challenge") {
                         // It's pointless to try next one as we'll be asked for captcha again.
-                        Logger.error(`Aborting!`);
+                        Logger.error("Aborting!");
                         break;
                     }
                 }
