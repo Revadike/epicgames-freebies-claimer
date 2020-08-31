@@ -147,6 +147,12 @@ function getToughCookie(cookie) {
             let freePromos = await freeGamesPromotions(client, country, country);
 
             for (let offer of freePromos) {
+                let launcherQuery = await client.launcherQuery(offer.namespace, offer.id);
+                if (launcherQuery.data.Launcher.entitledOfferItems.entitledToAllItemsInOffer) {
+                    Logger.info(`${offer.title} is already claimed for this account`);
+                    continue;
+                }
+
                 try {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
