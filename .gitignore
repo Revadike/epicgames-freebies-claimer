@@ -1,5 +1,6 @@
 *.bat
 *.log
+*.lnk
 node_modules
 package-lock.json
 .egstore/*
