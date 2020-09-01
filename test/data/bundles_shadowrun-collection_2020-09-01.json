@@ -1,0 +1,416 @@
+{
+  "offer": {
+    "regionRestrictions": {
+      "_type": "Store Region Filtering"
+    },
+    "_type": "Diesel Offer",
+    "namespace": "bd8a7e894699493fb21503837f7b66c5",
+    "id": "c5cb60ecc6554c6a8d9a682b87ab04bb",
+    "hasOffer": true
+  },
+  "jcr:isCheckedOut": true,
+  "data": {
+    "productLinks": {
+      "_type": "Diesel Product Lins"
+    },
+    "socialLinks": {
+      "_type": "Diesel Social Links",
+      "title": "Follow Shadowrun ",
+      "linkHomepage": "https://www.paradoxplaza.com/shadowrun-all/"
+    },
+    "requirements": {
+      "languages": [
+        "Audio: English",
+        "Text: English"
+      ],
+      "systems": [
+        {
+          "_type": "Diesel System Detail",
+          "systemType": "Windows",
+          "details": [
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "OS",
+              "minimum": "Windows XP SP3/Vista/Windows 7 & 8",
+              "recommended": "Windows XP SP3/Vista/Windows 7 & 8"
+            },
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "Processor",
+              "minimum": "x86-compatible 1.8GHz or faster processor",
+              "recommended": "x86-compatible 2GHz or faster processor"
+            },
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "Memory",
+              "minimum": "2 GB RAM",
+              "recommended": "4 GB RAM"
+            },
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "Storage",
+              "minimum": "30 GB available space",
+              "recommended": "30 GB available space"
+            },
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "Direct X",
+              "minimum": "Version 9.0",
+              "recommended": "Version 9.0"
+            },
+            {
+              "_type": "Diesel System Detail Item",
+              "title": "Graphics",
+              "minimum": "DirectX compatible 3D graphics card with at least 256MB of addressable memory",
+              "recommended": " DirectX compatible 3D graphics card with 512MB of addressable memory"
+            }
+          ]
+        }
+      ],
+      "accountRequirements": "NO_REQUIREMENTS",
+      "_type": "Diesel System Details",
+      "rating": {
+        "_type": "Diesel Rating"
+      }
+    },
+    "footer": {
+      "_type": "Diesel Product Footer",
+      "privacyPolicyLink": {
+        "_type": "Diesel Link"
+      }
+    },
+    "meta": {
+      "releaseDate": "2020-08-20T13:00:00.000Z",
+      "_type": "Epic Store Meta",
+      "publisher": [
+        "Paradox Interactive"
+      ],
+      "logo": {
+        "src": "https://cdn2.unrealengine.com/logo-400x400-400x400-777098045.png",
+        "_type": "Epic Store Image"
+      },
+      "developer": [
+        "Harebrained Schemes"
+      ],
+      "platform": [
+        "Windows"
+      ]
+    },
+    "_type": "Store Bundle Detail",
+    "about": {
+      "image": {
+        "src": "https://cdn2.unrealengine.com/landscape-image-shadowcoll-2560x1440-777100077.jpg",
+        "_type": "Diesel Image"
+      },
+      "developerAttribution": "Harebrained Schemes",
+      "_type": "Diesel Product About",
+      "publisherAttribution": " Paradox Interactive",
+      "description": "# Shadowrun Returns\n\nThe unique cyberpunk-meets-fantasy world of Shadowrun has gained a huge cult following since its creation nearly 25 years ago. Creator Jordan Weisman returns to the world of Shadowrun, modernizing this classic game setting as a single player, turn-based tactical RPG. In the urban sprawl of the Seattle metroplex, the search for a mysterious killer sets you on a trail that leads from the darkest slums to the city’s most powerful megacorps.\n\nYou will need to tread carefully, enlist the aid of other runners, and master powerful forces of technology and magic in order to emerge from the shadows of Seattle unscathed.\n\n# Shadowrun Dragonfall - Director Cut\n\nShadowrun: Dragonfall - Director’s Cut is a standalone release of Harebrained Schemes' critically-acclaimed Dragonfall campaign, which first premiered as a major expansion for Shadowrun Returns. The Director's Cut adds a host of new content and enhancements to the original game: 5 all-new missions, alternate endings, new music, a redesigned interface, team customization options, a revamped combat system, and more - making it the definitive version of this one-of-a-kind cyberpunk RPG experience.\n\n# Shadowrun Hong Kong - Extended Edition\n\nShadowrun: Hong Kong - Extended Edition is the capstone title in Harebrained Schemes' Shadowrun series - and includes the all-new, 6+ hr Shadows of Hong Kong Bonus Campaign. Experience the most impressive Shadowrun RPG yet, hailed as one of the best cRPG / strategy games of 2015!",
+      "shortDescription": "Shadowrun Collection includes Shadowrun Returns (Base Game), Shadowrun Dragonfall - Director Cut (Base Game) and Shadowrun Hong Kong - Extended Edition (Base Game)",
+      "title": "Shadowrun Collection",
+      "developerLogo": {
+        "_type": "Diesel Image"
+      }
+    },
+    "banner": {
+      "showPromotion": false,
+      "_type": "Epic Store Product Banner",
+      "link": {
+        "_type": "Diesel Link"
+      }
+    },
+    "includes": {
+      "_type": "Store Bundle Includes",
+      "items": [
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowrunreturns-harebrainedschemes-s1-2560x1440-768642852.jpg",
+            "_type": "Epic Store Image"
+          },
+          "_type": "Store Bundle Included Section",
+          "link": {
+            "src": "/product/shadowrun-returns",
+            "_type": "Diesel Link",
+            "title": "Shadowrun Returns"
+          },
+          "description": "The unique cyberpunk-meets-fantasy world of Shadowrun has gained a huge cult following since its creation. Creator Jordan Weisman returns to the world of Shadowrun, modernizing this classic game setting as a single player, turn-based tactical RPG.",
+          "title": "Shadowrun Returns"
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowrundragonfalldirectorcut-harebrainedschemes-s1-2560x1440-769294674.jpg",
+            "_type": "Epic Store Image"
+          },
+          "_type": "Store Bundle Included Section",
+          "link": {
+            "src": "/product/shadowrun-dragonfall",
+            "_type": "Diesel Link",
+            "title": "Shadowrun: Dragonfall"
+          },
+          "description": "Harebrained Schemes' biggest Shadowrun game to date, and the definitive Shadowrun RPG experience available on PC. A standalone title with tons of new content & improvements!",
+          "title": "Shadowrun: Dragonfall - Director’s Cut"
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowrunhongkongextendededition-harebrainedschemes-s1-2560x1440-768923401.jpg",
+            "_type": "Epic Store Image"
+          },
+          "_type": "Store Bundle Included Section",
+          "link": {
+            "src": "/product/shadowrun-hong-kong",
+            "_type": "Diesel Link",
+            "title": "Shadowrun Hong Kong - Extended Edition"
+          },
+          "description": "Shadowrun: Hong Kong - Extended Edition is the capstone title in Harebrained Schemes' Shadowrun series - and includes the all-new, 6+ hr Shadows of Hong Kong Bonus Campaign.",
+          "title": "Shadowrun Hong Kong - Extended Edition"
+        }
+      ]
+    },
+    "carousel": {
+      "_type": "Diesel Carousel",
+      "items": [
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/landscape-image-shadowcoll-2560x1440-777100077.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-01-1920x1080-785870290.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-02-1920x1080-785870323.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-03-1920x1080-785870474.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-04-1920x1080-785870331.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-05-1920x1080-785870547.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-06-1920x1080-785870233.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-07-1920x1080-785870678.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-08-1920x1080-785870757.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-09-1920x1080-785870879.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-10-1920x1080-785870817.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        },
+        {
+          "image": {
+            "src": "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-11-1920x1080-785871134.jpg",
+            "_type": "Diesel Image"
+          },
+          "_type": "Diesel Carousel Item - Image OR Video",
+          "video": {
+            "loop": false,
+            "_type": "Diesel Video",
+            "hasFullScreen": false,
+            "hasControls": false,
+            "muted": false,
+            "autoplay": false
+          }
+        }
+      ]
+    },
+    "seo": {
+      "image": {
+        "_type": "Epic Store Image"
+      },
+      "twitter": {
+        "_type": "SEO Twitter Metadata"
+      },
+      "_type": "Epic Store Product SEO",
+      "og": {
+        "_type": "SEO OG Metadata"
+      }
+    },
+    "gallery": {
+      "_type": "Diesel Gallery"
+    }
+  },
+  "hideMeta": false,
+  "namespace": "bd8a7e894699493fb21503837f7b66c5",
+  "_title": "Shadowrun Collection",
+  "ageGate": {
+    "regionRestrictions": [
+      {
+        "country": "KR",
+        "ageLimit": 18,
+        "_type": "Epic Store Age Gate Region"
+      }
+    ],
+    "hasAgeGate": false,
+    "_type": "Epic Store Age Gate"
+  },
+  "theme": {
+    "buttonPrimaryBg": "#000000",
+    "accentColor": "#000000",
+    "_type": "Diesel Theme",
+    "colorScheme": "dark"
+  },
+  "_noIndex": false,
+  "_images_": [
+    "https://cdn2.unrealengine.com/egs-shadowrunhongkongextendededition-harebrainedschemes-s1-2560x1440-768923401.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-08-1920x1080-785870757.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-11-1920x1080-785871134.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-07-1920x1080-785870678.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-09-1920x1080-785870879.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-06-1920x1080-785870233.jpg",
+    "https://cdn2.unrealengine.com/landscape-image-shadowcoll-2560x1440-777100077.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-04-1920x1080-785870331.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowrundragonfalldirectorcut-harebrainedschemes-s1-2560x1440-769294674.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-10-1920x1080-785870817.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowrunreturns-harebrainedschemes-s1-2560x1440-768642852.jpg",
+    "https://cdn2.unrealengine.com/logo-400x400-400x400-777098045.png",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-03-1920x1080-785870474.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-02-1920x1080-785870323.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-01-1920x1080-785870290.jpg",
+    "https://cdn2.unrealengine.com/egs-shadowruncollection-harebrainedschemes-g1a-05-1920x1080-785870547.jpg"
+  ],
+  "jcr:baseVersion": "a7ca237317f1e7b3a4135d-6edc-42cd-944a-bc5055b1d856",
+  "_urlPattern": "/bundles/shadowrun-collection",
+  "_slug": "shadowrun-collection",
+  "_activeDate": "2020-08-18T17:09:45.287Z",
+  "lastModified": "2020-08-27T14:54:12.843Z",
+  "_locale": "en-US",
+  "_id": "098c5cec-e9ee-4923-b5c3-e89d4dbee8ab"
+}
