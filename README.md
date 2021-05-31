@@ -7,7 +7,7 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 ## Requirements
  * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator/releases)
  * [Git](https://git-scm.com/downloads)
- * [Node.js](https://nodejs.org/download/)
+ * [Node.js](https://nodejs.org/download/) (with build tools checked)
 
 ## Instructions
 0. (Optional) ☆ Star this project :)
