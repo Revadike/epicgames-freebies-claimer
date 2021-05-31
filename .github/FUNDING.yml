@@ -1,9 +1,3 @@
-# These are supported funding model platforms
-
-github: Revadike # Replace with up to 4 GitHub Sponsors-enabled usernames e.g., [user1, user2]
-patreon: Revadike # Replace with a single Patreon username
-custom: [
-    "paypal.me/Revadike",
-    "coinrequest.io/request/mBAhcRTlknrpSJZ",
-    "steamcommunity.com/tradeoffer/new/?partner=82699538&token=V7DQVtra",
-] # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
+github: Revadike
+patreon: Revadike
+custom: ['paypal.me/Revadike', 'coinrequest.io/request/mBAhcRTlknrpSJZ', 'steamcommunity.com/tradeoffer/new/?partner=82699538&token=V7DQVtra']
