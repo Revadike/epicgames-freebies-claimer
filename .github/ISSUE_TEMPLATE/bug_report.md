@@ -17,8 +17,9 @@ labels: bug
   2. 
   3. 
 
+
 ### Specifications
 
-  - Platform/OS: 
-  - Node Version: 
   - `epicgames-freebies-claimer` Version: 
+  - Platform / OS: 
+  - Node Version: 
