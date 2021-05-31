@@ -5,20 +5,15 @@
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Game Store.
 
 ## Requirements
+ * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator)
  * [Node.js](https://nodejs.org/download/)
 
-## Instructions (arguments)
-1. Download/clone repo
-3. Run `npm install`
-4. Run `npm start USERNAME PASSWORD 0|1 2FA_SECRET`*
-
-## Instructions (config)
-1. Download/clone repo
+## Instructions
+1. Download/clone this repository
 2. Run `npm install`
-3. Edit `config.json` to include your EpicGames credentials and options
-4. Run `npm start`*
-
-*Only this step is required after the initial use.
+3. Generate `device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
+4. (Optional) Edit `config.json`
+5. Run `npm start`
 
 ## FAQ
 ### Why should I use this?
@@ -28,10 +23,14 @@ Also, this is a good alternative, in case you don't like using Epic's client or 
 ### Why should I even bother claiming these free games?
 To which I will say, why not? Most of these games are actually outstanding games! Even if you don't like Epic and their shenanigans, you will be pleased to know that Epic actually funds all the free copies that are given away:  ["But we actually found it was more economical to pay developers [a lump sum] to distribute their game free for two weeks..."](https://arstechnica.com/gaming/2019/03/epic-ceo-youre-going-to-see-lower-prices-on-epic-games-store/)
 
-### Can I use the looping or multi-account feature when using launch arguments?
-No, these are only usable by using the config.
-
 ## Changelog
+### V1.5.0
+ * Fixed login
+ * Fixed purchase (claiming)
+ * Removed ownership check (broken)
+ * Removed unneeded dependencies
+ * Code restyling
+
 ### V1.4.1
  * Removed the need for graphql query
 

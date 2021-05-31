@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.4.1",
+    "version": "1.5.0",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": {
         "name": "Revadike",
@@ -28,16 +28,15 @@
     "homepage": "https://github.com/revadike/epicgames-freebies-claimer",
     "url": "https://github.com/revadike/epicgames-freebies-claimer",
     "devDependencies": {
+        "@babel/eslint-parser": "latest",
         "chai": "*",
-        "eslint": "^6.8.0",
+        "eslint": "latest",
         "mocha": "*"
     },
     "dependencies": {
         "check-update-github": "^0.0.4",
         "colors": "^1.4.0",
         "epicgames-client": "Revadike/node-epicgames-client#develop",
-        "epicgames-client-login-adapter": "Revadike/node-epicgames-client-login-adapter",
-        "node-2fa": "^1.1.2",
         "tracer": "^1.0.3"
     }
 }

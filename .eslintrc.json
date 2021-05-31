@@ -1,28 +1,34 @@
 {
     "env": {
-        "browser": true,
         "node": true,
-        "es6": true
+        "es6": true,
+        "es2017": true,
+        "es2020": true,
+        "es2021": true
     },
     "extends": "eslint:recommended",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": 2018
+        "requireConfigFile": false
     },
     "rules": {
         "accessor-pairs": "error",
-        "array-bracket-newline": ["error", "consistent"],
+        "array-bracket-newline": ["error", { "multiline": true }],
         "array-bracket-spacing": ["error", "never", { "arraysInArrays": true }],
         "array-callback-return": "error",
-        "array-element-newline": ["error", "consistent"],
+        "array-element-newline": ["error", {
+            "ArrayExpression": "consistent",
+            "ArrayPattern": { "multiline": true }
+        }],
         "arrow-body-style": "error",
-        "arrow-parens": ["error", "as-needed"],
+        "arrow-parens": "error",
         "arrow-spacing": "error",
         "block-scoped-var": "error",
         "block-spacing": "error",
         "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
         "camelcase": "error",
         "class-methods-use-this": "error",
-        "comma-dangle": ["error", "only-multiline"],
+        "comma-dangle": ["error", "always-multiline"],
         "comma-spacing": "error",
         "comma-style": "error",
         "complexity": "error",
@@ -46,7 +52,7 @@
         "implicit-arrow-linebreak": "error",
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "init-declarations": "error",
-        "key-spacing": ["error", { "mode": "minimum", "align": "value" }],
+        "key-spacing": ["error", { "align": "value" }],
         "keyword-spacing": "error",
         "linebreak-style": "error",
         "lines-between-class-members": ["error", "always"],
@@ -67,6 +73,7 @@
         "no-dupe-else-if": "error",
         "no-duplicate-imports": "error",
         "no-else-return": "error",
+        "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
         "no-empty-function": "error",
         "no-eq-null": "error",
         "no-eval": "error",
@@ -93,7 +100,6 @@
         "no-new-wrappers": "error",
         "no-octal": "error",
         "no-octal-escape": "error",
-        "no-param-reassign": "error",
         "no-proto": "error",
         "no-redeclare": "error",
         "no-return-assign": "error",
@@ -122,7 +128,7 @@
         "no-with": "error",
         "no-whitespace-before-property": "error",
         "nonblock-statement-body-position": "error",
-        "object-curly-newline": "error",
+        "object-curly-newline": ["error", { "multiline": true }],
         "object-curly-spacing": ["error", "always"],
         "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
         "object-shorthand": "error",
@@ -159,7 +165,6 @@
         "space-infix-ops": "error",
         "space-unary-ops": "error",
         "spaced-comment": "error",
-        "strict": ["error", "global"],
         "switch-colon-spacing": "error",
         "symbol-description": "error",
         "template-curly-spacing": "error",

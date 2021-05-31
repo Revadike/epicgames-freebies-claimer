@@ -1,14 +1,13 @@
 "use strict";
+
 const { "Launcher": EpicGames } = require("epicgames-client");
+const { freeGamesPromotions } = require("./src/gamePromotions");
+
+const Auths = require(`${__dirname}/device_auths.json`);
 const CheckUpdate = require("check-update-github");
-const ClientLoginAdapter = require("epicgames-client-login-adapter");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
-const TwoFactor = require("node-2fa");
-const Cookie = require('tough-cookie').Cookie;
-
-const { freeGamesPromotions } = require('./src/gamePromotions');
 
 function isUpToDate() {
     return new Promise((res, rej) => {
@@ -16,7 +15,7 @@ function isUpToDate() {
             "name":           Package.name,
             "currentVersion": Package.version,
             "user":           "revadike",
-            "branch":         "master"
+            "branch":         "master",
         }, (err, latestVersion) => {
             if (err) {
                 rej(err);
@@ -27,22 +26,8 @@ function isUpToDate() {
     });
 }
 
-function getChromeCookie(cookie) {
-    cookie = Object.assign({}, cookie);
-    cookie.name = cookie.key;
-    if (cookie.expires instanceof Date) {
-        cookie.expires = cookie.expires.getTime() / 1000.0;
-    } else {
-        delete cookie.expires;
-    }
-    return cookie;
-}
-
-function getToughCookie(cookie) {
-    cookie = Object.assign({}, cookie);
-    cookie.key = cookie.name;
-    cookie.expires = new Date(cookie.expires * 1000);
-    return new Cookie(cookie);
+function sleep(delay) {
+    return new Promise((res) => setTimeout(res, delay * 60000));
 }
 
 (async() => {
@@ -50,93 +35,27 @@ function getToughCookie(cookie) {
         Logger.warn(`There is a new version available: ${Package.url}`);
     }
 
-    let { accounts, options, delay, loop } = Config;
-    if (!options) {
-        options = {};
-    }
-    let sleep = delay => new Promise(res => setTimeout(res, delay * 60000));
+    let { options, delay, loop } = Config;
     do {
-        if (process.argv.length > 2) {
-            loop = false;
-            accounts = [{
-                "email":               process.argv[2],
-                "password":            process.argv[3],
-                "rememberLastSession": Boolean(Number(process.argv[4])),
-                "secret":              process.argv[5],
-            }];
-        }
-
-        for (let account of accounts) {
-            let noSecret = !account.secret || account.secret.length === 0;
-            if (!noSecret) {
-                let { token } = TwoFactor.generateToken(account.secret);
-                account.twoFactorCode = token;
-            }
-
-            let epicOptions = Object.assign({}, options);
-            Object.assign(epicOptions, account);
-
-            let client = new EpicGames(epicOptions);
-
+        for (let email in Auths) {
+            let useDeviceAuth = true;
+            let clientOptions = { email, ...options };
+            let client = new EpicGames(clientOptions);
             if (!await client.init()) {
                 throw new Error("Error while initialize process.");
             }
 
-            let success = false;
-            try {
-                success = await client.login(account);
-            } catch (error) {
-                Logger.warn(error.message);
-            }
-
+            let success = await client.login({ useDeviceAuth });
             if (!success) {
-                Logger.warn(`Failed to login as ${client.config.email}, please attempt manually.`);
-
-
-                if (account.rememberLastSession) {
-                    if (!options.cookies) {
-                        options.cookies = [];
-                    }
-                    if (account.cookies && account.cookies.length) {
-                        options.cookies = options.cookies.concat(account.cookies);
-                    }
-                    client.http.jar._jar.store.getAllCookies((err, cookies) => {
-                        for (const cookie of cookies) {
-                            options.cookies.push(getChromeCookie(cookie));
-                        }
-                    });
-                }
-
-                let auth = await ClientLoginAdapter.init(account, options);
-                let exchangeCode = await auth.getExchangeCode();
-
-                if (account.rememberLastSession) {
-                    let cookies = await auth.getPage().then(p => p.cookies());
-                    for (let cookie of cookies) {
-                        cookie = getToughCookie(cookie);
-                        client.http.jar.setCookie(cookie, "https://" + cookie.domain);
-                    }
-                }
-
-                await auth.close();
-
-                if (!await client.login(null, exchangeCode)) {
-                    throw new Error("Error while logging in.");
-                }
+                throw new Error(`Failed to login as ${client.config.email}`);
             }
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
 
-            let { country } = client.account.country;
+            let { country } = client.account;
             let freePromos = await freeGamesPromotions(client, country, country);
 
             for (let offer of freePromos) {
-                let launcherQuery = await client.launcherQuery(offer.namespace, offer.id);
-                if (launcherQuery.data.Launcher.entitledOfferItems.entitledToAllItemsInOffer) {
-                    Logger.info(`${offer.title} is already claimed for this account`);
-                    continue;
-                }
-
                 try {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
@@ -167,7 +86,7 @@ function getToughCookie(cookie) {
             process.exit(0);
         }
     } while (loop);
-})().catch(err => {
+})().catch((err) => {
     Logger.error(err);
     process.exit(1);
 });
