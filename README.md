@@ -5,7 +5,8 @@
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Game Store.
 
 ## Requirements
- * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator)
+ * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator/releases)
+ * [Git](https://git-scm.com/downloads)
  * [Node.js](https://nodejs.org/download/)
 
 ## Instructions
