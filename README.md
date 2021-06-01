@@ -9,13 +9,16 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
  * [Git](https://git-scm.com/downloads)
  * [Node.js](https://nodejs.org/download/) (with build tools checked)
 
-## Instructions
+## Instructions - Quick
 0. (Optional) ☆ Star this project :)
 1. Download/clone this repository
 2. Run `npm install`
 3. Generate `device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
 4. (Optional) Edit `config.json`
 5. Run `npm start`
+
+## Instructions - Detailed
+Check out the [wiki](https://github.com/Revadike/epicgames-freebies-claimer/wiki), written by @lucifudge.
 
 ## FAQ
 ### Why should I use this?
