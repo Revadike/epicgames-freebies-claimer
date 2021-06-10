@@ -1,13 +1,29 @@
 "use strict";
-
-const { "Launcher": EpicGames } = require("epicgames-client");
 const { freeGamesPromotions } = require("./src/gamePromotions");
 
+const { readFile, writeFile } = require("fs").promises;
+const { "Client": EpicGames } = require("fnbr");
 const Auths = require(`${__dirname}/device_auths.json`);
 const CheckUpdate = require("check-update-github");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
+
+// (async() => {
+//     let auth;
+//     try {
+//         auth = { "deviceAuth": JSON.parse(await readFile("./deviceAuth.json")) };
+//     } catch (e) {
+//         auth = { "authorizationCode": () => Client.consoleQuestion("Please enter an authorization code: ") };
+//     }
+
+//     const client = new EpicGames({ auth });
+
+//     client.on("deviceauth:created", (da) => writeFile("./deviceAuth.json", JSON.stringify(da, null, 2)));
+
+//     await client.login();
+//     console.log(`Logged in as ${client.user.displayName}`);
+// })();
 
 function isUpToDate() {
     return new Promise((res, rej) => {

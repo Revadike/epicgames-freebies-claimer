@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": {
         "name": "Revadike",
@@ -36,7 +36,7 @@
     "dependencies": {
         "check-update-github": "^0.0.4",
         "colors": "^1.4.0",
-        "epicgames-client": "Revadike/node-epicgames-client#develop",
+        "fnbr": "^1.4.1",
         "tracer": "^1.0.3"
     }
 }
