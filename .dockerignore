@@ -1,0 +1,26 @@
+# From gitignore (modified)
+*.bat
+*.log
+*.lnk
+node_modules
+package-lock.json
+DeviceAuthGenerator.exe
+device_auths.json
+.egstore
+.vscode
+*.code-workspace
+.idea
+.github
+
+# Folders
+.git
+test
+
+# Other files
+*Dockerfile*
+*dockerignore*
+.gitignore
+LICENSE
+README*
+.eslintrc.json
+.editorconfig

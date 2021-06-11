@@ -12,9 +12,9 @@ module.exports = {
         "debug": colors.blue,
         "info":  colors.green,
         "warn":  colors.magenta,
-        "error": [colors.red, colors.bold]
+        "error": [colors.red, colors.bold],
     },
-    "preprocess": data => {
+    "preprocess": (data) => {
         data.title = data.title.toUpperCase();
         while (data.title.length < 5) { data.title += " "; }
         data.args = [...data.args];
@@ -23,17 +23,17 @@ module.exports = {
             data.args.shift();
         }
     },
-    "transport": data => {
+    "transport": (data) => {
         // eslint-disable-next-line no-console
         console.log(data.output);
 
         const streamoptions = {
             "flags":    "a",
-            "encoding": "utf8"
+            "encoding": "utf8",
         };
         fs.createWriteStream(path.join(__dirname, "claimer.log"), streamoptions).write(`\r\n${data.rawoutput}`);
         if (data.logpath) {
             fs.createWriteStream(data.logpath, streamoptions).write(`\r\n${data.rawoutput}`);
         }
-    }
+    },
 };
