@@ -1,5 +1,7 @@
 {
-	"options": {},
-	"delay": 1440,
-	"loop": true
+    "options": {
+        "checkEULA": true
+    },
+    "delay": 1440,
+    "loop": true
 }

@@ -15,7 +15,8 @@
     "main": "claimer.js",
     "scripts": {
         "test": "mocha",
-        "start": "node claimer.js"
+        "start": "node claimer.js",
+        "account": "node account.js"
     },
     "license": "MIT",
     "repository": {

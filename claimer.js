@@ -1,29 +1,21 @@
 "use strict";
-const { freeGamesPromotions } = require("./src/gamePromotions");
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-const { readFile, writeFile } = require("fs").promises;
+const { freeGamesPromotions } = require("./src/gamePromotions");
+const { purchaseOffer } = require("./src/purchaseOffer");
 const { "Client": EpicGames } = require("fnbr");
-const Auths = require(`${__dirname}/device_auths.json`);
 const CheckUpdate = require("check-update-github");
 const Config = require(`${__dirname}/config.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
 
-// (async() => {
-//     let auth;
-//     try {
-//         auth = { "deviceAuth": JSON.parse(await readFile("./deviceAuth.json")) };
-//     } catch (e) {
-//         auth = { "authorizationCode": () => Client.consoleQuestion("Please enter an authorization code: ") };
-//     }
-
-//     const client = new EpicGames({ auth });
-
-//     client.on("deviceauth:created", (da) => writeFile("./deviceAuth.json", JSON.stringify(da, null, 2)));
-
-//     await client.login();
-//     console.log(`Logged in as ${client.user.displayName}`);
-// })();
+let DeviceAuths = {};
+try {
+    DeviceAuths = require(`${__dirname}/device_auths.json`);
+} catch (error) { /* No device_auths.json */ }
+try {
+    DeviceAuths = require(`${__dirname}/deviceAuths.json`);
+} catch (error) { /* No deviceAuths.json */ }
 
 function isUpToDate() {
     return new Promise((res, rej) => {
@@ -47,33 +39,34 @@ function sleep(delay) {
 }
 
 (async() => {
-    if (!await isUpToDate()) {
-        Logger.warn(`There is a new version available: ${Package.url}`);
-    }
-
     let { options, delay, loop } = Config;
     do {
-        for (let email in Auths) {
-            let useDeviceAuth = true;
-            let clientOptions = { email, ...options };
-            let client = new EpicGames(clientOptions);
-            if (!await client.init()) {
-                throw new Error("Error while initialize process.");
-            }
+        if (!await isUpToDate()) {
+            Logger.warn(`There is a new version available: ${Package.url}`);
+        }
 
-            let success = await client.login({ useDeviceAuth });
-            if (!success) {
-                throw new Error(`Failed to login as ${client.config.email}`);
-            }
+        if (Object.keys(DeviceAuths).length === 0) {
+            Logger.warn("You should first add an account!");
+            Logger.warn("Run the following command:");
+            Logger.warn("");
+            Logger.warn("npm run account");
+            process.exit(0);
+        }
 
-            Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
+        for (let email in DeviceAuths) {
+            let deviceAuth = DeviceAuths[email];
+            let auth = { deviceAuth };
+            let client = new EpicGames({ auth, ...options });
 
-            let { country } = client.account;
+            await client.login();
+            Logger.info(`Logged in as ${client.user.displayName} (${client.user.id})`);
+
+            let { country } = client.user;
             let freePromos = await freeGamesPromotions(client, country, country);
 
             for (let offer of freePromos) {
                 try {
-                    let purchased = await client.purchase(offer, 1);
+                    let purchased = await purchaseOffer(client, offer);
                     if (purchased) {
                         Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
                     } else {
@@ -92,7 +85,7 @@ function sleep(delay) {
             }
 
             await client.logout();
-            Logger.info(`Logged ${client.account.name} out of Epic Games`);
+            Logger.info(`Logged ${client.user.displayName} (${client.user.id}) out of Epic Games`);
         }
 
         if (loop) {
