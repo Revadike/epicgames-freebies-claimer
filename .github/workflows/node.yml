@@ -13,10 +13,8 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
         node_version:
           - 12
-          - 14
           - 16
     name: Node ${{ matrix.node_version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
     steps:
@@ -29,6 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Linting
-        run: eslint .
+        run: npx eslint .
       - name: Test
         run: npm test
