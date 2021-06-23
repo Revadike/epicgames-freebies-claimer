@@ -51,7 +51,8 @@ function sleep(delay) {
             let clientOptions = { email, ...options };
             let client = new EpicGames(clientOptions);
             if (!await client.init()) {
-                throw new Error("Error while initialize process.");
+                Logger.error("Error while initialize process.");
+                break;
             }
 
             // Check before logging in
@@ -62,12 +63,13 @@ function sleep(delay) {
 
             Logger.info(`Found ${unclaimedPromos.length} unclaimed freebie(s) for ${email}`);
             if (unclaimedPromos.length === 0) {
-                return;
+                continue;
             }
 
-            let success = await client.login({ useDeviceAuth });
+            let success = await client.login({ useDeviceAuth }).catch(() => false);
             if (!success) {
-                throw new Error(`Failed to login as ${client.config.email}`);
+                Logger.error(`Failed to login as ${client.config.email}`);
+                continue;
             }
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
