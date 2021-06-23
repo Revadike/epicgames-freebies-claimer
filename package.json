@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": {
         "name": "Revadike",
@@ -18,16 +18,16 @@
     ],
     "funding": [
         {
+            "type": "patreon",
+            "url": "https://patreon.com/Revadike"
+        },
+        {
             "type": "steam",
             "url": "https://steamcommunity.com/tradeoffer/new/?partner=82699538&token=V7DQVtra"
         },
         {
             "type": "paypal",
             "url": "https://www.paypal.me/Revadike"
-        },
-        {
-            "type": "patreon",
-            "url": "https://patreon.com/Revadike"
         }
     ],
     "main": "claimer.js",
