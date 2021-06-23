@@ -28,6 +28,10 @@ function isUpToDate() {
     });
 }
 
+function write(path, data) {
+    return new Promise((res, rej) => writeFile(path, data, (err) => (err ? rej(err) : res(true))));
+}
+
 function sleep(delay) {
     return new Promise((res) => setTimeout(res, delay * 60000));
 }
@@ -41,6 +45,7 @@ function sleep(delay) {
 
         for (let email in Auths) {
             let { country } = Auths[email];
+            let claimedPromos = History[email] || [];
             let useDeviceAuth = true;
             let clientOptions = { email, ...options };
             let client = new EpicGames(clientOptions);
@@ -50,12 +55,11 @@ function sleep(delay) {
 
             // Check before logging in
             let freePromos = await freeGamesPromotions(client, country, country);
-            let claimedPromos = Object.values(History);
             let unclaimedPromos = freePromos.filter((offer) => !claimedPromos.find(
                 (_offer) => _offer.id === offer.id && _offer.namespace === offer.namespace,
             ));
 
-            Logger.info(`Found ${unclaimedPromos.length} unclaimed freebie(s)`);
+            Logger.info(`Found ${unclaimedPromos.length} unclaimed freebie(s) for ${email}`);
             if (unclaimedPromos.length === 0) {
                 return;
             }
@@ -67,7 +71,7 @@ function sleep(delay) {
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
             Auths[email].country = client.account.country;
-            writeFile(`${__dirname}/device_auths.json`, JSON.stringify(Auths, null, 4), () => false); // ignore fails
+            write(`${__dirname}/device_auths.json`, JSON.stringify(Auths, null, 4)).catch(() => false); // ignore fails
 
             for (let offer of unclaimedPromos) {
                 try {
@@ -77,7 +81,9 @@ function sleep(delay) {
                     } else {
                         Logger.warn(`${offer.title} was already claimed for this account`);
                     }
-                    History[Date.now()] = offer; // Also remember already claimed offers
+                    // Also remember already claimed offers
+                    offer.date = Date.now();
+                    claimedPromos.push(offer);
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
                     if (err.response
@@ -90,13 +96,12 @@ function sleep(delay) {
                 }
             }
 
-            writeFile(`${__dirname}/history.json`, JSON.stringify(History, null, 4), (err) => {
-                if (err) { throw err; }
-            });
+            History[email] = claimedPromos;
             await client.logout();
             Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }
 
+        await write(`${__dirname}/history.json`, JSON.stringify(History, null, 4));
         if (loop) {
             Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);
