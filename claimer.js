@@ -31,12 +31,12 @@ function sleep(delay) {
 }
 
 (async() => {
-    if (!await isUpToDate()) {
-        Logger.warn(`There is a new version available: ${Package.url}`);
-    }
-
     let { options, delay, loop } = Config;
     do {
+        if (!await isUpToDate()) {
+            Logger.warn(`There is a new version available: ${Package.url}`);
+        }
+
         for (let email in Auths) {
             let useDeviceAuth = true;
             let clientOptions = { email, ...options };
