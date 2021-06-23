@@ -29,6 +29,7 @@ function isUpToDate() {
 }
 
 function write(path, data) {
+    // eslint-disable-next-line no-extra-parens
     return new Promise((res, rej) => writeFile(path, data, (err) => (err ? rej(err) : res(true))));
 }
 
