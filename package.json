@@ -8,8 +8,26 @@
         "url": "https://revadike.com"
     },
     "contributors": [
+        "davispuh",
+        "jackblk",
+        "JourneyOver",
+        "lingsamuel",
+        "lupohan44",
+        "MusTangLee",
+        "zaevi"
+    ],
+    "funding": [
         {
-            "name": "davispuh"
+            "type": "steam",
+            "url": "https://steamcommunity.com/tradeoffer/new/?partner=82699538&token=V7DQVtra"
+        },
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.me/Revadike"
+        },
+        {
+            "type": "patreon",
+            "url": "https://patreon.com/Revadike"
         }
     ],
     "main": "claimer.js",
