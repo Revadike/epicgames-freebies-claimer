@@ -18,7 +18,7 @@ async function freeGamesPromotions(client, country = "US", allowCountries = "US"
         let page = offer;
 
         if (offer.pages) {
-            page = offer.pages.find((p) => p.offer.id == promo.id);
+            page = offer.pages.find((p) => p.offer.id === promo.id);
         }
 
         if (!page) {
