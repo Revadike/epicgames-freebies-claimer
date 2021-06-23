@@ -28,6 +28,7 @@
     "homepage": "https://github.com/revadike/epicgames-freebies-claimer",
     "url": "https://github.com/revadike/epicgames-freebies-claimer",
     "devDependencies": {
+        "@babel/core": "latest",
         "@babel/eslint-parser": "latest",
         "chai": "*",
         "eslint": "latest",
