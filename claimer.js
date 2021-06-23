@@ -2,10 +2,12 @@
 
 const { "Launcher": EpicGames } = require("epicgames-client");
 const { freeGamesPromotions } = require("./src/gamePromotions");
+const { writeFile } = require("fs");
 
 const Auths = require(`${__dirname}/device_auths.json`);
 const CheckUpdate = require("check-update-github");
 const Config = require(`${__dirname}/config.json`);
+const History = require(`${__dirname}/history.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
 
@@ -26,23 +28,40 @@ function isUpToDate() {
     });
 }
 
+function write(path, data) {
+    return new Promise((res, rej) => writeFile(path, data, (err) => (err ? rej(err) : res(true))));
+}
+
 function sleep(delay) {
     return new Promise((res) => setTimeout(res, delay * 60000));
 }
 
 (async() => {
-    if (!await isUpToDate()) {
-        Logger.warn(`There is a new version available: ${Package.url}`);
-    }
-
     let { options, delay, loop } = Config;
     do {
+        if (!await isUpToDate()) {
+            Logger.warn(`There is a new version available: ${Package.url}`);
+        }
+
         for (let email in Auths) {
+            let { country } = Auths[email];
+            let claimedPromos = History[email] || [];
             let useDeviceAuth = true;
             let clientOptions = { email, ...options };
             let client = new EpicGames(clientOptions);
             if (!await client.init()) {
                 throw new Error("Error while initialize process.");
+            }
+
+            // Check before logging in
+            let freePromos = await freeGamesPromotions(client, country, country);
+            let unclaimedPromos = freePromos.filter((offer) => !claimedPromos.find(
+                (_offer) => _offer.id === offer.id && _offer.namespace === offer.namespace,
+            ));
+
+            Logger.info(`Found ${unclaimedPromos.length} unclaimed freebie(s) for ${email}`);
+            if (unclaimedPromos.length === 0) {
+                return;
             }
 
             let success = await client.login({ useDeviceAuth });
@@ -51,18 +70,20 @@ function sleep(delay) {
             }
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
+            Auths[email].country = client.account.country;
+            write(`${__dirname}/device_auths.json`, JSON.stringify(Auths, null, 4)).catch(() => false); // ignore fails
 
-            let { country } = client.account;
-            let freePromos = await freeGamesPromotions(client, country, country);
-
-            for (let offer of freePromos) {
+            for (let offer of unclaimedPromos) {
                 try {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
                         Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
                     } else {
-                        Logger.info(`${offer.title} was already claimed for this account`);
+                        Logger.warn(`${offer.title} was already claimed for this account`);
                     }
+                    // Also remember already claimed offers
+                    offer.date = Date.now();
+                    claimedPromos.push(offer);
                 } catch (err) {
                     Logger.warn(`Failed to claim ${offer.title} (${err})`);
                     if (err.response
@@ -75,10 +96,12 @@ function sleep(delay) {
                 }
             }
 
+            History[email] = claimedPromos;
             await client.logout();
             Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }
 
+        await write(`${__dirname}/history.json`, JSON.stringify(History, null, 4));
         if (loop) {
             Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);

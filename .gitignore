@@ -5,6 +5,8 @@ node_modules
 package-lock.json
 DeviceAuthGenerator.exe
 device_auths.json
+deviceAuths.json
+history.json
 .egstore/*
 .vscode/*
 !.vscode/settings.json
@@ -13,3 +15,4 @@ device_auths.json
 !.vscode/extensions.json
 *.code-workspace
 .idea
+.github
