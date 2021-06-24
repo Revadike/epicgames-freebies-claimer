@@ -5,15 +5,22 @@
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Games Store.
 
 ## Requirements
- * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator/releases)
- * [Git](https://git-scm.com/downloads)
- * [Node.js](https://nodejs.org/download/) (with build tools checked)
+* [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator/releases)
+* Using Docker: [Docker Desktop](https://www.docker.com/products/docker-desktop)
+* Not using Docker:
+    * [Git](https://git-scm.com/downloads)
+    * [Node.js](https://nodejs.org/download/) (with build tools checked)
 
 ## Instructions - Quick
 0. (Optional) ☆ Star this project :)
-1. Download/clone this repository
-2. Run `npm install`
-3. Generate `device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
+1. Generate `device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
+
+### With Docker
+2. Run [this command](https://github.com/Revadike/epicgames-freebies-claimer/wiki/User-Guide-(Docker)#run-efc-via-docker), done!
+
+### Without Docker
+2. Download/clone this repository
+3. Run `npm install`
 4. (Optional) Edit `config.json`
 5. Run `npm start`
 
