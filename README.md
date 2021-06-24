@@ -20,6 +20,9 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 ## Instructions - Detailed
 Check out the [wiki](https://github.com/Revadike/epicgames-freebies-claimer/wiki), written by @lucifudge.
 
+## Instructions - Docker
+Check out the [wiki](https://github.com/Revadike/epicgames-freebies-claimer/wiki/User-Guide-(Docker)), written by @jackblk.
+
 ## FAQ
 ### Why should I use this?
 This is for the truly lazy, you know who you are. ;)
