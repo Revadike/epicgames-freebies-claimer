@@ -6,6 +6,7 @@ node_modules
 package-lock.json
 DeviceAuthGenerator.exe
 device_auths.json
+history.json
 .egstore
 .vscode
 *.code-workspace
