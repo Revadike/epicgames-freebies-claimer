@@ -13,6 +13,7 @@ async function auth(client) {
     }
 
     Auth = response;
+    console.log(response);
 }
 
 async function newPurchase(client, offer) {
