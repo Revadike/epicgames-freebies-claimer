@@ -4,10 +4,10 @@ const { "Launcher": EpicGames } = require("epicgames-client");
 const { freeGamesPromotions } = require("./src/gamePromotions");
 const { writeFile } = require("fs");
 
-const Auths = require(`${__dirname}/device_auths.json`);
+const Auths = require(`${__dirname}/data/device_auths.json`);
 const CheckUpdate = require("check-update-github");
-const Config = require(`${__dirname}/config.json`);
-const History = require(`${__dirname}/history.json`);
+const Config = require(`${__dirname}/data/config.json`);
+const History = require(`${__dirname}/data/history.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
 
@@ -104,7 +104,7 @@ function sleep(delay) {
             Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }
 
-        await write(`${__dirname}/history.json`, JSON.stringify(History, null, 4));
+        await write(`${__dirname}/data/history.json`, JSON.stringify(History, null, 4));
         if (loop) {
             Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);

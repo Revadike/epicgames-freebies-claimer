@@ -21,7 +21,7 @@ WORKDIR /app
 COPY . /app
 COPY --from=builder /app/node_modules ./node_modules
 # Create empty history.json, disable loop in container
-RUN echo "{}" > history.json \
-    && sed -i 's/"loop": true/"loop": false/g' config.json
+RUN echo "{}" > data/history.json \
+    && sed -i 's/"loop": true/"loop": false/g' data/config.json
 
 CMD ["npm", "start", "--no-update-notifier"]
