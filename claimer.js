@@ -1,7 +1,6 @@
 "use strict";
 
 const { "Launcher": EpicGames } = require("epicgames-client");
-const PushBullet = require("pushbullet");
 const { freeGamesPromotions } = require("./src/gamePromotions");
 const { writeFile } = require("fs");
 
@@ -40,10 +39,17 @@ function sleep(delay) {
 
 (async() => {
     let { options, delay, loop, pushbulletApiKey } = Config;
-    let pusher;
+
+    let pusher = null;
     if (pushbulletApiKey) {
-        pusher = new PushBullet(pushbulletApiKey);
+        try {
+            const PushBullet = require("pushbullet");
+            pusher = new PushBullet(pushbulletApiKey);
+        } catch (err) {
+            Logger.error("Package 'pushbullet' is not installed, but 'pushbulletApiKey' was set in config");
+        }
     }
+
     do {
         if (!await isUpToDate()) {
             Logger.warn(`There is a new version available: ${Package.url}`);
@@ -54,7 +60,8 @@ function sleep(delay) {
             let claimedPromos = History[email] || [];
             let newlyClaimedPromos = [];
             let useDeviceAuth = true;
-            let clientOptions = { email, ...options };
+            let rememberDevicesPath = `${__dirname}/data/device_auths.json`;
+            let clientOptions = { email, ...options, rememberDevicesPath };
             let client = new EpicGames(clientOptions);
             if (!await client.init()) {
                 Logger.error("Error while initialize process.");
@@ -107,15 +114,16 @@ function sleep(delay) {
             }
 
             History[email] = claimedPromos;
-            if (pusher && newlyClaimedPromos.length) {
-                let notification = newlyClaimedPromos.map(promo => promo.title).join(', ');
+            if (pusher && newlyClaimedPromos.length > 0) {
+                let notification = newlyClaimedPromos.map((promo) => promo.title).join(", ");
                 try {
-                    await pusher.note({}, "New free games grabbed on Epic", notification);
+                    await pusher.note({}, "New freebies claimed on Epic Games Store", notification);
                     Logger.info("Push notification sent");
                 } catch (err) {
                     Logger.error(`Failed to send push notification (${err})`);
                 }
             }
+
             await client.logout();
             Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }

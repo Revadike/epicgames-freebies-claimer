@@ -33,7 +33,8 @@ To which I will say, why not? Most of these games are actually outstanding games
 
 ## Changelog
 ### V1.5.4
- * Added optional Pushbullet notifications, if `pushbulletApiKey` option is present in `config.json`
+ * Create data directory to improve k8s convenience (#123)
+ * Added optional Pushbullet notifications, if `pushbulletApiKey` option is present in `config.json` (#131)
 
 ### V1.5.3
  * Fixed missing history.json
