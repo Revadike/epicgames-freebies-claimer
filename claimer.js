@@ -34,7 +34,7 @@ function write(path, data) {
 }
 
 function sleep(delay) {
-    return new Promise((res) => setTimeout(res, delay * 60000));
+    return new Promise((res) => setTimeout(res, delay * 6000));
 }
 
 (async() => {
