@@ -7,6 +7,7 @@ DeviceAuthGenerator.exe
 device_auths.json
 deviceAuths.json
 history.json
+data/*
 .egstore/*
 .vscode/*
 !.vscode/settings.json
