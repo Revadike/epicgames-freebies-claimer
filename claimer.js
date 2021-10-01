@@ -1,6 +1,7 @@
 "use strict";
 
 const { "Launcher": EpicGames } = require("epicgames-client");
+const PushBullet = require("pushbullet");
 const { freeGamesPromotions } = require("./src/gamePromotions");
 const { writeFile } = require("fs");
 
@@ -38,7 +39,11 @@ function sleep(delay) {
 }
 
 (async() => {
-    let { options, delay, loop } = Config;
+    let { options, delay, loop, pushbulletApiKey } = Config;
+    let pusher;
+    if (pushbulletApiKey) {
+        pusher = new PushBullet(pushbulletApiKey);
+    }
     do {
         if (!await isUpToDate()) {
             Logger.warn(`There is a new version available: ${Package.url}`);
@@ -47,6 +52,7 @@ function sleep(delay) {
         for (let email in Auths) {
             let { country } = Auths[email];
             let claimedPromos = History[email] || [];
+            let newlyClaimedPromos = [];
             let useDeviceAuth = true;
             let clientOptions = { email, ...options };
             let client = new EpicGames(clientOptions);
@@ -81,6 +87,7 @@ function sleep(delay) {
                     let purchased = await client.purchase(offer, 1);
                     if (purchased) {
                         Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
+                        newlyClaimedPromos.push(offer);
                     } else {
                         Logger.warn(`${offer.title} was already claimed for this account`);
                     }
@@ -100,6 +107,15 @@ function sleep(delay) {
             }
 
             History[email] = claimedPromos;
+            if (pusher && newlyClaimedPromos.length) {
+                let notification = newlyClaimedPromos.map(promo => promo.title).join(', ');
+                try {
+                    await pusher.note({}, "New free games grabbed on Epic", notification);
+                    Logger.info("Push notification sent");
+                } catch (err) {
+                    Logger.error(`Failed to send push notification (${err})`);
+                }
+            }
             await client.logout();
             Logger.info(`Logged ${client.account.name} out of Epic Games`);
         }
