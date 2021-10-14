@@ -1,6 +1,7 @@
 {
     "eslint.format.enable": true,
     "editor.formatOnSave": true,
+    "files.eol": "\n",
     "eslint.alwaysShowStatus": true,
     "prettier.requireConfig": true,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
