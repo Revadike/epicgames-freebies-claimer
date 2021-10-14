@@ -1,14 +1,9 @@
 /* eslint-env mocha */
-/* globals expect */
 "use strict";
 
-import "chai/register-expect.js";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import gamePromotions from "../src/gamePromotions.js";
-import { readFileSync } from "fs";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const { readFileSync } = require("fs");
+const gamePromotions = require("../src/gamePromotions.js");
+const { expect } = require("chai");
 
 function readData(name, date = null) {
     let filename = name.replace("/", "_");
