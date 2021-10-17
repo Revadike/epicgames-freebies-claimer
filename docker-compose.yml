@@ -1,0 +1,7 @@
+version: "3"
+services:
+  epic-claim:
+    image: ghcr.io/jackblk/epicgames-freebies-claimer:latest
+    container_name: epic-claim
+    volumes:
+      - "${PWD}/device_auths.json:/app/data/device_auths.json"

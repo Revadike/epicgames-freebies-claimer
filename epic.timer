@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Epic games claimer weekly
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

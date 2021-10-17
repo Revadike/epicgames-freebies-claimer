@@ -1,0 +1,6 @@
+[Unit]
+Description=Run epic games claimer docker image
+
+[Service]
+Type=oneshot
+ExecStart=docker start epic-claim
