@@ -59,8 +59,5 @@
         "colors": "^1.4.0",
         "epicgames-client": "Revadike/node-epicgames-client#develop",
         "tracer": "^1.0.3"
-    },
-    "optionalDependencies": {
-        "pushbullet": "^2.4.0"
     }
 }
