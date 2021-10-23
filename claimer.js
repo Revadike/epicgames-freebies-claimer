@@ -7,10 +7,10 @@ const { writeFile } = require("fs");
 const Auths = require(`${__dirname}/data/device_auths.json`);
 const CheckUpdate = require("check-update-github");
 const Config = require(`${__dirname}/data/config.json`);
+const Fork = require("child_process");
 const History = require(`${__dirname}/data/history.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
-const child_process = require("child_process");
 
 function isUpToDate() {
     return new Promise((res, rej) => {
@@ -27,6 +27,35 @@ function isUpToDate() {
             }
         });
     });
+}
+
+function notify(appriseUrl, newlyClaimedPromos) {
+    if (!appriseUrl || newlyClaimedPromos.length === 0) {
+        return;
+    }
+
+    let notification = newlyClaimedPromos.map((promo) => promo.title).join(", ");
+    try {
+        let s = Fork.spawnSync("apprise", [
+            "-vv",
+            "-t",
+            "New freebies claimed on Epic Games Store",
+            "-b",
+            notification,
+            appriseUrl,
+        ]);
+
+        let output = s.stdout ? s.stdout.toString() : "ERROR: maybe apprise not found";
+        if (output && output.includes("ERROR")) {
+            Logger.error(`Failed to send push notification (${output})`);
+        } else if (output) {
+            Logger.info("Push notification sent");
+        } else {
+            Logger.warn("No output from apprise");
+        }
+    } catch (err) {
+        Logger.error(`Failed to send push notification (${err})`);
+    }
 }
 
 function write(path, data) {
@@ -105,27 +134,7 @@ function sleep(delay) {
             }
 
             History[email] = claimedPromos;
-            if (appriseUrl && newlyClaimedPromos.length > 0) {
-                let notification = newlyClaimedPromos.map((promo) => promo.title).join(", ");
-               
-                try {
-                    let s = child_process.spawnSync("apprise", [ "-vv", "-t", "New freebies claimed on Epic Games Store", "-b", notification, appriseUrl])
-            
-                    let output = (s.stdout) ? s.stdout.toString() : "ERROR: maybe apprise not found";
-            
-                    if (output) {
-                        if (!output.includes("ERROR")) {
-                            Logger.info("Push notification sent");
-                        } else {
-                            Logger.error(`Failed to send push notification (${output})`);
-                        }
-                    } else {
-                        Logger.warn(`No output from apprise`);
-                    }
-                } catch (err) {
-                    Logger.error(`Failed to send push notification (${err})`);
-                }
-            }
+            notify(appriseUrl, newlyClaimedPromos);
 
             await client.logout();
             Logger.info(`Logged ${client.account.name} out of Epic Games`);

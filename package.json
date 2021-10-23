@@ -1,6 +1,6 @@
 {
     "name": "epicgames-freebies-claimer",
-    "version": "1.5.5",
+    "version": "1.5.6",
     "description": "Claim free game promotions from the Epic Game Store",
     "author": {
         "name": "Revadike",
@@ -9,6 +9,7 @@
     },
     "contributors": [
         "davispuh",
+        "drosoCode",
         "ffuubarbuzz",
         "jackblk",
         "JourneyOver",
