@@ -13,8 +13,8 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 0. (Optional) ☆ Star this project :)
 1. Download/clone this repository
 2. Run `npm install`
-3. Generate `device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
-4. (Optional) Edit `config.json`
+3. Generate `data/device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
+4. (Optional) Copy `data/config.example.json` to `data/config.json` and edit it
 5. Run `npm start`
 
 ## Instructions - Detailed
