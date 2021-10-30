@@ -2,14 +2,25 @@
 
 const { "Launcher": EpicGames } = require("epicgames-client");
 const { freeGamesPromotions } = require("./src/gamePromotions");
-const { writeFile } = require("fs");
+const Logger = require("tracer").console(`${__dirname}/logger.js`);
+const { writeFile, writeFileSync, existsSync, readFileSync } = require("fs");
 
 const Auths = require(`${__dirname}/data/device_auths.json`);
 const CheckUpdate = require("check-update-github");
+if (!existsSync(`${__dirname}/data/config.json`)) {
+    writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
+}
 const Config = require(`${__dirname}/data/config.json`);
 const Fork = require("child_process");
+if (!existsSync(`${__dirname}/data/history.json`)) {
+    try {
+        writeFileSync(`${__dirname}/data/history.json`, "{}");
+    } catch (err) {
+        Logger.error(`Failed to generate data/history.json file (${err})`);
+        process.exit(1);
+    }
+}
 const History = require(`${__dirname}/data/history.json`);
-const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require("./package.json");
 
 function isUpToDate() {
