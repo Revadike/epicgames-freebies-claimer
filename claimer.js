@@ -125,7 +125,7 @@ function sleep(delay) {
 
             Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
             Auths[email].country = client.account.country;
-            write(`${__dirname}/data/device_auths.json`, JSON.stringify(Auths, null, 4)).catch(() => false); // ignore fails
+            write(rememberDevicesPath, JSON.stringify(Auths, null, 4)).catch(() => false); // ignore fails
 
             for (let offer of unclaimedPromos) {
                 try {
@@ -161,7 +161,7 @@ function sleep(delay) {
                 notificationMessages.push(`${email} claimed ${newlyClaimedPromos.length} freebies: ${
                     newlyClaimedPromos.join(", ")}`);
             } else {
-                notificationMessages.push(`${email} has no unclaimed freebies`);
+                notificationMessages.push(`${email} has claimed 0 freebies`);
             }
 
             await client.logout();
