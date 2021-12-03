@@ -16,6 +16,7 @@ history.json
 # Folders
 .git
 test
+venv
 
 # Other files
 *Dockerfile*
@@ -25,3 +26,7 @@ LICENSE
 README*
 .eslintrc.json
 .editorconfig
+
+# Ignore all files in data folder except for the example config
+data
+!data/config.example.json

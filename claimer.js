@@ -6,7 +6,7 @@ const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const { writeFile, writeFileSync, existsSync, readFileSync } = require("fs");
 
 const Auths = require(`${__dirname}/data/device_auths.json`);
-const CheckUpdate = require("check-update-github");
+const CheckLatestRelease = require("./src/checkUpdate.js");
 if (!existsSync(`${__dirname}/data/config.json`)) {
     writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
 }
@@ -22,23 +22,6 @@ if (!existsSync(`${__dirname}/data/history.json`)) {
 }
 const History = require(`${__dirname}/data/history.json`);
 const Package = require("./package.json");
-
-function isUpToDate() {
-    return new Promise((res, rej) => {
-        CheckUpdate({
-            "name":           Package.name,
-            "currentVersion": Package.version,
-            "user":           "revadike",
-            "branch":         "master",
-        }, (err, latestVersion) => {
-            if (err) {
-                rej(err);
-            } else {
-                res(latestVersion === Package.version);
-            }
-        });
-    });
-}
 
 function appriseNotify(appriseUrl, notificationMessages) {
     if (!appriseUrl || notificationMessages.length === 0) {
@@ -82,8 +65,14 @@ function sleep(delay) {
     let { options, delay, loop, appriseUrl } = Config;
 
     do {
-        if (!await isUpToDate()) {
-            Logger.warn(`There is a new version available: ${Package.url}`);
+        Logger.info(`Epicgames Freebies Claimer ${Package.version}`);
+        try {
+            let latestVersion = await CheckLatestRelease();
+            if (latestVersion !== Package.version) {
+                Logger.warn(`Latest release version ${latestVersion} available: ${Package.url}`);
+            }
+        } catch (err) {
+            Logger.error(`Failed to check for updates (${err})`);
         }
 
         let notificationMessages = [];
