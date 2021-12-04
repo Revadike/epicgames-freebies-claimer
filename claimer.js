@@ -6,7 +6,7 @@ const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const { writeFile, writeFileSync, existsSync, readFileSync } = require("fs");
 
 const Auths = require(`${__dirname}/data/device_auths.json`);
-const CheckLatestRelease = require("./src/checkUpdate.js");
+const getLatestVersion = require("./src/checkUpdate.js");
 if (!existsSync(`${__dirname}/data/config.json`)) {
     writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
 }
@@ -66,13 +66,11 @@ function sleep(delay) {
 
     do {
         Logger.info(`Epicgames Freebies Claimer ${Package.version}`);
-        try {
-            let latestVersion = await CheckLatestRelease();
-            if (latestVersion !== Package.version) {
-                Logger.warn(`Latest release version ${latestVersion} available: ${Package.url}`);
-            }
-        } catch (err) {
+        let latestVersion = await getLatestVersion().catch((err) => {
             Logger.error(`Failed to check for updates (${err})`);
+        });
+        if (latestVersion && latestVersion !== Package.version) {
+            Logger.warn(`Latest release version ${latestVersion} available: ${Package.url}`);
         }
 
         let notificationMessages = [];

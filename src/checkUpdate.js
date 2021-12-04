@@ -1,4 +1,6 @@
-let https = require("https");
+"use strict";
+
+const https = require("https");
 
 // taken & modified from https://stackoverflow.com/a/38543075/8068153
 function httpsRequest(params, postData) {
@@ -33,6 +35,7 @@ function httpsRequest(params, postData) {
         // https://github.com/Revadike/epicgames-freebies-claimer/issues/152
         req.on("timeout", () => {
             req.destroy();
+            reject(new Error("Request timeout"));
         });
         if (postData) {
             req.write(postData);
@@ -42,15 +45,14 @@ function httpsRequest(params, postData) {
     });
 }
 
-let options = {
-    "host":    "api.github.com",
-    "path":    "/repos/Revadike/epicgames-freebies-claimer/releases",
-    "method":  "GET",
-    "headers": { "user-agent": "EFC" },
-    "timeout": 3000,
-
-};
-
 module.exports = function latestRelease() {
+    let options = {
+        "host":    "api.github.com",
+        "path":    "/repos/Revadike/epicgames-freebies-claimer/releases",
+        "method":  "GET",
+        "headers": { "user-agent": "EFC" },
+        "timeout": 3000,
+
+    };
     return httpsRequest(options);
 };
