@@ -34,7 +34,8 @@ To which I will say, why not? Most of these games are actually outstanding games
 ## Changelog
 ### V1.5.6
  * Added optional Apprise notifications (#143)
- * Improved update checking (#)
+ * Improved update checking (#155)
+ * Improved docker integration
 
 ### V1.5.5
  * Fixed testing (#137)
