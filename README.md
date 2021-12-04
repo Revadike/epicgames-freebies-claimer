@@ -5,7 +5,7 @@
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Games Store.
 
 ## Requirements
- * [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator/releases)
+ * [DeviceAuthGenerator](https://github.com/jackblk/DeviceAuthGenerator/releases)
  * [Git](https://git-scm.com/downloads)
  * [Node.js](https://nodejs.org/download/) (with build tools checked)
 
@@ -13,7 +13,7 @@ Claim [available free game promotions](https://www.epicgames.com/store/free-game
 0. (Optional) ☆ Star this project :)
 1. Download/clone this repository
 2. Run `npm install`
-3. Generate `data/device_auths.json` (using [DeviceAuthGenerator](https://github.com/xMistt/DeviceAuthGenerator))
+3. Generate `data/device_auths.json` (using [DeviceAuthGenerator](https://github.com/jackblk/DeviceAuthGenerator))
 4. (Optional) Copy `data/config.example.json` to `data/config.json` and edit it
 5. Run `npm start`
 
@@ -34,6 +34,7 @@ To which I will say, why not? Most of these games are actually outstanding games
 ## Changelog
 ### V1.5.6
  * Added optional Apprise notifications (#143)
+ * Improved update checking (#)
 
 ### V1.5.5
  * Fixed testing (#137)

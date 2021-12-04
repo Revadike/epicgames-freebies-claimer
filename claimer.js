@@ -1,27 +1,22 @@
 "use strict";
 
-const { "Launcher": EpicGames } = require("epicgames-client");
-const { freeGamesPromotions } = require("./src/gamePromotions");
-const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const { writeFile, writeFileSync, existsSync, readFileSync } = require("fs");
-
-const Auths = require(`${__dirname}/data/device_auths.json`);
-const getLatestVersion = require("./src/checkUpdate.js");
 if (!existsSync(`${__dirname}/data/config.json`)) {
     writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
 }
+if (!existsSync(`${__dirname}/data/history.json`)) {
+    writeFileSync(`${__dirname}/data/history.json`, "{}");
+}
+
+const { "Launcher": EpicGames } = require("epicgames-client");
+const { freeGamesPromotions } = require(`${__dirname}/src/gamePromotions`);
+const { latestVersion } = require(`${__dirname}/src/latestVersion.js`);
+const Auths = require(`${__dirname}/data/device_auths.json`);
 const Config = require(`${__dirname}/data/config.json`);
 const Fork = require("child_process");
-if (!existsSync(`${__dirname}/data/history.json`)) {
-    try {
-        writeFileSync(`${__dirname}/data/history.json`, "{}");
-    } catch (err) {
-        Logger.error(`Failed to generate data/history.json file (${err})`);
-        process.exit(1);
-    }
-}
 const History = require(`${__dirname}/data/history.json`);
-const Package = require("./package.json");
+const Logger = require("tracer").console(`${__dirname}/logger.js`);
+const Package = require(`${__dirname}/package.json`);
 
 function appriseNotify(appriseUrl, notificationMessages) {
     if (!appriseUrl || notificationMessages.length === 0) {
@@ -39,7 +34,7 @@ function appriseNotify(appriseUrl, notificationMessages) {
             appriseUrl,
         ]);
 
-        let output = s.stdout ? s.stdout.toString() : "ERROR: maybe apprise not found";
+        let output = s.stdout ? s.stdout.toString() : "ERROR: Maybe apprise not found?";
         if (output && output.includes("ERROR")) {
             Logger.error(`Failed to send push notification (${output})`);
         } else if (output) {
@@ -65,16 +60,17 @@ function sleep(delay) {
     let { options, delay, loop, appriseUrl } = Config;
 
     do {
-        Logger.info(`Epicgames Freebies Claimer ${Package.version}`);
-        let latestVersion = await getLatestVersion().catch((err) => {
+        Logger.info(`Epicgames Freebies Claimer (${Package.version}) by ${Package.author.name || Package.author}`);
+
+        let latest = await latestVersion().catch((err) => {
             Logger.error(`Failed to check for updates (${err})`);
         });
-        if (latestVersion && latestVersion !== Package.version) {
-            Logger.warn(`Latest release version ${latestVersion} available: ${Package.url}`);
+
+        if (latest && latest !== Package.version) {
+            Logger.warn(`There is a new release available (${latest}): ${Package.url}`);
         }
 
         let notificationMessages = [];
-
         for (let email in Auths) {
             let { country } = Auths[email];
             let claimedPromos = History[email] || [];
@@ -83,6 +79,7 @@ function sleep(delay) {
             let rememberDevicesPath = `${__dirname}/data/device_auths.json`;
             let clientOptions = { email, ...options, rememberDevicesPath };
             let client = new EpicGames(clientOptions);
+
             if (!await client.init()) {
                 let errMess = "Error while initialize process.";
                 notificationMessages.push(errMess);
