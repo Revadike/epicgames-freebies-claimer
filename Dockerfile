@@ -16,6 +16,13 @@ RUN apk add --no-cache --virtual build-deps \
 # App stage
 FROM node:16-alpine3.12 as app
 
+# Install apprise
+RUN apk add --no-cache \
+    python3=~3.8 \
+    py3-pip=~20.1 \
+    py3-cryptography=~2.9 \
+    && pip3 --no-cache-dir install apprise==0.9.6
+
 WORKDIR /app
 COPY . /app
 COPY --from=builder /app/node_modules ./node_modules
