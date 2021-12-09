@@ -19,20 +19,20 @@ async function getAddonForSlug(client, slug) {
 
 async function getOfferId(client, promo, locale = "en-US") {
     let offerId = null;
-    let slug = promo.productSlug || promo.urlSlug;
+    let slug = (promo.productSlug || promo.urlSlug).split("/")[0];
     let isBundle = (promo) => Boolean(promo.categories.find((cat) => cat.path === "bundles"));
-    let isAddon = (promo) => Boolean(promo.categories.find((cat) => cat.path === "addons"));
+    let isAddon = (promo) => promo.offerType === "EDITION" || Boolean(promo.categories.find((cat) => cat.path === "addons"));
 
     if (isAddon(promo)) {
-        let result = await getAddonForSlug(client, slug.split("/")[0], locale);
+        let result = await getAddonForSlug(client, slug, locale);
         // eslint-disable-next-line prefer-destructuring
         offerId = result.data.StorePageMapping.mapping.mappings.offerId;
     } else if (isBundle(promo)) {
-        let result = await client.getBundleForSlug(slug.split("/")[0], locale);
+        let result = await client.getBundleForSlug(slug, locale);
         let page = result.pages ? result.pages.find((p) => p.offer.id === promo.id) || result.pages[0] : result;
         offerId = page.offer.id;
     } else {
-        let result = await client.getProductForSlug(slug.split("/")[0], locale);
+        let result = await client.getProductForSlug(slug, locale);
         let page = result.pages ? result.pages.find((p) => p.offer.id === promo.id) || result.pages[0] : result;
         offerId = page.offer.id;
     }

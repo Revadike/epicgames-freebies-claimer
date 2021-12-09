@@ -1,0 +1,1619 @@
+{
+    "data": {
+        "Catalog": {
+            "searchStore": {
+                "elements": [
+                    {
+                        "title": "Offworld Trading Company",
+                        "id": "4531b00fcf354680bf68d138b7155fda",
+                        "namespace": "e8882546f28e4832af823c646aed232e",
+                        "description": "Mars has been colonized, and Earth's corporate titans fight to dominate this new market. Competition is fierce in this fast-paced economic RTS from Civilization IV Lead Designer, Soren Johnson.",
+                        "effectiveDate": "2020-03-05T16:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/epic/offer/EGS_MohawkGames_OffworldTradingCompany_S4-510x680-5c715e53a4447c2dc5429fc0c76d74f6.jpg"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/epic/offer/EGS_MohawkGames_OffworldTradingCompany_S3-1360x766-d93f4d942f88635933d16cfc7dab4983.jpg"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/offer/Diesel_productv2_offworld-trading-company_home_EGS_MohawkGames_OffworldTradingCompany_S1-2560x1440-39bc30160411f389f1547f9a254b934bcfd901d4-2560x1440-836395b78496a58a1e2b2ce21f9084a0.jpg"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/offer/otc-portrait-img-1200x1600-1200x1600-fe9ec1695e7785c3285add90a79a755a.jpg"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/offer/otc-portrait-img-1200x1600-1200x1600-fe9ec1695e7785c3285add90a79a755a.jpg"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-l69v3ppj5zgdpwtuvq6sgjew5yjt5w",
+                            "name": "Stardock Entertainment, Inc"
+                        },
+                        "productSlug": "offworld-trading-company/home",
+                        "urlSlug": "offworld-trading-company",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "b53a041ca67a4bf58827c3d503ed1a03",
+                                "namespace": "e8882546f28e4832af823c646aed232e"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Stardock Entertainment"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Mohawk Games"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "offworld-trading-company/home"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1299"
+                            },
+                            {
+                                "id": "1115"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1263"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "offworld-trading-company",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 2999,
+                                "originalPrice": 2999,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€29.99",
+                                    "discountPrice": "€29.99",
+                                    "intermediatePrice": "€29.99"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "Rogue Company",
+                        "id": "36bfbc7a0b664a2891c68dc947922469",
+                        "namespace": "933ada2ec45e4184ae840d64c99e0ba9",
+                        "description": "The world needs saving and only the best of the best can do it. Suit up as one of the elite agents of Rogue Company and go to war in a variety of different game modes.  Gear up and go Rogue! Download and play FREE now!",
+                        "effectiveDate": "2020-09-30T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_HeroCarouselImg_1920x1080_1920x1080-39fd126586ba2f42def83384ff307b0f"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_PortraitProductImage-1200x1600_1200x1600-bbce400cc2506be1035ea888d0b19c6c"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_HeroCarouselImg_1920x1080_1920x1080-39fd126586ba2f42def83384ff307b0f"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_PortraitProductImage-1200x1600_1200x1600-bbce400cc2506be1035ea888d0b19c6c"
+                            },
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_PortraitProductImage-1200x1600_1200x1600-bbce400cc2506be1035ea888d0b19c6c"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/offer/933ada2ec45e4184ae840d64c99e0ba9/RoCo_EGS_65Kestrel_PortraitProductImage-1200x1600_1200x1600-bbce400cc2506be1035ea888d0b19c6c"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-7aklpapnk74p66sqs6hm5byt29wp66",
+                            "name": "Hi-Rez Studios"
+                        },
+                        "productSlug": "rogue-company/home",
+                        "urlSlug": "rogue-company",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "167fe4a0caee4da689193e3e12af241e",
+                                "namespace": "933ada2ec45e4184ae840d64c99e0ba9"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "KR"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Hi-Rez Studios"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "rogue-company/home"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1216"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "16011"
+                            },
+                            {
+                                "id": "1164"
+                            },
+                            {
+                                "id": "9549"
+                            },
+                            {
+                                "id": "18607"
+                            },
+                            {
+                                "id": "1264"
+                            },
+                            {
+                                "id": "1234"
+                            },
+                            {
+                                "id": "1203"
+                            },
+                            {
+                                "id": "1299"
+                            },
+                            {
+                                "id": "1141"
+                            },
+                            {
+                                "id": "1210"
+                            },
+                            {
+                                "id": "1370"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "rogue-company",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 0,
+                                "originalPrice": 0,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "0",
+                                    "discountPrice": "0",
+                                    "intermediatePrice": "0"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "Genshin Impact",
+                        "id": "acc319019e974ec9a4af28530141d888",
+                        "namespace": "879b0d8776ab46a59a129983ba78f0ce",
+                        "description": "Embark on a journey across Teyvat to find your lost sibling and seek answers from The Seven — the gods of each element. Explore this wondrous world, join forces with a diverse range of characters, and unravel the countless mysteries that Teyvat holds...",
+                        "effectiveDate": "2021-06-08T23:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_GenshinImpact_miHoYoLimited_S1_2560x1440-91c6cd7312cc2647c3ebccca10f30399"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_GenshinImpact_miHoYoLimited_S2_1200x1600-c12cdcc2cac330df2185aa58c508e820"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_GenshinImpact_miHoYoLimited_S2_1200x1600-c12cdcc2cac330df2185aa58c508e820"
+                            },
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_GenshinImpact_miHoYoLimited_S2_1200x1600-c12cdcc2cac330df2185aa58c508e820"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EN_EGS_GenshinImpact_BonusCode_1920x1080_1920x1080-896705039852a0cbd5eda6eeed211ec8"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_GenshinImpact_miHoYoLimited_S2_1200x1600-c12cdcc2cac330df2185aa58c508e820"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-wlaqew5gv79ufa3slnqhhsqbpjdvnb",
+                            "name": "Cognosphere"
+                        },
+                        "productSlug": "genshin-impact",
+                        "urlSlug": "genshin-impact",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "9e81ef5caf374f89ad95b1cb782dbf3f",
+                                "namespace": "879b0d8776ab46a59a129983ba78f0ce"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "CN"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "miHoYo Limited"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "genshin-impact"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1203"
+                            },
+                            {
+                                "id": "1367"
+                            },
+                            {
+                                "id": "1307"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1117"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "genshin-impact",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 0,
+                                "originalPrice": 0,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "0",
+                                    "discountPrice": "0",
+                                    "intermediatePrice": "0"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "Hell is other demons",
+                        "id": "1786c8d9cd474bef9ce221929411633f",
+                        "namespace": "643a8667d7a940b8b36094020fcd0dcf",
+                        "description": "Hell is Other Demons is an action-platform shooter, with Roguelite elements. Explore a sprawling, hand-crafted world full of demons, insanely over-the-top boss fights, and a heavy synthwave soundtrack.",
+                        "effectiveDate": "2021-06-17T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S1_2560x1440-b9528f8932eadbc39d5e03db5d798859"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S2_1200x1600-da6dce7cd466a31ae78e34ccdc27bab8"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S1_2560x1440-b9528f8932eadbc39d5e03db5d798859"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S2_1200x1600-da6dce7cd466a31ae78e34ccdc27bab8"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S2_1200x1600-da6dce7cd466a31ae78e34ccdc27bab8"
+                            },
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Hellisotherdemons_CuddleMonsterGames_S2_1200x1600-da6dce7cd466a31ae78e34ccdc27bab8"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-ztdpxjrm7lyemkjl4967l76k4vzxfr",
+                            "name": "Kongregate"
+                        },
+                        "productSlug": "hell-is-other-demons",
+                        "urlSlug": "hell-is-other-demons",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "242a6521c00b48d58ba6a340085e84f5",
+                                "namespace": "643a8667d7a940b8b36094020fcd0dcf"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Kongregate"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Cuddle Monster Games"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "hell-is-other-demons"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1210"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "1083"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1151"
+                            },
+                            {
+                                "id": "10719"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "hell-is-other-demons",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 799,
+                                "originalPrice": 799,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€7.99",
+                                    "discountPrice": "€7.99",
+                                    "intermediatePrice": "€7.99"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "The Spectrum Retreat",
+                        "id": "2cb68a86262b4e0a91dbe0625cbbb242",
+                        "namespace": "32ef234417314b65a4f76041b684f4d0",
+                        "description": "Check-in to The Spectrum Retreat for a stay you won’t forget. Explore the pristine and uncanny hotel, The Penrose, while solving its ingenious colour-coded puzzles and discovering the reasons behind their seemingly never-ending stay.",
+                        "effectiveDate": "2021-07-01T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/bf525c62-bc8c-4a51-9d30-799186ab1293_1200x1600-166b997f74a0f926ffe562d8b3dc67b9"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/bf525c62-bc8c-4a51-9d30-799186ab1293_1200x1600-166b997f74a0f926ffe562d8b3dc67b9"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/bf525c62-bc8c-4a51-9d30-799186ab1293_1200x1600-166b997f74a0f926ffe562d8b3dc67b9"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/52b99d72-9223-4524-ab74-240ae808c489_2560x1440-d583c45997a46d39e1a31525ae883b84"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/bf525c62-bc8c-4a51-9d30-799186ab1293_1200x1600-166b997f74a0f926ffe562d8b3dc67b9"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/52b99d72-9223-4524-ab74-240ae808c489_2560x1440-d583c45997a46d39e1a31525ae883b84"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-fbx9l7z95axq9s73trhbttadbareuq",
+                            "name": "Ripstone Ltd"
+                        },
+                        "productSlug": "the-spectrum-retreat",
+                        "urlSlug": "capsicum-general-audience",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "7a643c21ff114df8a553a3685ae5f5e7",
+                                "namespace": "32ef234417314b65a4f76041b684f4d0"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Ripstone Ltd"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Dan Smith"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "the-spectrum-retreat"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1298"
+                            },
+                            {
+                                "id": "18051"
+                            },
+                            {
+                                "id": "17493"
+                            },
+                            {
+                                "id": "18777"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "1115"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1117"
+                            },
+                            {
+                                "id": "9549"
+                            },
+                            {
+                                "id": "18607"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "the-spectrum-retreat",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 519,
+                                "originalPrice": 1299,
+                                "voucherDiscount": 0,
+                                "discount": 780,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€12.99",
+                                    "discountPrice": "€5.19",
+                                    "intermediatePrice": "€5.19"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": [
+                                        {
+                                            "id": "c7606c4097e347928eec94570b225f41",
+                                            "endDate": "2021-12-11T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "promotions": {
+                            "promotionalOffers": [
+                                {
+                                    "promotionalOffers": [
+                                        {
+                                            "startDate": "2021-12-09T16:00:00.000Z",
+                                            "endDate": "2021-12-11T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 40
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "upcomingPromotionalOffers": []
+                        }
+                    },
+                    {
+                        "title": "Train Sim World® 2",
+                        "id": "240096b07cf94eaba1d3695221127d89",
+                        "namespace": "d8d8b399f3d14ac2b9b75870329a68dd",
+                        "description": "The evolution of train simulation! Master iconic locomotives on high-speed services, long freight hauls or precise commuter traffic, and get creative with customisation tools in this advanced sequel. Climb into the cab in Train Sim World 2.",
+                        "effectiveDate": "2021-07-29T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_1200x1600-51d687111b28dabec4b4706e35f22dd6"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_1200x1600-51d687111b28dabec4b4706e35f22dd6"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_1200x1600-51d687111b28dabec4b4706e35f22dd6"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_2560x1440-0bc89f2c71c91b711b22eb7d634834bd"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_1200x1600-51d687111b28dabec4b4706e35f22dd6"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_2560x1440-0bc89f2c71c91b711b22eb7d634834bd"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-hsu3hatj83tj7fpcykxyf7tn6ypg3e",
+                            "name": "Dovetail Games"
+                        },
+                        "productSlug": "train-sim-world-2",
+                        "urlSlug": "trainsimworld2-general-audience",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "4a5ec35744124d36ac5fc407fd1d6663",
+                                "namespace": "d8d8b399f3d14ac2b9b75870329a68dd"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Dovetail Games"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Dovetail Games"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "train-sim-world-2"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1393"
+                            },
+                            {
+                                "id": "17493"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "9549"
+                            },
+                            {
+                                "id": "18607"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "train-sim-world-2",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 2999,
+                                "originalPrice": 2999,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€29.99",
+                                    "discountPrice": "€29.99",
+                                    "intermediatePrice": "€29.99"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "Void Bastards",
+                        "id": "c1bb7eb3554b42f0957cc87363e59e1d",
+                        "namespace": "6b753bd045604be89d9779e741c604b1",
+                        "description": "Void Bastards is a revolutionary new strategy-shooter that will test your wits as well as exercise your aim. Can you lead the misfit prisoners of the Void Ark through the derelict spaceships?",
+                        "effectiveDate": "2021-08-19T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S6_1200x1600-9664eab2fc0c609341d087a5a8c0c933"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S6_1200x1600-9664eab2fc0c609341d087a5a8c0c933"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S6_1200x1600-9664eab2fc0c609341d087a5a8c0c933"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S6_1200x1600-9664eab2fc0c609341d087a5a8c0c933"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S1_2560x1440-6ffb5f547e5434d115cc6de7d13b1bc6"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_VoidBastards_BlueManchu_S1_2560x1440-6ffb5f547e5434d115cc6de7d13b1bc6"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-pldxyabsslnt6jth2z634mmr2pw8lu",
+                            "name": "Humble Bundle"
+                        },
+                        "productSlug": "void-bastards",
+                        "urlSlug": "alicebluegeneralaudience",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "d0514e500ac644dd9081ce799ab0db7d",
+                                "namespace": "6b753bd045604be89d9779e741c604b1"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Humble Bundle"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Blue Manchu"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "void-bastards"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1216"
+                            },
+                            {
+                                "id": "1210"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "9549"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "void-bastards",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 2799,
+                                "originalPrice": 2799,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€27.99",
+                                    "discountPrice": "€27.99",
+                                    "intermediatePrice": "€27.99"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": null
+                    },
+                    {
+                        "title": "Yooka-Laylee",
+                        "id": "03d4680cc79a4030b40e2d7c6bdacbaf",
+                        "namespace": "131e306949034972959ca401ca27837e",
+                        "description": "Yooka-Laylee is an all-new open-world platformer from genre veterans Playtonic! Explore huge, beautiful worlds, meet an unforgettable cast of characters and horde a vault-load of collectibles as buddy-duo Yooka and Laylee embark on an epic adventure!",
+                        "effectiveDate": "2021-08-19T15:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S4_1200x1600-3641c6b4798aef32998929ba887a4dba"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S4_1200x1600-3641c6b4798aef32998929ba887a4dba"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S3_2560x1440-779ed9403879e74fe1992fefeec9b0d5"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S4_1200x1600-3641c6b4798aef32998929ba887a4dba"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S3_2560x1440-779ed9403879e74fe1992fefeec9b0d5"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_YookaLaylee_Playtonic_S4_1200x1600-3641c6b4798aef32998929ba887a4dba"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-uvtztrtfjdn3xgrwyhbuwwb5z42mbv",
+                            "name": "Team17 Digital Ltd"
+                        },
+                        "productSlug": "yooka-laylee",
+                        "urlSlug": "yooka-laylee",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "1370227204cd4e8089f39ac46a769744",
+                                "namespace": "131e306949034972959ca401ca27837e"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Team17"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Playtonic"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "yooka-laylee"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1203"
+                            },
+                            {
+                                "id": "18051"
+                            },
+                            {
+                                "id": "18777"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1117"
+                            },
+                            {
+                                "id": "9549"
+                            },
+                            {
+                                "id": "1151"
+                            },
+                            {
+                                "id": "1263"
+                            },
+                            {
+                                "id": "18607"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "yooka-laylee",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 799,
+                                "originalPrice": 3999,
+                                "voucherDiscount": 0,
+                                "discount": 3200,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€39.99",
+                                    "discountPrice": "€7.99",
+                                    "intermediatePrice": "€7.99"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": [
+                                        {
+                                            "id": "4e1a7cf25cfe425eb4057ec9996cea47",
+                                            "endDate": "2021-12-11T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "promotions": {
+                            "promotionalOffers": [
+                                {
+                                    "promotionalOffers": [
+                                        {
+                                            "startDate": "2021-12-09T16:00:00.000Z",
+                                            "endDate": "2021-12-11T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 20
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "upcomingPromotionalOffers": []
+                        }
+                    },
+                    {
+                        "title": "Godfall Challenger Edition",
+                        "id": "bb96ea6efe4242c8b8f6d98a85a92089",
+                        "namespace": "b6b2ef0cc19a4adaaa1cf6c7ed000dfa",
+                        "description": "Instantly unleash Godfall’s power! Godfall Challenger Edition immediately unlocks a maximum level Valorplate, spoils you with skill points, and equips you with a spread of deadly weapons. Challenge all three end-game modes! ",
+                        "effectiveDate": "2021-12-09T16:00:00.000Z",
+                        "offerType": "EDITION",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S2_1200x1600-cb857bf8d33af10e95d942bf7d0fb87a"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S2_1200x1600-cb857bf8d33af10e95d942bf7d0fb87a"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S2_1200x1600-cb857bf8d33af10e95d942bf7d0fb87a"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S1_2560x1440-2541e6e7783e8a65817c51c0ad856c19"
+                            },
+                            {
+                                "type": "ProductLogo",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_IC1_200x72-cdaaa52361e18da94ede66a1119181e7"
+                            },
+                            {
+                                "type": "featuredMedia",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S1_2560x1440-2541e6e7783e8a65817c51c0ad856c19"
+                            },
+                            {
+                                "type": "DieselStoreFrontTall",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S2_1200x1600-cb857bf8d33af10e95d942bf7d0fb87a_1200x1600-cb857bf8d33af10e95d942bf7d0fb87a"
+                            },
+                            {
+                                "type": "DieselStoreFrontWide",
+                                "url": "https://cdn1.epicgames.com/offer/b6b2ef0cc19a4adaaa1cf6c7ed000dfa/EGS_GodfallChallengerEdition_CounterplayGames_Editions_S1_2560x1440-2541e6e7783e8a65817c51c0ad856c19_2560x1440-2541e6e7783e8a65817c51c0ad856c19"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-dcmk65hvycy3kndmqvfg3yn3up87jn",
+                            "name": "Gearbox Publishing"
+                        },
+                        "productSlug": "godfall--challenger-edition",
+                        "urlSlug": "godfall--challenger-edition",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "674abb9f5b324d0eab8afbabddb8be21",
+                                "namespace": "b6b2ef0cc19a4adaaa1cf6c7ed000dfa"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Gearbox Publishing"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Counterplay Games"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "godfall--challenger-edition"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1216"
+                            },
+                            {
+                                "id": "1264"
+                            },
+                            {
+                                "id": "18777"
+                            },
+                            {
+                                "id": "1370"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "1117"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "godfall",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [
+                            {
+                                "pageSlug": "godfall--challenger-edition",
+                                "pageType": "offer"
+                            }
+                        ],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 0,
+                                "originalPrice": 1499,
+                                "voucherDiscount": 0,
+                                "discount": 1499,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€14.99",
+                                    "discountPrice": "0",
+                                    "intermediatePrice": "0"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": [
+                                        {
+                                            "id": "83eef4fe0e4f478fb2854a593cde9f87",
+                                            "endDate": "2021-12-16T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "promotions": {
+                            "promotionalOffers": [
+                                {
+                                    "promotionalOffers": [
+                                        {
+                                            "startDate": "2021-12-09T16:00:00.000Z",
+                                            "endDate": "2021-12-16T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 0
+                                            }
+                                        },
+                                        {
+                                            "startDate": "2021-12-09T16:00:00.000Z",
+                                            "endDate": "2021-12-11T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 70
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "upcomingPromotionalOffers": []
+                        }
+                    },
+                    {
+                        "title": "Prison Architect",
+                        "id": "cf42bfef8bdc4a3b9db9ae500c9bfe06",
+                        "namespace": "3ffb410dab2d409aacd39a1abc6fcbba",
+                        "description": "Welcome Wardens!\n\nOnly the world’s most ruthless Warden can contain the world’s most ruthless inmates. Design and develop your personalized penitentiary in Prison Architect.\n\n",
+                        "effectiveDate": "2021-12-09T16:00:00.000Z",
+                        "offerType": "BASE_GAME",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": false,
+                        "keyImages": [
+                            {
+                                "type": "CodeRedemption_340x440",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S2_1200x1600-414a3c16492da2d1500fc942fae1ef10"
+                            },
+                            {
+                                "type": "Thumbnail",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S2_1200x1600-414a3c16492da2d1500fc942fae1ef10"
+                            },
+                            {
+                                "type": "OfferImageTall",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S2_1200x1600-414a3c16492da2d1500fc942fae1ef10"
+                            },
+                            {
+                                "type": "OfferImageWide",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S1_2560x1440-032995cc5b2eefb8ce2b7b3b446a76ce"
+                            },
+                            {
+                                "type": "featuredMedia",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_S1_2560x1440-032995cc5b2eefb8ce2b7b3b446a76ce"
+                            },
+                            {
+                                "type": "ProductLogo",
+                                "url": "https://cdn1.epicgames.com/offer/3ffb410dab2d409aacd39a1abc6fcbba/EGS_PrisonArchitect_DoubleEleven_IC1_400x400-bc208c15894de2ad26335edaa99bd5d3"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-tjvfg6rejs6h86qa7k9aa64rrgbxxb",
+                            "name": "Paradox Interactive"
+                        },
+                        "productSlug": "prison-architect",
+                        "urlSlug": "prison-architect",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "88ad9e91920544ff901b241f62aed8ea",
+                                "namespace": "3ffb410dab2d409aacd39a1abc6fcbba"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.blacklist",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "Paradox Interactive"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "Paradox Interactive"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "prison-architect"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "games/edition"
+                            },
+                            {
+                                "path": "games/edition/base"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "id": "1115"
+                            },
+                            {
+                                "id": "9547"
+                            },
+                            {
+                                "id": "10719"
+                            }
+                        ],
+                        "catalogNs": {
+                            "mappings": [
+                                {
+                                    "pageSlug": "prison-architect",
+                                    "pageType": "productHome"
+                                }
+                            ]
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 0,
+                                "originalPrice": 2499,
+                                "voucherDiscount": 0,
+                                "discount": 2499,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "€24.99",
+                                    "discountPrice": "0",
+                                    "intermediatePrice": "0"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": [
+                                        {
+                                            "id": "6460f5090a97489eb27a75f7dde7b076",
+                                            "endDate": "2021-12-16T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "promotions": {
+                            "promotionalOffers": [
+                                {
+                                    "promotionalOffers": [
+                                        {
+                                            "startDate": "2021-12-09T16:00:00.000Z",
+                                            "endDate": "2021-12-16T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "upcomingPromotionalOffers": []
+                        }
+                    },
+                    {
+                        "title": "Mystery Game",
+                        "id": "a6f6c6bba62d4814bed688325715da36",
+                        "namespace": "d5241c76f178492ea1540fce45616757",
+                        "description": "Mystery Game (Dec 16)",
+                        "effectiveDate": "2099-01-01T00:00:00.000Z",
+                        "offerType": "OTHERS",
+                        "expiryDate": null,
+                        "status": "ACTIVE",
+                        "isCodeRedemptionOnly": true,
+                        "keyImages": [
+                            {
+                                "type": "VaultClosed",
+                                "url": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/EGS_15DaysofGames_wrapped_1920x1080_day01_v02_1920x1080-7163bbb436a93dc9ca739386ad6e36e0"
+                            }
+                        ],
+                        "seller": {
+                            "id": "o-ufmrk5furrrxgsp5tdngefzt5rxdcn",
+                            "name": "Epic Dev Test Account"
+                        },
+                        "productSlug": "[]",
+                        "urlSlug": "16mysterygame",
+                        "url": null,
+                        "items": [
+                            {
+                                "id": "8341d7c7e4534db7848cc428aa4cbe5a",
+                                "namespace": "d5241c76f178492ea1540fce45616757"
+                            }
+                        ],
+                        "customAttributes": [
+                            {
+                                "key": "com.epicgames.app.freegames.vault.close",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "com.epicgames.app.freegames.vault.slug",
+                                "value": "free-games"
+                            },
+                            {
+                                "key": "publisherName",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "com.epicgames.app.freegames.vault.open",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "developerName",
+                                "value": "[]"
+                            },
+                            {
+                                "key": "com.epicgames.app.productSlug",
+                                "value": "[]"
+                            }
+                        ],
+                        "categories": [
+                            {
+                                "path": "freegames/vaulted"
+                            },
+                            {
+                                "path": "freegames"
+                            },
+                            {
+                                "path": "games"
+                            },
+                            {
+                                "path": "applications"
+                            }
+                        ],
+                        "tags": [],
+                        "catalogNs": {
+                            "mappings": []
+                        },
+                        "offerMappings": [],
+                        "price": {
+                            "totalPrice": {
+                                "discountPrice": 0,
+                                "originalPrice": 0,
+                                "voucherDiscount": 0,
+                                "discount": 0,
+                                "currencyCode": "EUR",
+                                "currencyInfo": {
+                                    "decimals": 2
+                                },
+                                "fmtPrice": {
+                                    "originalPrice": "0",
+                                    "discountPrice": "0",
+                                    "intermediatePrice": "0"
+                                }
+                            },
+                            "lineOffers": [
+                                {
+                                    "appliedRules": []
+                                }
+                            ]
+                        },
+                        "promotions": {
+                            "promotionalOffers": [],
+                            "upcomingPromotionalOffers": [
+                                {
+                                    "promotionalOffers": [
+                                        {
+                                            "startDate": "2021-12-16T16:00:00.000Z",
+                                            "endDate": "2021-12-17T16:00:00.000Z",
+                                            "discountSetting": {
+                                                "discountType": "PERCENTAGE",
+                                                "discountPercentage": 0
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "paging": {
+                    "count": 1000,
+                    "total": 11
+                }
+            }
+        }
+    },
+    "extensions": {}
+}
