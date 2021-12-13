@@ -33,7 +33,7 @@ To which I will say, why not? Most of these games are actually outstanding games
 
 ## Changelog
 
-[Full changelog in Wiki](https://github.com/Revadike/epicgames-freebies-claimer/wiki/Changelog)
+[Full changelog in Wiki](https://github.com/Revadike/epicgames-freebies-claimer/releases)
 
 ## Happy Freebie Claiming!
 ![image](https://user-images.githubusercontent.com/4411977/122922274-bb263b00-d363-11eb-8b82-8a3ed6e7e29d.png)
