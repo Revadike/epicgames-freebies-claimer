@@ -127,7 +127,7 @@ function sleep(delay) {
                     claimedPromos.push(offer);
                 } catch (err) {
                     notificationMessages.push(`${email} failed to claim ${offer.title}`);
-                    Logger.warn(`Failed to claim ${offer.title} (${err})`);
+                    Logger.error(`Failed to claim ${offer.title} (${err})`);
                     if (err.response
                         && err.response.body
                         && err.response.body.errorCode === "errors.com.epicgames.purchase.purchase.captcha.challenge") {
