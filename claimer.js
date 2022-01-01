@@ -1,19 +1,28 @@
 "use strict";
 
-const { writeFile, writeFileSync, existsSync, readFileSync } = require("fs");
+const { writeFileSync, existsSync, readFileSync, unlinkSync } = require("fs");
 if (!existsSync(`${__dirname}/data/config.json`)) {
     writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
 }
 if (!existsSync(`${__dirname}/data/history.json`)) {
     writeFileSync(`${__dirname}/data/history.json`, "{}");
 }
+if (!existsSync(`${__dirname}/data/deviceAuths.json`)) {
+    if (existsSync(`${__dirname}/data/device_auths.json`)) {
+        writeFileSync(`${__dirname}/data/deviceAuths.json`, readFileSync(`${__dirname}/data/device_auths.json`));
+        unlinkSync(`${__dirname}/data/device_auths.json`);
+    } else {
+        writeFileSync(`${__dirname}/data/deviceAuths.json`, "{}");
+    }
+}
 
-const { "Launcher": EpicGames } = require("epicgames-client");
+const { "Client": EpicGames } = require("fnbr");
 const { freeGamesPromotions } = require(`${__dirname}/src/gamePromotions`);
 const { latestVersion } = require(`${__dirname}/src/latestVersion.js`);
-const Auths = require(`${__dirname}/data/device_auths.json`);
+const { offerPurchase } = require(`${__dirname}/src/offerPurchase.js`);
 const Config = require(`${__dirname}/data/config.json`);
 const Fork = require("child_process");
+const DeviceAuths = require(`${__dirname}/data/deviceAuths.json`);
 const History = require(`${__dirname}/data/history.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
 const Package = require(`${__dirname}/package.json`);
@@ -47,11 +56,6 @@ function appriseNotify(appriseUrl, notificationMessages) {
     }
 }
 
-function write(path, data) {
-    // eslint-disable-next-line no-extra-parens
-    return new Promise((res, rej) => writeFile(path, data, (err) => (err ? rej(err) : res(true))));
-}
-
 function sleep(delay) {
     return new Promise((res) => setTimeout(res, delay * 60000));
 }
@@ -70,22 +74,30 @@ function sleep(delay) {
             Logger.warn(`There is a new release available (${latest}): ${Package.url}`);
         }
 
+        if (Object.keys(DeviceAuths).length === 0) {
+            Logger.warn("You should first add an account!");
+            Logger.warn("Run the following command:");
+            Logger.warn("");
+            Logger.warn("npm run account");
+            process.exit(0);
+        }
+
         let notificationMessages = [];
-        for (let email in Auths) {
-            let { country } = Auths[email];
+        for (let email in DeviceAuths) {
+            let { country } = DeviceAuths[email];
             let claimedPromos = History[email] || [];
             let newlyClaimedPromos = [];
-            let useDeviceAuth = true;
-            let rememberDevicesPath = `${__dirname}/data/device_auths.json`;
-            let clientOptions = { email, ...options, rememberDevicesPath };
+            let checkEULA = true;
+            let deviceAuth = DeviceAuths[email];
+            let auth = { deviceAuth, checkEULA };
+            let clientOptions = {
+                ...options,
+                auth,
+                "createParty":   false,
+                "connectToXMPP": false,
+                "fetchFriends":  false,
+            };
             let client = new EpicGames(clientOptions);
-
-            if (!await client.init()) {
-                let errMess = "Error while initialize process.";
-                notificationMessages.push(errMess);
-                Logger.error(errMess);
-                break;
-            }
 
             // Check before logging in
             let freePromos = await freeGamesPromotions(client, country, country);
@@ -101,21 +113,21 @@ function sleep(delay) {
                 continue;
             }
 
-            let success = await client.login({ useDeviceAuth }).catch(() => false);
-            if (!success) {
-                let errMess = `Failed to login as ${email}`;
-                notificationMessages.push(errMess);
-                Logger.error(errMess);
+            let err = await client.login().catch((err) => err);
+            if (err) {
+                err = `Failed to login as ${email}: ${err}`;
+                notificationMessages.push(err);
+                Logger.error(err);
                 continue;
             }
 
-            Logger.info(`Logged in as ${client.account.name} (${client.account.id})`);
-            Auths[email].country = client.account.country;
-            write(rememberDevicesPath, JSON.stringify(Auths, null, 4)).catch(() => false); // ignore fails
+            Logger.info(`Logged in as ${client.user.displayName} (${client.user.id})`);
+            DeviceAuths[email].country = client.user.country;
+            writeFileSync(`${__dirname}/data/deviceAuths.json`, JSON.stringify(DeviceAuths, null, 4));
 
             for (let offer of unclaimedPromos) {
                 try {
-                    let purchased = await client.purchase(offer, 1);
+                    let purchased = await offerPurchase(client, offer);
                     if (purchased) {
                         Logger.info(`Successfully claimed ${offer.title} (${purchased})`);
                         newlyClaimedPromos.push(offer.title);
@@ -132,9 +144,9 @@ function sleep(delay) {
                         && err.response.body
                         && err.response.body.errorCode === "errors.com.epicgames.purchase.purchase.captcha.challenge") {
                         // It's pointless to try next one as we'll be asked for captcha again.
-                        let errMess = "Aborting! Captcha detected.";
-                        notificationMessages.push(errMess);
-                        Logger.error(errMess);
+                        let err = "Aborting! Captcha detected.";
+                        notificationMessages.push(err);
+                        Logger.error(err);
                         break;
                     }
                 }
@@ -151,11 +163,11 @@ function sleep(delay) {
             }
 
             await client.logout();
-            Logger.info(`Logged ${client.account.name} out of Epic Games`);
+            Logger.info(`Logged ${client.user.displayName} out of Epic Games`);
         }
         appriseNotify(appriseUrl, notificationMessages);
 
-        await write(`${__dirname}/data/history.json`, JSON.stringify(History, null, 4));
+        writeFileSync(`${__dirname}/data/history.json`, JSON.stringify(History, null, 4));
         if (loop) {
             Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);
