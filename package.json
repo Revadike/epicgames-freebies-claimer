@@ -36,7 +36,8 @@
     "main": "claimer.js",
     "scripts": {
         "test": "mocha",
-        "start": "node claimer.js"
+        "start": "node claimer.js",
+        "account": "node account.js"
     },
     "license": "MIT",
     "repository": {
@@ -57,7 +58,7 @@
     },
     "dependencies": {
         "colors": "^1.4.0",
-        "epicgames-client": "Revadike/node-epicgames-client#develop",
+        "fnbr": "github:fnbrjs/fnbr.js#next",
         "tracer": "^1.0.3"
     }
 }
