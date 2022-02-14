@@ -1,97 +1,107 @@
 "use strict";
 
 const ENDPOINT = {
-    "PORTAL_ORIGIN": "ue-launcher-website-prod.ol.epicgames.com",
-    "PURCHASE":      "https://payment-website-pci.ol.epicgames.com/purchase",
+    "CHECKOUT": "https://www.epicgames.com/store/purchase",
+    "PURCHASE": "https://payment-website-pci.ol.epicgames.com/purchase",
 };
 
-// async newPurchase(offer) {
-//     let { data: purchase } = await this.http.sendGet(`https://${ENDPOINT.PORTAL_ORIGIN}/purchase?showNavigation=true&namespace=${offer.namespace}&offers=${offer.id}`);
-//     purchase = Cheerio.load(purchase);
-//     const token = purchase('#purchaseToken').val();
-//     return {
-//         token,
-//     };
-// }
+async function getPurchaseToken(client, offer) {
+    let { error, response } = await client.http.sendEpicgamesRequest(
+        true,
+        "GET",
+        // eslint-disable-next-line max-len
+        `${ENDPOINT.CHECKOUT}?offers=1-${offer.namespace}-${offer.id}&orderId&purchaseToken&showNavigation=true`,
+        "launcher",
+    );
 
-//   async purchaseOrderPreview(purchase, offer) {
-//     const { data } = await this.http.sendPost(
-//         `${ENDPOINT.PURCHASE}/order-preview`,
-//         `${this.account.auth.tokenType} ${this.account.auth.accessToken}`,
-//         {
-//             useDefault: true,
-//             setDefault: false,
-//             namespace: offer.namespace,
-//             country: null,
-//             countryName: null,
-//             orderId: null,
-//             orderComplete: null,
-//             orderError: null,
-//             orderPending: null,
-//             offers: [
-//                 offer.id,
-//             ],
-//             offerPrice: '',
-//         },
-//         true,
-//         {
-//             'x-requested-with': purchase.token,
-//         },
-//     );
+    if (error) {
+        throw error;
+    }
 
-//     if (data.orderResponse && data.orderResponse.error) {
-//         throw new Error(data.orderResponse.message);
-//     }
-//     return data.syncToken ? data : false;
-// }
+    let token = response.match(/(?<=id="purchaseToken" value=")([0-9a-f]+)(?=")/g);
+    if (!token) {
+        throw new Error("Unable to acquire purchase token");
+    }
 
-//   async purchaseOrderConfirm(purchase, order) {
-//     const { data } = await this.http.sendPost(
-//         `${ENDPOINT.PURCHASE}/confirm-order`,
-//         `${this.account.auth.tokenType} ${this.account.auth.accessToken}`,
-//         {
-//             useDefault: true,
-//             setDefault: false,
-//             namespace: order.namespace,
-//             country: order.country,
-//             countryName: order.countryName,
-//             orderId: null,
-//             orderComplete: null,
-//             orderError: null,
-//             orderPending: null,
-//             offers: order.offers,
-//             includeAccountBalance: false,
-//             totalAmount: order.orderResponse.totalPrice,
-//             affiliateId: '',
-//             creatorSource: '',
-//             syncToken: order.syncToken,
-//         },
-//         true,
-//         {
-//             'x-requested-with': purchase.token,
-//         },
-//     );
-//     if (data.error) {
-//         throw new Error(data.message || data);
-//     }
-//     return data && data.confirmation;
-// }
+    return token[0];
+}
 
-//   async purchase(offer, quantity) {
-//     const purchase = await this.newPurchase(offer);
-//     if (!purchase || !purchase.token) {
-//         throw new Error('Unable to acquire purchase token');
-//     }
-//     const order = await this.purchaseOrderPreview(purchase, offer);
-//     if (!order) return false;
-//     return this.purchaseOrderConfirm(purchase, order);
-// }
+async function purchaseOrderPreview(client, offer, token) {
+    let { error, response } = await client.http.sendEpicgamesRequest(
+        false,
+        "POST",
+        `${ENDPOINT.PURCHASE}/order-preview`,
+        "launcher",
+        { "x-requested-with": token },
+        {
+            "useDefault":    true,
+            "setDefault":    false,
+            "namespace":     offer.namespace,
+            "country":       null,
+            "countryName":   null,
+            "orderId":       null,
+            "orderComplete": null,
+            "orderError":    null,
+            "orderPending":  null,
+            "offers":        [offer.id],
+            "offerPrice":    "",
+        },
+    );
 
-// TODO
-function offerPurchase(client, offer) {
-    let err = new Error("Not yet implemented a way to purchase an offer");
-    err.offer = offer;
-    throw err;
+    if (response.orderResponse && response.orderResponse.error) {
+        throw new Error(response.orderResponse.message);
+    }
+
+    if (error) {
+        throw error;
+    }
+
+    if (!response.syncToken) {
+        throw new Error("Unable to acquire sync token");
+    }
+
+    return response;
+}
+
+async function purchaseOrderConfirm(client, order, token) {
+    let { error, response } = await client.http.sendEpicgamesRequest(
+        false,
+        "POST",
+        `${ENDPOINT.PURCHASE}/confirm-order`,
+        "launcher",
+        { "x-requested-with": token },
+        {
+            "useDefault":            true,
+            "setDefault":            false,
+            "namespace":             order.namespace,
+            "country":               order.country,
+            "countryName":           order.countryName,
+            "orderId":               null,
+            "orderComplete":         null,
+            "orderError":            null,
+            "orderPending":          null,
+            "offers":                order.offers,
+            "includeAccountBalance": false,
+            "totalAmount":           order.orderResponse.totalPrice,
+            "affiliateId":           "",
+            "creatorSource":         "",
+            "syncToken":             order.syncToken,
+        },
+    );
+    if (response && response.error) {
+        throw new Error(response.message || response.error || response);
+    }
+    if (error) {
+        error.response = response;
+        throw new Error(`Cannot confirm order (${error})`);
+    }
+    return response && response.confirmation;
+}
+
+async function offerPurchase(client, offer) {
+    let token = await getPurchaseToken(client, offer);
+    let order = await purchaseOrderPreview(client, offer, token);
+    return purchaseOrderConfirm(client, order, token);
 }
 
 module.exports = { offerPurchase };

@@ -88,8 +88,9 @@ function sleep(delay) {
             let claimedPromos = History[email] || [];
             let newlyClaimedPromos = [];
             let checkEULA = true;
+            let createLauncherSession = true;
             let deviceAuth = DeviceAuths[email];
-            let auth = { deviceAuth, checkEULA };
+            let auth = { deviceAuth, checkEULA, createLauncherSession };
             let clientOptions = {
                 ...options,
                 auth,
