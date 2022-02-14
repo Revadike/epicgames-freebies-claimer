@@ -59,6 +59,7 @@
     "dependencies": {
         "colors": "^1.4.0",
         "fnbr": "github:fnbrjs/fnbr.js#next",
+        "puppeteer-hcaptcha": "4.1.2",
         "tracer": "^1.0.3"
     }
 }
