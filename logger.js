@@ -1,7 +1,12 @@
-"use strict";
 const colors = require("colors");
 const fs = require("fs");
 const path = require("path");
+
+const streamoptions = {
+    "flags":    "a",
+    "encoding": "utf8",
+};
+const stream = fs.createWriteStream(path.join(__dirname, "main.log"), streamoptions);
 
 module.exports = {
     "format":     " {{timestamp}} | {{title}} | {{message}}",
@@ -27,11 +32,7 @@ module.exports = {
         // eslint-disable-next-line no-console
         console.log(data.output);
 
-        const streamoptions = {
-            "flags":    "a",
-            "encoding": "utf8",
-        };
-        fs.createWriteStream(path.join(__dirname, "claimer.log"), streamoptions).write(`\r\n${data.rawoutput}`);
+        stream.write(`\r\n${data.rawoutput}`);
         if (data.logpath) {
             fs.createWriteStream(data.logpath, streamoptions).write(`\r\n${data.rawoutput}`);
         }

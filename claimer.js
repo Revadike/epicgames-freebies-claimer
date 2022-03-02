@@ -1,77 +1,53 @@
 "use strict";
 
-const { writeFileSync, existsSync, readFileSync, unlinkSync } = require("fs");
-if (!existsSync(`${__dirname}/data/config.json`)) {
-    writeFileSync(`${__dirname}/data/config.json`, readFileSync(`${__dirname}/data/config.example.json`));
-}
-if (!existsSync(`${__dirname}/data/history.json`)) {
-    writeFileSync(`${__dirname}/data/history.json`, "{}");
-}
-if (!existsSync(`${__dirname}/data/deviceAuths.json`)) {
-    if (existsSync(`${__dirname}/data/device_auths.json`)) {
-        writeFileSync(`${__dirname}/data/deviceAuths.json`, readFileSync(`${__dirname}/data/device_auths.json`));
-        unlinkSync(`${__dirname}/data/device_auths.json`);
-    } else {
-        writeFileSync(`${__dirname}/data/deviceAuths.json`, "{}");
-    }
-}
+const { writeFile, prepareData, sleep } = require(`${__dirname}/src/utils`);
+prepareData();
 
 const { "Client": EpicGames } = require("fnbr");
+const { appriseNotify } = require(`${__dirname}/src/appriseNotify`);
 const { freeGamesPromotions } = require(`${__dirname}/src/gamePromotions`);
-const { latestVersion } = require(`${__dirname}/src/latestVersion.js`);
 const { offerPurchase } = require(`${__dirname}/src/offerPurchase.js`);
+const AutoGitUpdate = require("auto-git-update");
 const Config = require(`${__dirname}/data/config.json`);
-const Fork = require("child_process");
 const DeviceAuths = require(`${__dirname}/data/deviceAuths.json`);
 const History = require(`${__dirname}/data/history.json`);
 const Logger = require("tracer").console(`${__dirname}/logger.js`);
+const OS = require("os");
 const Package = require(`${__dirname}/package.json`);
 
-function appriseNotify(appriseUrl, notificationMessages) {
-    if (!appriseUrl || notificationMessages.length === 0) {
-        return;
-    }
-
-    let notification = notificationMessages.join("\n");
-    try {
-        let s = Fork.spawnSync("apprise", [
-            "-vv",
-            "-t",
-            `Epicgames Freebies Claimer ${Package.version}`,
-            "-b",
-            notification,
-            appriseUrl,
-        ]);
-
-        let output = s.stdout ? s.stdout.toString() : "ERROR: Maybe apprise not found?";
-        if (output && output.includes("ERROR")) {
-            Logger.error(`Failed to send push notification (${output})`);
-        } else if (output) {
-            Logger.info("Push notification sent");
-        } else {
-            Logger.warn("No output from apprise");
-        }
-    } catch (err) {
-        Logger.error(`Failed to send push notification (${err})`);
-    }
-}
-
-function sleep(delay) {
-    return new Promise((res) => setTimeout(res, delay * 60000));
-}
-
 (async() => {
-    let { options, delay, loop, appriseUrl, notifyIfNoUnclaimedFreebies } = Config;
+    let {
+        appriseUrl,
+        autoUpdate,
+        delay,
+        loop,
+        notifyIfNoUnclaimedFreebies,
+        options,
+    } = Config;
+    let updater = new AutoGitUpdate({
+        "executeOnComplete": "npm start",
+        "exitOnComplete":    true,
+        "fromReleases":      true,
+        "logConfig":         {
+            "logGeneral": false,
+            "logWarning": false,
+            "logError":   false,
+        },
+        "repository":   Package.url,
+        "tempLocation": OS.tmpdir(),
+    });
+
+    if (process.env.EFC_DISABLE_AUTO_UPDATE) {
+        autoUpdate = false;
+    } else if (autoUpdate !== false) {
+        autoUpdate = true;
+    }
 
     do {
         Logger.info(`Epicgames Freebies Claimer (${Package.version}) by ${Package.author.name || Package.author}`);
 
-        let latest = await latestVersion().catch((err) => {
-            Logger.error(`Failed to check for updates (${err})`);
-        });
-
-        if (latest && latest !== Package.version) {
-            Logger.warn(`There is a new release available (${latest}): ${Package.url}`);
+        if (autoUpdate) {
+            await updater.autoUpdate();
         }
 
         if (Object.keys(DeviceAuths).length === 0) {
@@ -124,7 +100,7 @@ function sleep(delay) {
 
             Logger.info(`Logged in as ${client.user.displayName} (${client.user.id})`);
             DeviceAuths[email].country = client.user.country;
-            writeFileSync(`${__dirname}/data/deviceAuths.json`, JSON.stringify(DeviceAuths, null, 4));
+            await writeFile(`${__dirname}/data/deviceAuths.json`, JSON.stringify(DeviceAuths, null, 4));
 
             for (let offer of unclaimedPromos) {
                 try {
@@ -166,9 +142,9 @@ function sleep(delay) {
             await client.logout();
             Logger.info(`Logged ${client.user.displayName} out of Epic Games`);
         }
-        appriseNotify(appriseUrl, notificationMessages);
+        appriseNotify(appriseUrl, notificationMessages, Logger);
 
-        writeFileSync(`${__dirname}/data/history.json`, JSON.stringify(History, null, 4));
+        await writeFile(`${__dirname}/data/history.json`, JSON.stringify(History, null, 4));
         if (loop) {
             Logger.info(`Waiting ${delay} minutes`);
             await sleep(delay);

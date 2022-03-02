@@ -57,6 +57,7 @@
         "mocha": "*"
     },
     "dependencies": {
+        "auto-git-update": "commonjs",
         "colors": "^1.4.0",
         "fnbr": "github:fnbrjs/fnbr.js#next",
         "puppeteer-hcaptcha": "4.1.2",

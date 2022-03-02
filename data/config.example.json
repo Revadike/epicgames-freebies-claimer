@@ -1,5 +1,6 @@
 {
     "appriseUrl": null,
+    "autoUpdate": true,
     "delay": 1440,
     "loop": false,
     "notifyIfNoUnclaimedFreebies": false,
