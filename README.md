@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/4411977/74479432-6a6d1b00-4eaf-11ea-930f-1b89e7135887.png)
 
 ## ⚠️Status⚠️
-EpicGames has made captchas mandatory for claiming free games. Currently, epicgames freebies claimer cannot handle this, so [it is not working](https://github.com/Revadike/epicgames-freebies-claimer/issues/172). I am trying to fix it by implementating anti captcha solutions. You can track my progression [here](https://github.com/Revadike/epicgames-freebies-claimer/pull/184),
+EpicGames has made captchas mandatory for claiming free games. Currently, epicgames freebies claimer cannot handle this, so [it is not working](https://github.com/Revadike/epicgames-freebies-claimer/issues/172). I am trying to fix it by implementating anti captcha solutions. You can track my progression [here](https://github.com/Revadike/epicgames-freebies-claimer/pull/184). Any help would be greatly appreciated!
 
 ## Description
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Games Store.
