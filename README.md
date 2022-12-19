@@ -4,6 +4,10 @@
 ## ⚠️Status⚠️
 EpicGames has made captchas mandatory for claiming free games. Currently, epicgames freebies claimer cannot handle this, so [it is not working](https://github.com/Revadike/epicgames-freebies-claimer/issues/172). I am trying to fix it by implementating anti captcha solutions. You can track my progression [here](https://github.com/Revadike/epicgames-freebies-claimer/pull/184). Any help would be greatly appreciated!
 
+In the meantime, you may want to check out [Epic Games Store Weekly Free Games](https://github.com/claabs/epicgames-freegames-node) which passes captcha checks and 2FA by sending the user a notification to solve them manually.
+
+[GrabFreeGames.com](https://grabfreegames.com/notifications) also offers a number of ways to be notified when free games become available, but it does not offer any claim automation.
+
 ## Description
 Claim [available free game promotions](https://www.epicgames.com/store/free-games) from the Epic Games Store.
 
